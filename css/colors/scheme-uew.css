@@ -1,0 +1,117 @@
+/* Uganda Evaluation Week Color Scheme */
+/* Primary Colors: Gold, Mustard, Light Blue, Orange, Red Coral */
+/* Secondary Colors: Deep Slate Blue, Muted Teal, Warm Stone, Charcoal Graphite */
+
+:root {
+  /* Primary Brand Colors */
+  --primary-color: #cd912d; /* Gold - main accent */
+  --primary-color-rgb: 205, 145, 45;
+  
+  --secondary-color: #2f4a5a; /* Deep Slate Blue - professional anchor */
+  --secondary-color-rgb: 47, 74, 90;
+  
+  /* Extended Primary Palette */
+  --gold: #cd912d;
+  --gold-rgb: 205, 145, 45;
+  
+  --mustard: #e7d14a;
+  --mustard-rgb: 231, 209, 74;
+  
+  --light-blue: #cbebf2;
+  --light-blue-rgb: 203, 235, 242;
+  
+  --light-grey: #e6e7e8;
+  --light-grey-rgb: 230, 231, 232;
+  
+  --orange: #e47925;
+  --orange-rgb: 228, 121, 37;
+  
+  --red-coral: #e35826;
+  --red-coral-rgb: 227, 88, 38;
+  
+  /* Secondary Palette */
+  --deep-slate-blue: #2f4a5a;
+  --deep-slate-blue-rgb: 47, 74, 90;
+  
+  --muted-teal: #4f8f8b;
+  --muted-teal-rgb: 79, 143, 139;
+  
+  --warm-stone: #cfc9c2;
+  --warm-stone-rgb: 207, 201, 194;
+  
+  --charcoal-graphite: #2b2b2b;
+  --charcoal-graphite-rgb: 43, 43, 43;
+  
+  /* Functional Colors */
+  --bg-dark: #2b2b2b; /* Charcoal Graphite - refined dark background */
+  --bg-dark-rgb: 43, 43, 43;
+  
+  --bg-dark-2: #2f4a5a; /* Deep Slate Blue - secondary dark */
+  --bg-dark-2-rgb: 47, 74, 90;
+  
+  --text-light: #e6e7e8; /* Light Grey - text on dark */
+  --text-light-rgb: 230, 231, 232;
+  
+  --text-muted: #cfc9c2; /* Warm Stone - muted text */
+  --text-muted-rgb: 207, 201, 194;
+  
+  /* Accent Colors for Interactive Elements */
+  --accent-hover: #e7d14a; /* Mustard - hover states */
+  --accent-hover-rgb: 231, 209, 74;
+  
+  --accent-cta: #e47925; /* Orange - call to action */
+  --accent-cta-rgb: 228, 121, 37;
+  
+  --accent-highlight: #cbebf2; /* Light Blue - highlights */
+  --accent-highlight-rgb: 203, 235, 242;
+  
+  /* Gradient Colors */
+  --gradient-start: #cd912d; /* Gold */
+  --gradient-end: #e47925; /* Orange */
+  
+  /* Border and Divider Colors */
+  --border-light: rgba(230, 231, 232, 0.2);
+  --border-dark: rgba(43, 43, 43, 0.5);
+  
+  /* Overlay Colors */
+  --overlay-dark: rgba(43, 43, 43, 0.85);
+  --overlay-gradient: linear-gradient(180deg, rgba(47, 74, 90, 0.9) 0%, rgba(43, 43, 43, 0.95) 100%);
+}
+
+/* Dark Scheme Overrides for Uganda Evaluation Week */
+.dark-scheme {
+  --bg-color: #2b2b2b;
+  --bg-color-rgb: 43, 43, 43;
+  --text-color: #e6e7e8;
+  --text-color-rgb: 230, 231, 232;
+}
+
+/* Additional utility classes for brand colors */
+.bg-gold { background-color: var(--gold); }
+.bg-mustard { background-color: var(--mustard); }
+.bg-light-blue { background-color: var(--light-blue); }
+.bg-orange { background-color: var(--orange); }
+.bg-red-coral { background-color: var(--red-coral); }
+.bg-deep-slate { background-color: var(--deep-slate-blue); }
+.bg-muted-teal { background-color: var(--muted-teal); }
+.bg-warm-stone { background-color: var(--warm-stone); }
+.bg-charcoal { background-color: var(--charcoal-graphite); }
+
+.text-gold { color: var(--gold); }
+.text-mustard { color: var(--mustard); }
+.text-light-blue { color: var(--light-blue); }
+.text-orange { color: var(--orange); }
+.text-red-coral { color: var(--red-coral); }
+.text-deep-slate { color: var(--deep-slate-blue); }
+.text-muted-teal { color: var(--muted-teal); }
+.text-warm-stone { color: var(--warm-stone); }
+.text-charcoal { color: var(--charcoal-graphite); }
+
+/* Gradient backgrounds */
+.bg-gradient-gold-orange {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+}
+
+.bg-gradient-slate-teal {
+  background: linear-gradient(135deg, var(--deep-slate-blue) 0%, var(--muted-teal) 100%);
+}
