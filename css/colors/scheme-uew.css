@@ -263,3 +263,547 @@
 .bg-gradient-slate-teal {
   background: linear-gradient(135deg, #2f4a5a 0%, #4f8f8b 100%) !important;
 }
+
+/* ============================================
+   LIGHT MODE STYLES
+   ============================================ */
+
+/* Light mode background overrides */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+/* Light mode text */
+.text-dark {
+  color: #2b2b2b !important;
+}
+
+/* Light mode section styling */
+section.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* Light mode card styling */
+.bg-light .bg-dark-2,
+.bg-light .bg-dark-1 {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light mode gradient edges */
+.bg-light .gradient-edge-bottom {
+  background: linear-gradient(0deg, rgba(248, 249, 250, 1) 0%, rgba(248, 249, 250, 0) 100%) !important;
+}
+
+.bg-light .gradient-edge-top {
+  background: linear-gradient(180deg, rgba(248, 249, 250, 1) 0%, rgba(248, 249, 250, 0) 100%) !important;
+}
+
+/* Light mode hover effects */
+.bg-light .hover:hover .hover-bg-color {
+  background: #cd912d !important;
+}
+
+.bg-light .hover:hover .hover-text-light {
+  color: #ffffff !important;
+}
+
+/* Light mode radial gradient */
+.bg-light .radial-gradient-color {
+  background: radial-gradient(circle, rgba(205, 145, 45, 0) 50%, rgba(205, 145, 45, 0.8) 100%) !important;
+}
+
+/* Light mode accordion */
+.bg-light .accordion-section-title {
+  color: #2b2b2b !important;
+  background-color: #ffffff !important;
+  border-color: rgba(205, 145, 45, 0.2) !important;
+}
+
+.bg-light .accordion-section-content {
+  color: #2b2b2b !important;
+  background-color: #ffffff !important;
+}
+
+/* Light mode form inputs */
+.bg-light .form-control {
+  background-color: #ffffff !important;
+  border-color: #e6e7e8 !important;
+  color: #2b2b2b !important;
+}
+
+.bg-light .form-control:focus {
+  border-color: #cd912d !important;
+  box-shadow: 0 0 0 0.2rem rgba(205, 145, 45, 0.25) !important;
+}
+
+/* Light mode borders */
+.bg-light .border-white-bottom-op-2 {
+  border-bottom: 1px solid rgba(43, 43, 43, 0.1) !important;
+}
+
+.bg-light .border-white-op-3 {
+  border: 1px solid rgba(43, 43, 43, 0.1) !important;
+}
+
+/* Light mode subtitle */
+.bg-light .subtitle {
+  color: #cd912d !important;
+}
+
+.bg-light .subtitle.s2 {
+  color: #cd912d !important;
+}
+
+/* Light mode lead text */
+.bg-light .lead {
+  color: #4f8f8b !important;
+}
+
+/* Light mode check list */
+.bg-light .ul-check li {
+  color: #2b2b2b !important;
+}
+
+.bg-light .ul-check li::before {
+  color: #cd912d !important;
+}
+
+/* Light mode footer */
+footer.section-dark {
+  background-color: #2b2b2b !important;
+}
+
+/* ============================================
+   HERO SECTION - Height fix
+   ============================================ */
+
+#section-hero {
+  height: 100vh;
+  min-height: 800px;
+}
+
+#section-hero .mh-800 {
+  height: 100%;
+  min-height: 800px;
+  position: relative;
+}
+
+#section-hero .swiper,
+#section-hero .swiper-slide,
+#section-hero .swiper-inner {
+  height: 100% !important;
+}
+
+/* ============================================
+   NAVBAR BRAND STYLING
+   ============================================ */
+
+/* Transparent header over hero */
+header.transparent .menu-item {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+header.transparent .menu-item:hover,
+header.transparent .menu-item.active {
+  color: #cd912d !important;
+}
+
+/* Scrolled header — JS applies .smaller class */
+header.smaller {
+  background: #2b2b2b !important;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+header.smaller .menu-item {
+  color: rgba(230, 231, 232, 0.9) !important;
+}
+
+header.smaller .menu-item:hover,
+header.smaller .menu-item.active {
+  color: #cd912d !important;
+}
+
+header.smaller .logo-scroll {
+  display: block !important;
+}
+
+/* Legacy .header-scroll fallback (some templates toggle this) */
+header:not(.transparent).header-scroll,
+header.header-scroll {
+  background-color: #2b2b2b !important;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+header:not(.transparent).header-scroll .menu-item,
+header.header-scroll .menu-item {
+  color: rgba(230, 231, 232, 0.9) !important;
+}
+
+header:not(.transparent).header-scroll .menu-item:hover,
+header.header-scroll .menu-item:hover {
+  color: #cd912d !important;
+}
+
+header:not(.transparent).header-scroll .logo-scroll,
+header.header-scroll .logo-scroll {
+  display: block !important;
+}
+
+/* Light mode jarallax overlays */
+.bg-light.jarallax .sw-overlay,
+.bg-light .sw-overlay {
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Light mode text on dark background sections within light page */
+.bg-light .text-light {
+  color: #ffffff !important;
+}
+
+/* Light mode button line variant */
+.btn-line {
+  border: 2px solid #cd912d !important;
+  color: #cd912d !important;
+  background: transparent !important;
+}
+
+.btn-line:hover {
+  background: #cd912d !important;
+  color: #ffffff !important;
+}
+
+/* Light mode swiper buttons */
+.bg-light .swiper-button-prev,
+.bg-light .swiper-button-next {
+  color: #cd912d !important;
+}
+
+.bg-light .swiper-pagination-bullet-active {
+  background: #cd912d !important;
+}
+
+/* ============================================
+   COUNTDOWN SECTION - CREATIVE REDESIGN
+   ============================================ */
+
+#section-countdown {
+  background: linear-gradient(135deg, #111111 0%, #2f4a5a 45%, #111111 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold glow orb */
+.cdown-orb {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(205, 145, 45, 0.15) 0%, transparent 68%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dot matrix overlay (right side) */
+.cdown-dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  background-image: radial-gradient(rgba(205, 145, 45, 0.18) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* Split layout container */
+.cdown-split {
+  display: flex;
+  min-height: 440px;
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- LEFT PANEL: Event Identity ---- */
+.cdown-panel-left {
+  flex: 0 0 42%;
+  display: flex;
+  align-items: center;
+  padding: 70px 50px 70px 80px;
+  border-right: 1px solid rgba(205, 145, 45, 0.2);
+  position: relative;
+}
+
+/* Thick gold left border accent */
+.cdown-panel-left::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  width: 4px;
+  background: linear-gradient(180deg, transparent 0%, #cd912d 30%, #e7d14a 70%, transparent 100%);
+  border-radius: 2px;
+}
+
+.cdown-identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.cdown-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #cd912d;
+  margin-bottom: 22px;
+}
+
+/* Stacked large title words */
+.cdown-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  line-height: 1;
+}
+
+.cdown-word {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  display: block;
+  line-height: 1.05;
+}
+
+.cdown-word-gold {
+  color: #cd912d;
+}
+
+/* Gold divider line */
+.cdown-divider {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #cd912d, #e7d14a);
+  margin-bottom: 26px;
+  border-radius: 1px;
+}
+
+/* Date & venue info */
+.cdown-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.cdown-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(230, 231, 232, 0.75);
+  font-size: 0.875rem;
+}
+
+.cdown-meta-item i {
+  color: #cd912d;
+  font-size: 0.8rem;
+  width: 14px;
+  flex-shrink: 0;
+}
+
+/* ---- RIGHT PANEL: Timer ---- */
+.cdown-panel-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 60px;
+  position: relative;
+}
+
+.cdown-timer-wrap {
+  text-align: center;
+}
+
+.cdown-timer-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: rgba(230, 231, 232, 0.4);
+  margin-bottom: 36px;
+}
+
+/* jQuery Countdown - Editorial open style */
+#defaultCountdown {
+  display: flex !important;
+  justify-content: center;
+}
+
+#defaultCountdown .countdown-row {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#defaultCountdown .countdown-section {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 32px;
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* Vertical gold separator between units */
+#defaultCountdown .countdown-section + .countdown-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8%;
+  bottom: 28%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(205, 145, 45, 0.55), transparent);
+}
+
+/* Giant editorial numbers */
+#defaultCountdown .countdown-amount {
+  font-size: 5.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  display: block !important;
+  letter-spacing: -3px !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+#defaultCountdown .countdown-period {
+  font-size: 0.58rem !important;
+  font-weight: 700 !important;
+  color: #cd912d !important;
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
+  margin-top: 14px !important;
+  display: block !important;
+}
+
+#defaultCountdown .countdown-separator {
+  display: none !important;
+}
+
+/* ---- RESPONSIVE ---- */
+
+@media (max-width: 1199px) {
+  .cdown-panel-left {
+    padding: 60px 40px 60px 60px;
+  }
+
+  .cdown-word {
+    font-size: 2.5rem;
+  }
+
+  #defaultCountdown .countdown-amount {
+    font-size: 4.5rem !important;
+  }
+
+  #defaultCountdown .countdown-section {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .cdown-split {
+    flex-direction: column;
+  }
+
+  .cdown-panel-left {
+    flex: none;
+    padding: 50px 40px 36px;
+    border-right: none;
+    border-bottom: 1px solid rgba(205, 145, 45, 0.2);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cdown-panel-left::before {
+    top: auto;
+    bottom: 0;
+    left: 15%;
+    right: 15%;
+    width: auto;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #cd912d, transparent);
+  }
+
+  .cdown-identity {
+    align-items: center;
+  }
+
+  .cdown-title {
+    align-items: center;
+  }
+
+  .cdown-panel-right {
+    padding: 40px 30px 50px;
+  }
+
+  .cdown-word {
+    font-size: 2.6rem;
+  }
+
+  .cdown-dots {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  #defaultCountdown .countdown-amount {
+    font-size: 3.75rem !important;
+    letter-spacing: -2px !important;
+  }
+
+  #defaultCountdown .countdown-section {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .cdown-panel-left {
+    padding: 40px 24px 28px;
+  }
+
+  .cdown-word {
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+
+  .cdown-panel-right {
+    padding: 32px 16px 44px;
+  }
+
+  #defaultCountdown .countdown-amount {
+    font-size: 2.75rem !important;
+    letter-spacing: -1px !important;
+  }
+
+  #defaultCountdown .countdown-section {
+    padding: 0 14px;
+  }
+}
