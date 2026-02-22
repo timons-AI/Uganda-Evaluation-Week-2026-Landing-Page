@@ -432,6 +432,10 @@ header.smaller .logo-scroll {
   display: block !important;
 }
 
+header.smaller .logo-main {
+  display: none !important;
+}
+
 /* Legacy .header-scroll fallback (some templates toggle this) */
 header:not(.transparent).header-scroll,
 header.header-scroll {
@@ -452,6 +456,11 @@ header.header-scroll .menu-item:hover {
 header:not(.transparent).header-scroll .logo-scroll,
 header.header-scroll .logo-scroll {
   display: block !important;
+}
+
+header:not(.transparent).header-scroll .logo-main,
+header.header-scroll .logo-main {
+  display: none !important;
 }
 
 /* Light mode jarallax overlays */
