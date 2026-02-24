@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sponsors &amp; Partners | 9th Uganda Evaluation Week 2026</title>
+    <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Sponsors and Partners of Uganda Evaluation Week 2026" name="description">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/vendors.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link id="colors" href="css/colors/scheme-uew.css" rel="stylesheet" type="text/css">
+    <style>
+        /* ============================================================
+           AWWWARDS HERO — "PARTNER WITH PURPOSE"
+           ============================================================ */
+
+        /* Full-viewport container */
+        .sph {
+            position: relative;
+            height: 100vh;
+            min-height: 680px;
+            background: #07090c;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Animated grain noise overlay */
+        .sph-grain {
+            position: absolute;
+            inset: -50%;
+            width: 200%; height: 200%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: 0.035;
+            pointer-events: none;
+            z-index: 1;
+            animation: sph-grain 6s steps(8) infinite;
+        }
+        @keyframes sph-grain {
+            0%,100%{transform:translate(0,0)}
+            12%{transform:translate(-4%,-4%)}
+            25%{transform:translate(-8%,4%)}
+            37%{transform:translate(4%,-8%)}
+            50%{transform:translate(-4%,12%)}
+            62%{transform:translate(-8%,4%)}
+            75%{transform:translate(12%,0)}
+            87%{transform:translate(0,8%)}
+        }
+
+        /* Ambient radial glow */
+        .sph-glow-1 {
+            position: absolute;
+            width: 800px; height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(205,145,45,0.09) 0%, transparent 65%);
+            top: -200px; right: -200px;
+            pointer-events: none; z-index: 1;
+        }
+        .sph-glow-2 {
+            position: absolute;
+            width: 600px; height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(47,74,90,0.3) 0%, transparent 70%);
+            bottom: -100px; left: 30%;
+            pointer-events: none; z-index: 1;
+        }
+
+        /* Vertical structural lines */
+        .sph-vline {
+            position: absolute;
+            top: 0; bottom: 0; width: 1px;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(205,145,45,0.15) 20%,
+                rgba(205,145,45,0.15) 80%,
+                transparent 100%);
+            pointer-events: none; z-index: 1;
+        }
+        .sph-vline-l { left: 60px; }
+        .sph-vline-r { right: 60px; }
+
+        /* ---- Main 2-col grid ---- */
+        .sph-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 0 80px;
+            position: relative;
+            z-index: 2;
+            align-items: center;
+            gap: 60px;
+            max-width: 1500px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ---- LEFT: Editorial typography ---- */
+        .sph-left {
+            padding-top: 40px;
+        }
+
+        .sph-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            animation: sph-up 0.9s 0.1s cubic-bezier(.16,1,.3,1) both;
+        }
+        .sph-eyebrow-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #cd912d;
+            flex-shrink: 0;
+            box-shadow: 0 0 12px rgba(205,145,45,0.6);
+            animation: sph-dot-pulse 2.5s ease infinite;
+        }
+        @keyframes sph-dot-pulse {
+            0%,100%{box-shadow:0 0 12px rgba(205,145,45,0.6)}
+            50%{box-shadow:0 0 24px rgba(205,145,45,0.15)}
+        }
+        .sph-eyebrow-text {
+            font-size: 0.58rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: rgba(230,231,232,0.38);
+            font-weight: 700;
+        }
+
+        /* Giant stacked words */
+        .sph-headline {
+            margin-bottom: 28px;
+        }
+        .sph-word {
+            display: block;
+            font-size: clamp(3.2rem, 5.5vw, 5.8rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            animation: sph-up 1s cubic-bezier(.16,1,.3,1) both;
+        }
+        .sph-word:nth-child(1){ animation-delay: 0.15s; }
+        .sph-word:nth-child(2){ animation-delay: 0.27s; }
+        .sph-word:nth-child(3){ animation-delay: 0.39s; }
+
+        .sph-word-outline {
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(230,231,232,0.55);
+        }
+        .sph-word-solid { color: #ffffff; }
+        .sph-word-gold  {
+            color: #cd912d;
+            position: relative;
+        }
+
+        @keyframes sph-up {
+            from { opacity:0; transform:translateY(50px) skewY(2deg); filter:blur(6px); }
+            to   { opacity:1; transform:translateY(0) skewY(0); filter:blur(0); }
+        }
+
+        /* Rule + issue number */
+        .sph-rule {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+            animation: sph-up 0.9s 0.5s cubic-bezier(.16,1,.3,1) both;
+        }
+        .sph-rule-line {
+            height: 1px;
+            width: 70px;
+            background: linear-gradient(90deg, #cd912d 0%, transparent 100%);
+        }
+        .sph-rule-label {
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: rgba(205,145,45,0.45);
+            text-transform: uppercase;
+        }
+
+        .sph-body {
+            font-size: clamp(0.82rem, 1vw, 0.95rem);
+            color: rgba(230,231,232,0.48);
+            line-height: 1.75;
+            max-width: 420px;
+            margin-bottom: 36px;
+            animation: sph-up 0.9s 0.6s cubic-bezier(.16,1,.3,1) both;
+        }
+
+        /* CTA row */
+        .sph-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: sph-up 0.9s 0.72s cubic-bezier(.16,1,.3,1) both;
+        }
+
+        .sph-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 22px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+        .sph-btn-primary {
+            background: #cd912d;
+            color: #fff;
+            border: 2px solid #cd912d;
+        }
+        .sph-btn-primary:hover {
+            background: transparent;
+            color: #cd912d;
+            gap: 16px;
+        }
+        .sph-btn-ghost {
+            background: transparent;
+            color: rgba(230,231,232,0.5);
+            border: 1px solid rgba(230,231,232,0.15);
+        }
+        .sph-btn-ghost:hover {
+            border-color: rgba(205,145,45,0.4);
+            color: #cd912d;
+        }
+        .sph-btn-arrow {
+            font-size: 1rem;
+            line-height: 1;
+            transition: transform 0.25s;
+        }
+        .sph-btn-primary:hover .sph-btn-arrow { transform: translateX(5px); }
+
+        /* Stat pills */
+        .sph-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            animation: sph-up 0.9s 0.85s cubic-bezier(.16,1,.3,1) both;
+        }
+        .sph-pill {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: rgba(230,231,232,0.4);
+            font-size: 0.58rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 14px;
+            border-radius: 30px;
+        }
+
+        /* ---- RIGHT: Mosaic wall ---- */
+        .sph-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            animation: sph-up 1.1s 0.2s cubic-bezier(.16,1,.3,1) both;
+        }
+
+        .sph-mosaic {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+                "a a b"
+                "c d b"
+                "c e f";
+            gap: 10px;
+            width: 100%;
+            max-width: 460px;
+            height: 380px;
+        }
+
+        .sph-tile {
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(205,145,45,0.1);
+            background: rgba(255,255,255,0.025);
+            backdrop-filter: blur(2px);
+            transition: border-color 0.35s, background 0.35s;
+            animation: sph-tile-float 5s ease-in-out infinite alternate;
+        }
+        .sph-tile:nth-child(1){ animation-delay: 0s; }
+        .sph-tile:nth-child(2){ animation-delay: 0.6s; }
+        .sph-tile:nth-child(3){ animation-delay: 1.2s; }
+        .sph-tile:nth-child(4){ animation-delay: 0.3s; }
+        .sph-tile:nth-child(5){ animation-delay: 0.9s; }
+        .sph-tile:nth-child(6){ animation-delay: 1.5s; }
+
+        .sph-tile::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(205,145,45,0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
+        .sph-tile:hover::after { opacity: 1; }
+        .sph-tile:hover {
+            border-color: rgba(205,145,45,0.3);
+            background: rgba(205,145,45,0.04);
+        }
+
+        @keyframes sph-tile-float {
+            from { transform: translateY(0px); }
+            to   { transform: translateY(-7px); }
+        }
+
+        /* Grid area assignments */
+        .sph-tile-a { grid-area: a; }
+        .sph-tile-b { grid-area: b; }
+        .sph-tile-c { grid-area: c; }
+        .sph-tile-d { grid-area: d; }
+        .sph-tile-e { grid-area: e; }
+        .sph-tile-f { grid-area: f; }
+
+        /* Tile content variants */
+        .sph-tc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .sph-tc i { font-size: 1.5rem; color: rgba(205,145,45,0.3); }
+        .sph-tc-label {
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(230,231,232,0.2);
+            font-weight: 700;
+        }
+        .sph-tc-num {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #cd912d;
+            line-height: 1;
+        }
+        .sph-tc-sub {
+            font-size: 0.52rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(205,145,45,0.45);
+        }
+        .sph-tc-big {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+        .sph-tc-accent {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(230,231,232,0.22);
+        }
+
+        /* Special tile: gold-tinted */
+        .sph-tile-gold-bg {
+            background: rgba(205,145,45,0.07) !important;
+            border-color: rgba(205,145,45,0.18) !important;
+        }
+
+        /* ---- BOTTOM TICKER ---- */
+        .sph-ticker {
+            flex-shrink: 0;
+            border-top: 1px solid rgba(205,145,45,0.1);
+            background: rgba(205,145,45,0.02);
+            overflow: hidden;
+            padding: 12px 0;
+            position: relative;
+            z-index: 2;
+        }
+        .sph-ticker-inner {
+            display: flex;
+            gap: 48px;
+            white-space: nowrap;
+            width: max-content;
+            animation: sph-tick 22s linear infinite;
+        }
+        .sph-ticker-inner span {
+            font-size: 0.52rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: rgba(230,231,232,0.18);
+        }
+        .sph-ticker-sep { color: rgba(205,145,45,0.35) !important; }
+        @keyframes sph-tick {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        /* ---- SCROLL INDICATOR ---- */
+        .sph-scroll {
+            position: absolute;
+            right: 28px;
+            bottom: 72px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 4;
+        }
+        .sph-scroll-bar {
+            width: 1px;
+            height: 54px;
+            background: linear-gradient(180deg, rgba(205,145,45,0.5) 0%, transparent 100%);
+            animation: sph-scroll-anim 1.8s ease-in-out infinite;
+            transform-origin: top;
+        }
+        @keyframes sph-scroll-anim {
+            0%   { transform: scaleY(0); opacity: 1; }
+            60%  { transform: scaleY(1); opacity: 1; }
+            100% { transform: scaleY(1); opacity: 0; }
+        }
+        .sph-scroll-text {
+            writing-mode: vertical-rl;
+            font-size: 0.42rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: rgba(230,231,232,0.18);
+        }
+
+        /* ============================================================
+           SPONSORS GRID (unchanged, below the hero)
+           ============================================================ */
+        .sp-tier-label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 32px;
+            width: 100%;
+        }
+        .sp-tier-line {
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(90deg, rgba(205,145,45,0.4), transparent);
+        }
+        .sp-tier-text {
+            font-size: 0.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #cd912d;
+            white-space: nowrap;
+        }
+        .sp-logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 56px;
+        }
+        .sp-logo-grid.sp-platinum { gap: 24px; }
+        .sp-logo-card {
+            background: #ffffff;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 36px;
+            transition: box-shadow 0.3s, transform 0.3s;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .sp-logo-card:hover {
+            box-shadow: 0 8px 30px rgba(47,74,90,0.15);
+            transform: translateY(-3px);
+        }
+        .sp-logo-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .sp-logo-placeholder i { font-size: 1.8rem; color: #e0e0e0; }
+        .sp-logo-placeholder span {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ccc;
+        }
+        .sp-logo-grid.sp-platinum .sp-logo-card { flex: 1 1 280px; min-height: 130px; }
+        .sp-logo-grid.sp-gold    .sp-logo-card { flex: 1 1 200px; min-height: 100px; }
+        .sp-logo-grid.sp-silver  .sp-logo-card { flex: 1 1 160px; min-height: 80px; }
+        .sp-logo-grid.sp-partners .sp-logo-card { flex: 1 1 130px; min-height: 70px; padding: 18px 24px; }
+        .badge-platinum { background: linear-gradient(135deg, #b0b8c1, #d6dde3); color: #2b2b2b; }
+        .badge-gold     { background: linear-gradient(135deg, #cd912d, #e7d14a); color: #fff; }
+        .badge-silver   { background: linear-gradient(135deg, #8a9ba8, #b0c0cc); color: #fff; }
+        .badge-partner  { background: rgba(79,143,139,0.15); color: #4f8f8b; border: 1px solid rgba(79,143,139,0.3); }
+
+        /* Become a sponsor */
+        .sponsor-cta-section {
+            background: linear-gradient(135deg, #2f4a5a 0%, #1a2e3a 100%);
+            border-radius: 16px;
+            padding: 50px;
+            border: 1px solid rgba(205,145,45,0.2);
+            margin-top: 40px;
+        }
+        .sponsor-benefit-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .sponsor-benefit-icon {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            background: rgba(205,145,45,0.12);
+            display: flex; align-items: center; justify-content: center;
+            color: #cd912d; flex-shrink: 0; font-size: 0.85rem;
+        }
+        .sponsor-benefit-text {
+            font-size: 0.9rem;
+            color: rgba(230,231,232,0.7);
+            line-height: 1.5;
+            padding-top: 7px;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 991px) {
+            .sph-grid {
+                grid-template-columns: 1fr;
+                padding: 0 40px;
+                gap: 40px;
+            }
+            .sph { min-height: auto; height: auto; }
+            .sph-left { padding-top: 120px; padding-bottom: 20px; }
+            .sph-right { justify-content: center; }
+            .sph-mosaic { max-width: 420px; height: 300px; }
+            .sph-vline-l, .sph-vline-r, .sph-scroll { display: none; }
+            .sph-right { padding-bottom: 40px; }
+        }
+        @media (max-width: 575px) {
+            .sph-grid { padding: 0 20px; }
+            .sph-left { padding-top: 100px; }
+            .sph-word { font-size: clamp(2.6rem, 11vw, 3.6rem); }
+            .sph-mosaic {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "a a"
+                    "b c"
+                    "d e"
+                    "f f";
+                height: auto;
+                gap: 8px;
+            }
+            .sph-tile { min-height: 90px; }
+            .sph-cta-row { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="float-text show-on-scroll"><span><a href="#">Scroll to top</a></span></div>
+        <div class="scrollbar-v show-on-scroll"></div>
+        <div id="de-loader"></div>
+
+        <header class="transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex">
+                            <div class="de-flex-col">
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img src="images/logo.png" alt="Uganda Evaluation Association">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="de-flex-col header-col-mid">
+                                    <ul id="mainmenu">
+                                        <li><a class="menu-item" href="index.html">Home</a></li>
+                                        <li><a class="menu-item" href="index.html#section-about">About</a></li>
+                                        <li><a class="menu-item" href="index.html#section-tickets">Registration</a></li>
+                                        <li><a class="menu-item" href="index.html#section-venue">Venue</a></li>
+                                        <li><a class="menu-item active" href="sponsors.html">Sponsors &amp; Partners</a></li>
+                                        <li><a class="menu-item" href="exhibitors.html">Exhibitors</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="de-flex-col">
+                                <a class="btn-main fx-slide w-100" href="https://events.ugandaevaluationassociation.org/" target="_blank"><span>Register Here</span></a>
+                                <div class="menu_side_area"><span id="menu-btn"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero — PARTNER WITH PURPOSE (Awwwards-level) -->
+        <section class="sph" id="sph">
+            <div class="sph-grain"></div>
+            <div class="sph-glow-1"></div>
+            <div class="sph-glow-2"></div>
+            <div class="sph-vline sph-vline-l"></div>
+            <div class="sph-vline sph-vline-r"></div>
+
+            <div class="sph-grid">
+                <!-- LEFT: Editorial typography -->
+                <div class="sph-left">
+                    <div class="sph-eyebrow">
+                        <div class="sph-eyebrow-dot"></div>
+                        <span class="sph-eyebrow-text">Uganda Evaluation Week 2026</span>
+                    </div>
+                    <div class="sph-headline">
+                        <span class="sph-word sph-word-outline">PARTNER</span>
+                        <span class="sph-word sph-word-solid">WITH</span>
+                        <span class="sph-word sph-word-gold">PURPOSE</span>
+                    </div>
+                    <div class="sph-rule">
+                        <div class="sph-rule-line"></div>
+                        <div class="sph-rule-label">Edition 09 &bull; 25 Years UEA</div>
+                    </div>
+                    <p class="sph-body">Join the organisations whose investment powers Africa's premier evaluation conference — connecting 300+ practitioners, government leaders, and development partners across Uganda and beyond.</p>
+                    <div class="sph-cta-row">
+                        <a class="sph-btn sph-btn-primary" href="#become-sponsor">
+                            <span>Become a Sponsor</span>
+                            <div class="sph-btn-arrow">→</div>
+                        </a>
+                        <a class="sph-btn sph-btn-ghost" href="index.html#section-about">About UEW 2026</a>
+                    </div>
+                    <div class="sph-pills">
+                        <div class="sph-pill">300+ Delegates</div>
+                        <div class="sph-pill">15+ Countries</div>
+                        <div class="sph-pill">25 Yrs UEA</div>
+                        <div class="sph-pill">May 2026</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Mosaic wall -->
+                <div class="sph-right">
+                    <div class="sph-mosaic">
+                        <div class="sph-tile sph-tile-a">
+                            <div class="sph-tc">
+                                <i class="fa fa-building-columns"></i>
+                                <span class="sph-tc-label">Platinum Sponsor</span>
+                            </div>
+                        </div>
+                        <div class="sph-tile sph-tile-b sph-tile-gold-bg">
+                            <div class="sph-tc">
+                                <div class="sph-tc-num">300+</div>
+                                <div class="sph-tc-sub">Delegates</div>
+                            </div>
+                        </div>
+                        <div class="sph-tile sph-tile-c">
+                            <div class="sph-tc">
+                                <div class="sph-tc-big">25</div>
+                                <div class="sph-tc-accent">Years of UEA</div>
+                            </div>
+                        </div>
+                        <div class="sph-tile sph-tile-d">
+                            <div class="sph-tc">
+                                <i class="fa fa-star"></i>
+                                <span class="sph-tc-label">Gold Sponsor</span>
+                            </div>
+                        </div>
+                        <div class="sph-tile sph-tile-e">
+                            <div class="sph-tc">
+                                <i class="fa fa-handshake"></i>
+                                <span class="sph-tc-label">Partner</span>
+                            </div>
+                        </div>
+                        <div class="sph-tile sph-tile-f">
+                            <div class="sph-tc">
+                                <div class="sph-tc-num">$250</div>
+                                <div class="sph-tc-sub">Intl / booth</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom ticker -->
+            <div class="sph-ticker">
+                <div class="sph-ticker-inner">
+                    <span>PLATINUM</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>GOLD</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>SILVER</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>DEVELOPMENT PARTNERS</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>INNOVATION HUB</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>MEDIA PARTNERS</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>PLATINUM</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>GOLD</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>SILVER</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>DEVELOPMENT PARTNERS</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>INNOVATION HUB</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                    <span>MEDIA PARTNERS</span><span class="sph-ticker-sep">&nbsp;&middot;&nbsp;</span>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="sph-scroll">
+                <div class="sph-scroll-bar"></div>
+                <div class="sph-scroll-text">SCROLL</div>
+            </div>
+        </section>
+
+        <!-- Sponsors Grid -->
+        <section class="bg-light text-dark">
+            <div class="container">
+
+                <!-- Platinum -->
+                <div class="sp-tier-label">
+                    <div class="sp-tier-line"></div>
+                    <span class="sp-tier-text">
+                        <span class="badge badge-platinum px-3 py-1 rounded-pill">Platinum Sponsors</span>
+                    </span>
+                    <div class="sp-tier-line" style="background: linear-gradient(90deg, transparent, rgba(205,145,45,0.5));"></div>
+                </div>
+
+                <div class="sp-logo-grid sp-platinum">
+                    <div class="sp-logo-card">
+                        <div class="sp-logo-placeholder">
+                            <i class="fa fa-building-columns"></i>
+                            <span>Platinum Sponsor</span>
+                        </div>
+                    </div>
+                    <div class="sp-logo-card">
+                        <div class="sp-logo-placeholder">
+                            <i class="fa fa-building-columns"></i>
+                            <span>Platinum Sponsor</span>
+                        </div>
+                    </div>
+                    <div class="sp-logo-card">
+                        <div class="sp-logo-placeholder">
+                            <i class="fa fa-building-columns"></i>
+                            <span>Your Logo Here</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gold -->
+                <div class="sp-tier-label">
+                    <div class="sp-tier-line"></div>
+                    <span class="sp-tier-text">
+                        <span class="badge badge-gold px-3 py-1 rounded-pill">Gold Sponsors</span>
+                    </span>
+                    <div class="sp-tier-line" style="background: linear-gradient(90deg, transparent, rgba(205,145,45,0.5));"></div>
+                </div>
+
+                <div class="sp-logo-grid sp-gold">
+                    <div class="sp-logo-card">
+                        <div class="sp-logo-placeholder">
+                            <i class="fa fa-building"></i>
+                            <span>Gold Sponsor</span>
+                        </div>
+                    </div>
+                    <div class="sp-logo-card">
+                        <div class="sp-logo-placeholder">
+                            <i class="fa fa-building"></i>
+                            <span>Gold Sponsor</span>
+                        </div>
+                    </div>
+                    <div class="sp-logo-card">
+                        <div class="sp-logo-placeholder">
+                            <i class="fa fa-building"></i>
+                            <span>Gold Sponsor</span>
+                        </div>
+                    </div>
+                    <div class="sp-logo-card">
+                        <div class="sp-logo-placeholder">
+                            <i class="fa fa-building"></i>
+                            <span>Gold Sponsor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silver -->
+                <div class="sp-tier-label">
+                    <div class="sp-tier-line"></div>
+                    <span class="sp-tier-text">
+                        <span class="badge badge-silver px-3 py-1 rounded-pill">Silver Sponsors</span>
+                    </span>
+                    <div class="sp-tier-line" style="background: linear-gradient(90deg, transparent, rgba(205,145,45,0.5));"></div>
+                </div>
+
+                <div class="sp-logo-grid sp-silver">
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-briefcase"></i><span>Silver Sponsor</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-briefcase"></i><span>Silver Sponsor</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-briefcase"></i><span>Silver Sponsor</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-briefcase"></i><span>Silver Sponsor</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-briefcase"></i><span>Silver Sponsor</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-briefcase"></i><span>Silver Sponsor</span></div></div>
+                </div>
+
+                <!-- Development Partners -->
+                <div class="sp-tier-label">
+                    <div class="sp-tier-line"></div>
+                    <span class="sp-tier-text">
+                        <span class="badge badge-partner px-3 py-1 rounded-pill">Development Partners</span>
+                    </span>
+                    <div class="sp-tier-line" style="background: linear-gradient(90deg, transparent, rgba(205,145,45,0.5));"></div>
+                </div>
+
+                <div class="sp-logo-grid sp-partners">
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-handshake"></i><span>Partner</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-handshake"></i><span>Partner</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-handshake"></i><span>Partner</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-handshake"></i><span>Partner</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-handshake"></i><span>Partner</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-handshake"></i><span>Partner</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-handshake"></i><span>Partner</span></div></div>
+                    <div class="sp-logo-card"><div class="sp-logo-placeholder"><i class="fa fa-handshake"></i><span>Partner</span></div></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Become a Sponsor CTA -->
+        <section id="become-sponsor" class="bg-light text-dark pt-0 pb-80">
+            <div class="container">
+                <div class="sponsor-cta-section text-light">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="subtitle mb-3" style="color: #cd912d;">Partner With Us</div>
+                            <h2 class="text-light mb-4">Become a Sponsor or Partner</h2>
+                            <p style="color: rgba(230,231,232,0.7);">The 9th Uganda Evaluation Week brings together <strong style="color:#fff;">300+ evaluation professionals, government officials, and development practitioners</strong> from across Uganda, Africa, and the globe. Partner with us to amplify your brand's reach and demonstrate your commitment to evidence-based development.</p>
+
+                            <div class="mt-4">
+                                <div class="sponsor-benefit-item">
+                                    <div class="sponsor-benefit-icon"><i class="fa fa-eye"></i></div>
+                                    <div class="sponsor-benefit-text">Brand visibility across all conference materials, banners, website, and social media throughout the event</div>
+                                </div>
+                                <div class="sponsor-benefit-item">
+                                    <div class="sponsor-benefit-icon"><i class="fa fa-users"></i></div>
+                                    <div class="sponsor-benefit-text">Direct access to Uganda's leading evaluation professionals, government planners, and development partners</div>
+                                </div>
+                                <div class="sponsor-benefit-item">
+                                    <div class="sponsor-benefit-icon"><i class="fa fa-microphone"></i></div>
+                                    <div class="sponsor-benefit-text">Speaking opportunities and exhibition booth space at Africa's premier evaluation event</div>
+                                </div>
+                                <div class="sponsor-benefit-item">
+                                    <div class="sponsor-benefit-icon"><i class="fa fa-globe-africa"></i></div>
+                                    <div class="sponsor-benefit-text">Association with 25 years of the Uganda Evaluation Association — a trusted name in African M&amp;E</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(205,145,45,0.2); border-radius: 12px; padding: 36px;">
+                                <h4 class="text-light mb-3">Get the Sponsorship Package</h4>
+                                <p style="color: rgba(230,231,232,0.6); font-size: 0.9rem; margin-bottom: 24px;">Contact our team to receive the full sponsorship brochure, including tier details, pricing, and available benefits.</p>
+                                <div class="mb-3">
+                                    <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: rgba(205,145,45,0.7); margin-bottom: 6px;">Email Us</div>
+                                    <a href="mailto:uew@ugandaevaluationassociation.org" style="color: #fff; font-size: 1rem; font-weight: 600; text-decoration: none;">uew@ugandaevaluationassociation.org</a>
+                                </div>
+                                <div class="mb-4">
+                                    <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: rgba(205,145,45,0.7); margin-bottom: 6px;">Call / WhatsApp</div>
+                                    <a href="tel:+256776123523" style="color: #fff; font-size: 1rem; font-weight: 600; text-decoration: none;">+256 776 123 523</a>
+                                </div>
+                                <a class="btn-main fx-slide w-100" href="mailto:uew@ugandaevaluationassociation.org"><span>Request Sponsorship Package</span></a>
+                                <div style="margin-top: 16px; text-align: center;">
+                                    <small style="color: rgba(230,231,232,0.35);">Also interested in exhibiting? <a href="exhibitors.html" style="color: #cd912d;">View Exhibitor Info →</a></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- footer begin -->
+    <footer class="text-light section-dark">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="images/logo.png" class="w-150px mb-4" alt="">
+                    <p class="small" style="color: rgba(230,231,232,0.5);">9th Uganda Evaluation Week 2026 &mdash; 25 Years of UEA</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#section-tickets">Registration</a></li>
+                        <li><a href="exhibitors.html">Exhibitors</a></li>
+                        <li><a href="index.html#section-venue">Venue</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">Contact</h5>
+                    <div class="footer-contact-list">
+                        <div class="footer-contact-item">
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:uew@ugandaevaluationassociation.org">uew@ugandaevaluationassociation.org</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa fa-globe"></i>
+                            <a href="https://www.ugandaevaluationassociation.org/" target="_blank">ugandaevaluationassociation.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        &copy; 2026 Uganda Evaluation Association. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="js/vendors.js"></script>
+    <script src="js/designesia.js"></script>
+</body>
+</html>

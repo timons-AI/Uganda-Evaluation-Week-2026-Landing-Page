@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Uganda Evaluation Week - UEA Conference 2025</title>
+    <title>9th Uganda Evaluation Week 2026 | Uganda Evaluation Association</title>
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
@@ -19,6 +19,444 @@
     <link href="css/swiper-custom-1.css" rel="stylesheet" type="text/css" >
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-uew.css" rel="stylesheet" type="text/css" >
+
+    <style>
+        /* ============================================================
+           REGISTRATION SECTION — Custom gradient background
+           ============================================================ */
+
+        #section-tickets {
+            background: #07090c !important;
+            position: relative;
+        }
+
+        /* Layer 1 — coloured blob orbs */
+        #section-tickets::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 55% at 8%  15%, rgba(205,145,45,0.22)  0%, transparent 60%),
+                radial-gradient(ellipse 60% 65% at 92% 85%, rgba(79,143,139,0.24)  0%, transparent 58%),
+                radial-gradient(ellipse 75% 60% at 55% 50%, rgba(47, 74, 90,0.55)  0%, transparent 68%),
+                radial-gradient(ellipse 35% 30% at 85% 18%, rgba(228,121, 37,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 45% 40% at 20% 80%, rgba(47, 74, 90,0.30)  0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Layer 2 — subtle dot grid */
+        #section-tickets::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+            background-size: 36px 36px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* True glassmorphism for registration cards */
+        #section-tickets .reg-card {
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            background: rgba(255,255,255,0.07) !important;
+            border: 1px solid rgba(255,255,255,0.14) !important;
+        }
+        #section-tickets .reg-card-featured {
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            background: rgba(205,145,45,0.1) !important;
+            border-color: rgba(205,145,45,0.45) !important;
+        }
+        #section-tickets .reg-addon-card {
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            background: rgba(255,255,255,0.05) !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+        }
+
+        /* ============================================================
+           LANDING HERO — "EVALUATE · IMPACT · TRANSFORM"
+           ============================================================ */
+
+        .lph {
+            position: relative;
+            height: 100vh;
+            min-height: 720px;
+            background: #07090c;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            z-index: 0;
+        }
+
+        /* Photo backdrop — slow drift */
+        .lph-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('images/slider/3.webp');
+            background-size: cover;
+            background-position: center 30%;
+            opacity: 0.2;
+            z-index: 0;
+            animation: lph-bg-drift 20s ease-in-out infinite alternate;
+        }
+        @keyframes lph-bg-drift {
+            from { transform: scale(1.05) translateX(0); }
+            to   { transform: scale(1.05) translateX(-2%); }
+        }
+
+        /* Animated grain overlay */
+        .lph-grain {
+            position: absolute;
+            inset: -50%;
+            width: 200%; height: 200%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: 0.032;
+            pointer-events: none;
+            z-index: 1;
+            animation: lph-grain 7s steps(8) infinite;
+        }
+        @keyframes lph-grain {
+            0%,100%{transform:translate(0,0)}
+            12%{transform:translate(-4%,-4%)}
+            25%{transform:translate(-8%,4%)}
+            37%{transform:translate(4%,-8%)}
+            50%{transform:translate(-4%,12%)}
+            62%{transform:translate(-8%,4%)}
+            75%{transform:translate(12%,0)}
+            87%{transform:translate(0,8%)}
+        }
+
+        /* Ghost "09" behind content */
+        .lph-ghost-num {
+            position: absolute;
+            right: -3%;
+            top: 50%;
+            transform: translateY(-52%);
+            font-size: clamp(18rem, 30vw, 36rem);
+            font-weight: 900;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(205,145,45,0.06);
+            letter-spacing: -0.05em;
+            pointer-events: none;
+            z-index: 1;
+            user-select: none;
+            animation: lph-ghost-in 2s 0.4s cubic-bezier(.16,1,.3,1) both;
+        }
+        @keyframes lph-ghost-in {
+            from { opacity: 0; transform: translateY(-52%) translateX(60px); }
+            to   { opacity: 1; transform: translateY(-52%) translateX(0); }
+        }
+
+        /* Ambient glows */
+        .lph-glow-1 {
+            position: absolute;
+            width: 1000px; height: 1000px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(205,145,45,0.06) 0%, transparent 65%);
+            top: -300px; left: -300px;
+            pointer-events: none; z-index: 1;
+        }
+        .lph-glow-2 {
+            position: absolute;
+            width: 700px; height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(47,74,90,0.22) 0%, transparent 70%);
+            bottom: -100px; right: 15%;
+            pointer-events: none; z-index: 1;
+        }
+
+        /* Vertical structural line */
+        .lph-vline {
+            position: absolute;
+            left: 80px; top: 0; bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(205,145,45,0.18) 20%,
+                rgba(205,145,45,0.18) 80%,
+                transparent 100%);
+            z-index: 2; pointer-events: none;
+        }
+
+        /* ---- Main content area ---- */
+        .lph-content {
+            position: relative;
+            z-index: 3;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 120px;
+            width: 100%;
+        }
+
+        .lph-inner {
+            max-width: 780px;
+            padding-top: 30px;
+        }
+
+        /* Eyebrow */
+        .lph-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+            animation: lph-up 0.9s 0.1s cubic-bezier(.16,1,.3,1) both;
+        }
+        .lph-eyebrow-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #cd912d;
+            flex-shrink: 0;
+            box-shadow: 0 0 14px rgba(205,145,45,0.7);
+            animation: lph-dot-pulse 2.5s ease infinite;
+        }
+        @keyframes lph-dot-pulse {
+            0%,100%{ box-shadow:0 0 14px rgba(205,145,45,0.7); }
+            50%{ box-shadow:0 0 28px rgba(205,145,45,0.12); }
+        }
+        .lph-eyebrow-text {
+            font-size: 0.58rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: rgba(230,231,232,0.35);
+            font-weight: 700;
+        }
+
+        /* Edition badge chip */
+        .lph-edition {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 14px 5px 6px;
+            border: 1px solid rgba(205,145,45,0.2);
+            border-radius: 3px;
+            margin-bottom: 28px;
+            animation: lph-up 0.9s 0.2s cubic-bezier(.16,1,.3,1) both;
+        }
+        .lph-edition-num {
+            background: #cd912d;
+            color: #fff;
+            font-size: 0.52rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            padding: 3px 9px;
+            border-radius: 2px;
+            text-transform: uppercase;
+        }
+        .lph-edition-text {
+            font-size: 0.52rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(230,231,232,0.28);
+            font-weight: 700;
+        }
+
+        /* Headline stack */
+        .lph-headline { margin-bottom: 24px; }
+        .lph-word {
+            display: block;
+            font-size: clamp(3.6rem, 7vw, 7.5rem);
+            font-weight: 900;
+            line-height: 0.87;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            animation: lph-up 1s cubic-bezier(.16,1,.3,1) both;
+        }
+        .lph-word:nth-child(1){ animation-delay: 0.22s; }
+        .lph-word:nth-child(2){ animation-delay: 0.34s; }
+        .lph-word:nth-child(3){ animation-delay: 0.46s; }
+
+        .lph-word-solid   { color: #ffffff; }
+        .lph-word-outline {
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(230,231,232,0.42);
+        }
+        .lph-word-gold { color: #cd912d; }
+
+        @keyframes lph-up {
+            from { opacity:0; transform:translateY(55px) skewY(2deg); filter:blur(6px); }
+            to   { opacity:1; transform:translateY(0) skewY(0); filter:blur(0); }
+        }
+
+        /* Conference theme */
+        .lph-theme {
+            font-size: clamp(0.75rem, 1vw, 0.88rem);
+            color: rgba(230,231,232,0.38);
+            font-style: italic;
+            letter-spacing: 0.3px;
+            line-height: 1.65;
+            margin-bottom: 32px;
+            max-width: 560px;
+            border-left: 2px solid rgba(205,145,45,0.35);
+            padding-left: 16px;
+            animation: lph-up 0.9s 0.58s cubic-bezier(.16,1,.3,1) both;
+        }
+
+        /* Meta chips — date, location, milestone */
+        .lph-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 38px;
+            animation: lph-up 0.9s 0.68s cubic-bezier(.16,1,.3,1) both;
+        }
+        .lph-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.09);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: rgba(230,231,232,0.6);
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+        .lph-chip i { color: #cd912d; font-size: 0.72rem; }
+
+        /* CTAs */
+        .lph-cta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            animation: lph-up 0.9s 0.78s cubic-bezier(.16,1,.3,1) both;
+        }
+        .lph-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 26px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+        .lph-btn-primary {
+            background: #cd912d;
+            color: #fff;
+            border: 2px solid #cd912d;
+        }
+        .lph-btn-primary:hover {
+            background: transparent;
+            color: #cd912d;
+            gap: 16px;
+        }
+        .lph-btn-ghost {
+            background: transparent;
+            color: rgba(230,231,232,0.5);
+            border: 1px solid rgba(230,231,232,0.15);
+        }
+        .lph-btn-ghost:hover {
+            border-color: rgba(205,145,45,0.4);
+            color: #cd912d;
+        }
+        .lph-btn-arrow { font-size: 1rem; line-height: 1; transition: transform 0.25s; }
+        .lph-btn-primary:hover .lph-btn-arrow { transform: translateX(5px); }
+
+        /* ---- Bottom stats strip ---- */
+        .lph-stats {
+            flex-shrink: 0;
+            border-top: 1px solid rgba(205,145,45,0.1);
+            background: rgba(0,0,0,0.35);
+            display: flex;
+            position: relative;
+            z-index: 3;
+            animation: lph-up 0.9s 0.92s cubic-bezier(.16,1,.3,1) both;
+        }
+        .lph-stat {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 16px;
+            border-right: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .lph-stat:last-child { border-right: none; }
+        .lph-stat:hover { background: rgba(205,145,45,0.04); }
+        .lph-stat-num {
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: #cd912d;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        .lph-stat-label {
+            font-size: 0.47rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(230,231,232,0.26);
+            font-weight: 700;
+        }
+
+        /* Scroll indicator */
+        .lph-scroll {
+            position: absolute;
+            right: 36px;
+            bottom: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 4;
+        }
+        .lph-scroll-bar {
+            width: 1px; height: 60px;
+            background: linear-gradient(180deg, rgba(205,145,45,0.5) 0%, transparent 100%);
+            animation: lph-scroll-anim 1.8s ease-in-out infinite;
+            transform-origin: top;
+        }
+        @keyframes lph-scroll-anim {
+            0%   { transform: scaleY(0); opacity: 1; }
+            60%  { transform: scaleY(1); opacity: 1; }
+            100% { transform: scaleY(1); opacity: 0; }
+        }
+        .lph-scroll-text {
+            writing-mode: vertical-rl;
+            font-size: 0.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: rgba(230,231,232,0.15);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1200px) {
+            .lph-content { padding: 0 80px; }
+            .lph-vline { left: 40px; }
+        }
+        @media (max-width: 991px) {
+            .lph-content { padding: 0 40px; }
+            .lph-vline, .lph-ghost-num, .lph-scroll { display: none; }
+            .lph-inner { padding-top: 100px; padding-bottom: 40px; }
+        }
+        @media (max-width: 575px) {
+            .lph-content { padding: 0 24px; }
+            .lph-word { font-size: clamp(2.8rem, 14vw, 4.4rem); }
+            .lph-inner { padding-top: 90px; }
+            .lph-cta { flex-direction: column; align-items: flex-start; }
+            .lph-stats { display: grid; grid-template-columns: 1fr 1fr; }
+            .lph-stat { border-bottom: 1px solid rgba(255,255,255,0.05); }
+            .lph-stat:nth-child(2n) { border-right: none; }
+            .lph-stat:nth-child(3), .lph-stat:nth-child(4) { border-bottom: none; }
+        }
+    </style>
 
 </head>
 
@@ -44,10 +482,7 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="index.html">
-                                        <img class="logo-main" src="images/logo.jpg" alt="" >
-                                        <img class="logo-scroll" src="images/logo.jpg" alt="" >
-                                        <img class="logo-mobile" src="images/logo.jpg" alt="" >
-                                        
+                                        <img src="images/logo.png" alt="Uganda Evaluation Association">
                                     </a>
                                 </div>
                                 <!-- logo close -->
@@ -61,23 +496,17 @@
                                         <li><a class="menu-item" href="#section-why-attend">Why Attend</a></li>
                                         <li><a class="menu-item" href="#section-speakers">Speakers</a></li>
                                         <li><a class="menu-item" href="#section-schedule">Schedule</a></li>
-                                        <li><a class="menu-item" href="#section-tickets">Tickets</a></li>
+                                        <li><a class="menu-item" href="#section-tickets">Registration</a></li>
                                         <li><a class="menu-item" href="#section-venue">Venue</a></li>
                                         <li><a class="menu-item" href="#section-faq">FAQ</a></li>
-                                        <li><a class="menu-item" href="news.html">Pages</a>
-                                            <ul>
-                                                <li><a class="menu-item" href="tickets.html">Tickets</a></li>
-                                                <li><a class="menu-item" href="news.html">News</a></li>
-                                                <li><a class="menu-item" href="news-single.html">News Single</a></li>
-                                                <li><a class="menu-item" href="contact.html">Contact</a>
-                                            </ul>
-                                        </li>
+                                        <li><a class="menu-item" href="sponsors.html">Sponsors &amp; Partners</a></li>
+                                        <li><a class="menu-item" href="exhibitors.html">Exhibitors</a></li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="de-flex-col">
-                                <a class="btn-main fx-slide w-100" href="tickets.html"><span>Buy Tickets</span></a>
+                                <a class="btn-main fx-slide w-100" href="https://events.ugandaevaluationassociation.org/" target="_blank"><span>Register Here</span></a>
 
                                 <div class="menu_side_area">
                                     <span id="menu-btn"></span>
@@ -89,92 +518,118 @@
             </div>
         </header>
 
-        <section id="section-hero" class="section-dark text-light p-0 relative overflow-hidden z-1000">
-            <div class="mh-800">
-                <div class="swiper">
-                  <!-- Additional required wrapper -->
-                  <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="abs abs-centered z-2 w-100">
-                            <div class="container" data-wow-duration="1s">
-                                <div class="row">
-                                    <div class="col-lg-7">
-                                        <div class="subtitle">Uganda Evaluation Week 2026</div>
-                                        <h1 class="mb-4 uppercase">Transforming Evaluation for Sustainable Development</h1>
+        <!-- Hero — EVALUATE · IMPACT · TRANSFORM -->
+        <section id="section-hero" class="lph">
+            <div class="lph-bg"></div>
+            <div class="lph-grain"></div>
+            <div class="lph-glow-1"></div>
+            <div class="lph-glow-2"></div>
+            <div class="lph-vline"></div>
+            <div class="lph-ghost-num">09</div>
 
-                                        <div class="d-block d-md-flex">
-                                            <div class="d-flex align-items-center me-4">
-                                                <i class="fa fa-calendar id-color me-3"></i>
-                                                <h4 class="mb-0">4th - 8th May 2026</h4>
-                                            </div>
+            <div class="lph-content">
+                <div class="lph-inner">
 
-                                            <div class="d-flex align-items-center me-4">
-                                                <i class="fa fa-location-pin id-color me-3"></i>
-                                                <h4 class="mb-0">Silver Springs, Kampala</h4>
-                                            </div>
-                                        </div>
+                    <div class="lph-eyebrow">
+                        <div class="lph-eyebrow-dot"></div>
+                        <span class="lph-eyebrow-text">Uganda Evaluation Association Presents</span>
+                    </div>
 
-                                        <div class="spacer-single"></div>
+                    <div class="lph-edition">
+                        <span class="lph-edition-num">9th Edition</span>
+                        <span class="lph-edition-text">May 2026 &bull; Kampala, Uganda</span>
+                    </div>
 
-                                        <a class="btn-main mx-2 fx-slide" href="#section-tickets"><span>Get Tickets</span></a>
-                                        <a class="btn-main btn-line mx-2 fx-slide" href="#section-schedule"><span>View Schedule</span></a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="lph-headline">
+                        <span class="lph-word lph-word-solid">EVALUATE</span>
+                        <span class="lph-word lph-word-outline">IMPACT</span>
+                        <span class="lph-word lph-word-gold">TRANSFORM</span>
+                    </div>
+
+                    <p class="lph-theme">"Transforming Evaluation for Sustainable Development"</p>
+
+                    <div class="lph-meta">
+                        <div class="lph-chip">
+                            <i class="fa fa-calendar"></i>
+                            <span>4th &ndash; 8th May 2026</span>
                         </div>
-
-                        <div class="swiper-inner" data-bgimage="url(images/slider/3.webp)">
-                            <div class="sw-overlay op-3"></div>
-                            <div class="gradient-edge-bottom"></div>
+                        <div class="lph-chip">
+                            <i class="fa fa-location-pin"></i>
+                            <span>Silver Springs Hotel, Kampala</span>
+                        </div>
+                        <div class="lph-chip">
+                            <i class="fa fa-star"></i>
+                            <span>25 Years of UEA</span>
                         </div>
                     </div>
 
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="abs abs-centered z-2 w-100">
-                            <div class="container" data-wow-duration="1s">
-                                <div class="row">
-                                    <div class="col-lg-7">
-                                        <div class="subtitle">Uganda Evaluation Week 2026</div>
-                                        <h1 class="mb-4 uppercase">Building Evaluation Capacity Across Africa</h1>
-
-                                        <div class="d-block d-md-flex">
-                                            <div class="d-flex align-items-center me-4">
-                                                <i class="fa fa-calendar id-color me-3"></i>
-                                                <h4 class="mb-0">4th - 8th May 2026</h4>
-                                            </div>
-
-                                            <div class="d-flex align-items-center me-4">
-                                                <i class="fa fa-location-pin id-color me-3"></i>
-                                                <h4 class="mb-0">Silver Springs, Kampala</h4>
-                                            </div>
-                                        </div>
-
-                                        <div class="spacer-single"></div>
-
-                                        <a class="btn-main mx-2 fx-slide" href="#section-tickets"><span>Get Tickets</span></a>
-                                        <a class="btn-main btn-line mx-2 fx-slide" href="#section-schedule"><span>View Schedule</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-inner" data-bgimage="url(images/slider/4.webp)">
-                            <div class="sw-overlay op-3"></div>
-                            <div class="gradient-edge-bottom"></div>
-                        </div>
+                    <div class="lph-cta">
+                        <a class="lph-btn lph-btn-primary" href="https://events.ugandaevaluationassociation.org/" target="_blank">
+                            <span>Register Now</span>
+                            <div class="lph-btn-arrow">→</div>
+                        </a>
+                        <a class="lph-btn lph-btn-ghost" href="#section-schedule">View Schedule</a>
                     </div>
 
-
-                  </div>
-                  <!-- If we need pagination -->
-                  <div class="swiper-pagination"></div>
-
-                  <!-- If we need navigation buttons -->
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
                 </div>
+            </div>
+
+            <!-- Bottom stats strip -->
+            <div class="lph-stats">
+                <div class="lph-stat">
+                    <div class="lph-stat-num">300+</div>
+                    <div class="lph-stat-label">Delegates</div>
+                </div>
+                <div class="lph-stat">
+                    <div class="lph-stat-num">5</div>
+                    <div class="lph-stat-label">Days</div>
+                </div>
+                <div class="lph-stat">
+                    <div class="lph-stat-num">15+</div>
+                    <div class="lph-stat-label">Countries</div>
+                </div>
+                <div class="lph-stat">
+                    <div class="lph-stat-num">25</div>
+                    <div class="lph-stat-label">Years of UEA</div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="lph-scroll">
+                <div class="lph-scroll-bar"></div>
+                <div class="lph-scroll-text">SCROLL</div>
+            </div>
+        </section>
+
+        <!-- Organisers Logo Bar -->
+        <section id="section-org-logos" class="org-logo-bar">
+            <div class="org-logo-eyebrow">Organised by</div>
+            <div class="org-logo-row">
+                <!-- 25 Years UEW Logo -->
+                <a href="#section-about" class="org-logo-item">
+                    <img src="images/feedback/UEW 9th Without BG(1).png" alt="9th Uganda Evaluation Week — 25 Years of UEA" class="org-logo-img">
+                </a>
+                <!-- Divider -->
+                <div class="org-logo-divider"></div>
+                <!-- UEA Logo -->
+                <a href="https://www.ugandaevaluationassociation.org/" target="_blank" class="org-logo-item">
+                    <img src="images/feedback/UEA Logo.png" alt="Uganda Evaluation Association" class="org-logo-img">
+                </a>
+                <!-- Divider -->
+                <div class="org-logo-divider"></div>
+                <!-- OPM -->
+                <a href="#section-about" class="org-logo-item org-logo-opm">
+                    <div class="org-logo-opm-crest">
+                        <div class="opm-shield">
+                            <i class="fa fa-shield-halved"></i>
+                        </div>
+                    </div>
+                    <div class="org-logo-opm-text">
+                        <span class="opm-line-1">Office of the</span>
+                        <span class="opm-line-2">Prime Minister</span>
+                        <span class="opm-line-3">Republic of Uganda</span>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -223,25 +678,63 @@
 
         <section id="section-about" class="bg-light text-dark">
             <div class="container">
-                <div class="row  gx-5 align-items-center justify-content-between">
+                <div class="row gx-5 align-items-center justify-content-between">
                     <div class="col-lg-6">
                           <div class="me-lg-5 pe-lg-5 py-5 my-5">
                               <div class="subtitle wow fadeInUp" data-wow-delay=".2s">About the Event</div>
                               <h2 class="wow fadeInUp" data-wow-delay=".4s">Africa's Premier Evaluation Conference</h2>
-                              <p class="wow fadeInUp" data-wow-delay=".6s">Uganda Evaluation Week is the flagship annual event of the Uganda Evaluation Association (UEA), bringing together evaluation professionals, policy makers, development practitioners, and researchers from across Uganda, Africa, and the world to advance the culture and practice of monitoring, evaluation, accountability, and learning (MEAL).</p>
+                              <p class="wow fadeInUp" data-wow-delay=".5s">The Uganda Evaluation Association (UEA), in collaboration with the Office of the Prime Minister (OPM) and partners, is organising the <strong>9th Uganda Evaluation Week (UEW)</strong> — a landmark edition marking <strong>25 years</strong> of UEA's existence.</p>
+                              <p class="wow fadeInUp" data-wow-delay=".6s">The UEW provides a platform for evaluation practitioners from Government, Civil Society, the Private Sector, Young and Emerging Evaluators, academia, and development partners to discuss and share evidence and lessons arising from development evaluation in Uganda and beyond.</p>
 
-                              <ul class="ul-check">
-                                  <li class="wow fadeInUp" data-wow-delay=".8s">5 days of keynotes, workshops, and knowledge exchange</li>
-                                  <li class="wow fadeInUp" data-wow-delay=".9s">200+ evaluation professionals and policy makers</li>
-                                  <li class="wow fadeInUp" data-wow-delay="1s">Regional case studies and evidence-sharing sessions</li>
-                              </ul>
-
+                              <div class="about-objectives wow fadeInUp" data-wow-delay=".7s">
+                                  <div class="about-obj-item">
+                                      <div class="about-obj-icon"><i class="fa fa-microchip"></i></div>
+                                      <span>Showcase innovations in AI &amp; digital technology for enhanced accountability</span>
+                                  </div>
+                                  <div class="about-obj-item">
+                                      <div class="about-obj-icon"><i class="fa fa-users"></i></div>
+                                      <span>Foster dialogue on inclusive, citizen-centered M&amp;E systems</span>
+                                  </div>
+                                  <div class="about-obj-item">
+                                      <div class="about-obj-icon"><i class="fa fa-graduation-cap"></i></div>
+                                      <span>Build capacity in government, civil society, and youth in modern evaluation</span>
+                                  </div>
+                                  <div class="about-obj-item">
+                                      <div class="about-obj-icon"><i class="fa fa-globe-africa"></i></div>
+                                      <span>Align Uganda's evaluation practices with global standards &amp; SDGs under NDP IV</span>
+                                  </div>
+                              </div>
                           </div>
                     </div>
 
                     <div class="col-lg-5">
-                        <div class="wow scaleIn">
-                            <img src="images/misc/c1.webp" class="w-100 rotate-animation" alt="">
+                        <div class="about-visual-wrap wow fadeInRight" data-wow-delay=".4s">
+                            <div class="about-stat-card">
+                                <div class="about-stat-grid">
+                                    <div class="about-stat">
+                                        <div class="about-stat-num">25</div>
+                                        <div class="about-stat-label">Years of UEA</div>
+                                    </div>
+                                    <div class="about-stat">
+                                        <div class="about-stat-num">5</div>
+                                        <div class="about-stat-label">Conference Days</div>
+                                    </div>
+                                    <div class="about-stat">
+                                        <div class="about-stat-num">5</div>
+                                        <div class="about-stat-label">Thematic Strands</div>
+                                    </div>
+                                    <div class="about-stat">
+                                        <div class="about-stat-num">8+</div>
+                                        <div class="about-stat-label">Participant Sectors</div>
+                                    </div>
+                                </div>
+                                <div class="about-theme-banner">
+                                    <div class="about-theme-label">Conference Theme</div>
+                                    <div class="about-theme-text">"Transforming Evaluation for Sustainable Development"</div>
+                                    <div class="about-theme-sub">NDP IV &mdash; Uganda 2026</div>
+                                </div>
+                            </div>
+                            <img src="images/misc/c1.webp" class="about-bg-img" alt="">
                         </div>
                     </div>
 
@@ -304,7 +797,7 @@
                                 <div class="abs p-40 bottom-0 z-2">
                                     <div class="relative wow fadeInUp">
                                         <h4>Evaluation Excellence</h4>
-                                        <p class="mb-0">Access cutting-edge evaluation methodologies, frameworks, and innovations from leading M&amp;E practitioners across Africa and beyond.</p>
+                                        <p class="mb-0">Access cutting-edge evaluation methodologies, frameworks, and innovations from leading M&amp;E practitioners <strong>across Uganda, Africa and beyond.</strong></p>
                                     </div>
                                 </div>
                                 <div class="gradient-edge-bottom h-100"></div>
@@ -336,7 +829,7 @@
                                 <div class="abs p-40 bottom-0 z-2">
                                     <div class="relative wow fadeInUp">
                                         <h4>Pan-African Networking</h4>
-                                        <p class="mb-0">Build lasting professional connections with evaluators, researchers, and development practitioners from across Uganda, Africa, and the global development community.</p>
+                                        <p class="mb-0">Build lasting professional <strong>connections with academia, development partners,</strong> evaluators, researchers, and practitioners from across Uganda, Africa, and the global development community.</p>
                                     </div>
                                 </div>
                                 <div class="gradient-edge-bottom h-100"></div>
@@ -352,7 +845,7 @@
                                 <div class="abs p-40 bottom-0 z-2">
                                     <div class="relative wow fadeInUp">
                                         <h4>Policy Influence</h4>
-                                        <p class="mb-0">Engage directly with government officials and policy makers to champion evidence-based planning and accountable use of development resources.</p>
+                                        <p class="mb-0">Engage directly with government officials and policy makers to champion evidence-based planning and accountable use of <strong>development and investment resources.</strong></p>
                                     </div>
                                 </div>
                                 <div class="gradient-edge-bottom h-100"></div>
@@ -367,8 +860,8 @@
                             <div class="bg-white relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
                                 <div class="abs p-40 bottom-0 z-2">
                                     <div class="relative wow fadeInUp">
-                                        <h4>Career Development</h4>
-                                        <p class="mb-0">Advance your evaluation career through professional development sessions, certification workshops, and recognition of evaluation excellence.</p>
+                                        <h4>Career Development for YEEs</h4>
+                                        <p class="mb-0">Advance your evaluation career <strong>through mentorship program,</strong> professional development sessions, certification workshops, and recognition of evaluation excellence.</p>
                                     </div>
                                 </div>
                                 <div class="gradient-edge-bottom h-100"></div>
@@ -436,44 +929,51 @@
                 </div>
 
                 <div class="row g-4">
+                    <!-- Josephine Watera - President, UEA -->
                     <div class="col-lg-4">
                         <div class="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
-                            <img src="images/team/1.webp" class="w-100 hover-scale-1-1" alt="">
+                            <img src="images/team/4.webp" class="w-100 hover-scale-1-1" alt="Josephine Watera">
                             <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
                             <div class="abs w-100 start-0 bottom-0 z-3">
                                 <div class="bg-blur p-4 m-4 rounded-1 text-light text-center relative z-2">
-                                    <h3 class="mb-0">Dr. Sarah Namirembe</h3>
-                                    <span>Director of Planning &amp; M&amp;E, Ministry of Finance</span>
+                                    <div class="speaker-badge">Confirmed</div>
+                                    <h3 class="mb-0">Josephine Watera</h3>
+                                    <span>President, Uganda Evaluation Association (UEA)</span>
                                 </div>
                                 <div class="gradient-edge-bottom h-100 op-8"></div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Commissioner Timothy Lubanga - OPM -->
                     <div class="col-lg-4">
                         <div class="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
-                            <img src="images/team/2.webp" class="w-100 hover-scale-1-1" alt="">
+                            <img src="images/team/5.webp" class="w-100 hover-scale-1-1" alt="Commissioner Timothy Lubanga">
                             <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
                             <div class="abs w-100 start-0 bottom-0 z-3">
                                 <div class="bg-blur p-4 m-4 rounded-1 text-light text-center relative z-2">
-                                    <h3 class="mb-0">Prof. James Otieno</h3>
-                                    <span>Chair, African Evaluation Association (AfrEA)</span>
+                                    <div class="speaker-badge">Confirmed</div>
+                                    <h3 class="mb-0">Commissioner Timothy Lubanga</h3>
+                                    <span>Commissioner, Monitoring &amp; Evaluation, Office of the Prime Minister</span>
                                 </div>
                                 <div class="gradient-edge-bottom h-100 op-8"></div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- More speakers coming soon -->
                     <div class="col-lg-4">
-                        <div class="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
-                            <img src="images/team/3.webp" class="w-100 hover-scale-1-1" alt="">
-                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
-                            <div class="abs w-100 start-0 bottom-0 z-3">
-                                <div class="bg-blur p-4 m-4 rounded-1 text-light text-center relative z-2">
-                                    <h3 class="mb-0">Dr. Amina Hassan</h3>
-                                    <span>Senior Evaluation Advisor, UNDP East Africa</span>
+                        <div class="speaker-tba-card wow fadeIn">
+                            <div class="speaker-tba-inner">
+                                <div class="speaker-tba-icon">
+                                    <i class="fa fa-user-plus"></i>
                                 </div>
-                                <div class="gradient-edge-bottom h-100 op-8"></div>
+                                <h4>More Speakers</h4>
+                                <p>Additional keynote speakers and panelists will be announced as confirmations come in.</p>
+                                <div class="speaker-tba-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <small class="text-gold">Announcements coming soon</small>
                             </div>
                         </div>
                     </div>
@@ -1025,235 +1525,323 @@
             </div>
         </section>
 
-        <section id="section-tickets" class="bg-deep-slate text-light pt-80 relative jarallax" aria-label="section">
-            <img src="images/background/4.webp" class="jarallax-img" alt="">
-            <div class="gradient-edge-top"></div>
-            <div class="gradient-edge-bottom"></div>
-            <div class="sw-overlay op-5"></div>
+        <section id="section-tickets" class="text-light pt-80 relative" aria-label="section">
 
             <div class="container relative z-2">
                 <div class="row g-4 gx-5 justify-content-center">
-                  <div class="col-lg-6 text-center">
+                  <div class="col-lg-7 text-center">
                       <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Registration</div>
                       <h2 class="wow fadeInUp" data-wow-delay=".2s">Register for UEW 2026</h2>
-                      <p class="lead wow fadeInUp" data-wow-delay=".4s">Choose the registration option that fits your needs and join hundreds of evaluation professionals at Uganda's premier annual conference.</p>
+                      <p class="lead wow fadeInUp" data-wow-delay=".4s">Join hundreds of evaluation professionals at Uganda's premier annual conference. Early Bird rates available until <strong>April 15, 2026.</strong></p>
                   </div>
                 </div>
 
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="owl-carousel owl-theme owl-2-dots wow mask-right">
-                            <!-- ticket item begin -->
-                            <div class="item">
-                                <div class="relative overflow-hidden h-100 border-white-op-3 rounded-1 bg-blur">
-                                    <div class="gradient-edge-bottom color op-5"></div>
-                                    <div class="p-40 relative z-2">
-                                        <div class="text-center">
-                                            <h2 class="fs-40 mb-0">General Delegate</h2>
-                                            <h3 class="id-color mb-4">UGX 400,000</h3>
-                                            <h4>Includes:</h4>
+                <!-- Pricing Table -->
+                <div class="row g-4 wow fadeInUp" data-wow-delay=".3s">
+
+                    <!-- International -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="reg-card">
+                            <div class="reg-card-header reg-intl">
+                                <div class="reg-card-category">International</div>
+                                <div class="reg-card-icon"><i class="fa fa-globe"></i></div>
+                            </div>
+                            <div class="reg-card-body">
+                                <div class="reg-tier">
+                                    <div class="reg-tier-name">Professionals</div>
+                                    <div class="reg-price-row">
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Early Bird</div>
+                                            <div class="reg-price">$400</div>
                                         </div>
-
-                                        <div class="border-white-bottom-op-2 mb-4"></div>
-
-                                        <ul class="ul-check mb-4">
-                                            <li>Access to all plenary and parallel sessions.</li>
-                                            <li>Conference materials and abstract book.</li>
-                                            <li>Networking lunches and tea breaks.</li>
-                                            <li>Certificate of participation.</li>
-                                        </ul>
-
-                                        <a class="btn-main fx-slide w-100" href="tickets.html"><span>Register Now</span></a>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Late</div>
+                                            <div class="reg-price reg-price-muted">$450</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">On-Site</div>
+                                            <div class="reg-price reg-price-muted">$500</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reg-separator"></div>
+                                <div class="reg-tier">
+                                    <div class="reg-tier-name">Young &amp; Emerging Evaluators (YEEs)</div>
+                                    <div class="reg-price-row">
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Early Bird</div>
+                                            <div class="reg-price">$250</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Late</div>
+                                            <div class="reg-price reg-price-muted">$300</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">On-Site</div>
+                                            <div class="reg-price reg-price-muted">$350</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ticket item end -->
+                        </div>
+                    </div>
 
-                            <!-- ticket item begin -->
-                            <div class="item">
-                                <div class="relative overflow-hidden h-100 border-white-op-3 rounded-1 bg-blur">
-                                    <div class="gradient-edge-bottom color op-5"></div>
-                                    <div class="p-40 relative z-2">
-                                        <div class="text-center">
-                                            <h2 class="fs-40 mb-0">Professional Delegate</h2>
-                                            <h3 class="id-color mb-4">UGX 650,000</h3>
-                                            <h4>Includes:</h4>
+                    <!-- East African -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="reg-card">
+                            <div class="reg-card-header reg-ea">
+                                <div class="reg-card-category">East African</div>
+                                <div class="reg-card-icon"><i class="fa fa-map"></i></div>
+                            </div>
+                            <div class="reg-card-body">
+                                <div class="reg-tier">
+                                    <div class="reg-tier-name">Professionals</div>
+                                    <div class="reg-price-row">
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Early Bird</div>
+                                            <div class="reg-price">$300</div>
                                         </div>
-
-                                        <div class="border-white-bottom-op-2 mb-4"></div>
-
-                                        <ul class="ul-check mb-4">
-                                            <li>All General Delegate benefits.</li>
-                                            <li>Priority access to all workshops and labs.</li>
-                                            <li>UEA Professional Development credits.</li>
-                                            <li>Access to speaker networking reception.</li>
-                                        </ul>
-
-                                        <a class="btn-main fx-slide w-100" href="tickets.html"><span>Register Now</span></a>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Late</div>
+                                            <div class="reg-price reg-price-muted">$350</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">On-Site</div>
+                                            <div class="reg-price reg-price-muted">$400</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reg-separator"></div>
+                                <div class="reg-tier">
+                                    <div class="reg-tier-name">Young &amp; Emerging Evaluators (YEEs)</div>
+                                    <div class="reg-price-row">
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Early Bird</div>
+                                            <div class="reg-price">$200</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Late</div>
+                                            <div class="reg-price reg-price-muted">$250</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">On-Site</div>
+                                            <div class="reg-price reg-price-muted">$300</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ticket item end -->
+                        </div>
+                    </div>
 
-                            <!-- ticket item begin -->
-                            <div class="item">
-                                <div class="relative overflow-hidden h-100 border-white-op-3 rounded-1 bg-blur">
-                                    <div class="gradient-edge-bottom color op-5"></div>
-                                    <div class="p-40 relative z-2">
-                                        <div class="text-center">
-                                            <h2 class="fs-40 mb-0">International Delegate</h2>
-                                            <h3 class="id-color mb-4">USD 250</h3>
-                                            <h4>Includes:</h4>
+                    <!-- Ugandan -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="reg-card reg-card-featured">
+                            <div class="reg-featured-badge">Most Popular</div>
+                            <div class="reg-card-header reg-ugandan">
+                                <div class="reg-card-category">Ugandan Delegates</div>
+                                <div class="reg-card-icon"><i class="fa fa-flag"></i></div>
+                            </div>
+                            <div class="reg-card-body">
+                                <div class="reg-tier">
+                                    <div class="reg-tier-name">UEA Members</div>
+                                    <div class="reg-price-row">
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Early Bird</div>
+                                            <div class="reg-price reg-price-ugx">UGX<br>750K</div>
                                         </div>
-
-                                        <div class="border-white-bottom-op-2 mb-4"></div>
-
-                                        <ul class="ul-check mb-4">
-                                            <li>Full access to all 5 days of sessions.</li>
-                                            <li>Airport transfers and hotel coordination support.</li>
-                                            <li>All workshops, plenaries, and networking events.</li>
-                                            <li>UEA International Delegate recognition.</li>
-                                        </ul>
-
-                                        <a class="btn-main fx-slide w-100" href="tickets.html"><span>Register Now</span></a>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Late</div>
+                                            <div class="reg-price reg-price-ugx reg-price-muted">850K</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">On-Site</div>
+                                            <div class="reg-price reg-price-ugx reg-price-muted">950K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reg-separator"></div>
+                                <div class="reg-tier">
+                                    <div class="reg-tier-name">YEE Members</div>
+                                    <div class="reg-price-row">
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Early Bird</div>
+                                            <div class="reg-price reg-price-ugx">UGX<br>555K</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Late</div>
+                                            <div class="reg-price reg-price-ugx reg-price-muted">650K</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">On-Site</div>
+                                            <div class="reg-price reg-price-ugx reg-price-muted">750K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reg-separator"></div>
+                                <div class="reg-tier">
+                                    <div class="reg-tier-name">Non-UEA Members</div>
+                                    <div class="reg-price-row">
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Early Bird</div>
+                                            <div class="reg-price reg-price-ugx">UGX<br>850K</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">Late</div>
+                                            <div class="reg-price reg-price-ugx reg-price-muted">950K</div>
+                                        </div>
+                                        <div class="reg-price-divider"></div>
+                                        <div class="reg-price-col">
+                                            <div class="reg-price-label">On-Site</div>
+                                            <div class="reg-price reg-price-ugx reg-price-muted">1.05M</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ticket item end -->
+                        </div>
+                    </div>
 
-                            <!-- ticket item begin -->
-                            <div class="item">
-                                <div class="relative overflow-hidden h-100 border-white-op-3 rounded-1 bg-blur">
-                                    <div class="gradient-edge-bottom color op-5"></div>
-                                    <div class="p-40 relative z-2">
-                                        <div class="text-center">
-                                            <h2 class="fs-40 mb-0">Institutional Package</h2>
-                                            <h3 class="id-color mb-4">UGX 2,500,000</h3>
-                                            <h4>Includes:</h4>
-                                        </div>
+                </div>
 
-                                        <div class="border-white-bottom-op-2 mb-4"></div>
-
-                                        <ul class="ul-check mb-4">
-                                            <li>5 delegate passes for your organisation.</li>
-                                            <li>Organisation logo featured in conference materials.</li>
-                                            <li>Exhibition booth or poster space.</li>
-                                            <li>Priority speaking slot consideration.</li>
-                                        </ul>
-
-                                        <a class="btn-main fx-slide w-100" href="tickets.html"><span>Register Now</span></a>
-                                    </div>
-                                </div>
+                <!-- Additional packages row -->
+                <div class="row g-4 mt-2 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="reg-addon-card">
+                            <div class="reg-addon-icon"><i class="fa fa-chalkboard-teacher"></i></div>
+                            <div>
+                                <div class="reg-addon-title">Pre-Conference Workshops</div>
+                                <div class="reg-addon-prices">Intl: $200 &bull; UEA Members: UGX 500K &bull; Non-Members: UGX 600K</div>
                             </div>
-                            <!-- ticket item end -->
-
-                            <!-- ticket item begin -->
-                            <div class="item">
-                                <div class="relative overflow-hidden h-100 border-white-op-3 rounded-1 bg-blur">
-                                    <div class="gradient-edge-bottom color op-5"></div>
-                                    <div class="p-40 relative z-2">
-                                        <div class="text-center">
-                                            <h2 class="fs-40 mb-0">Student &amp; Early Career</h2>
-                                            <h3 class="id-color mb-4">UGX 100,000</h3>
-                                            <h4>Includes:</h4>
-                                        </div>
-
-                                        <div class="border-white-bottom-op-2 mb-4"></div>
-
-                                        <ul class="ul-check mb-4">
-                                            <li>Access to all keynotes and sessions.</li>
-                                            <li>Young Evaluators Network meetup.</li>
-                                            <li>Mentorship session with senior evaluators.</li>
-                                            <li>Student poster presentation opportunity.</li>
-                                        </ul>
-
-                                        <a class="btn-main fx-slide w-100" href="tickets.html"><span>Register Now</span></a>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="reg-addon-card">
+                            <div class="reg-addon-icon"><i class="fa fa-store"></i></div>
+                            <div>
+                                <div class="reg-addon-title">Exhibition Space (Per Booth)</div>
+                                <div class="reg-addon-prices">International: $250 &bull; National: $200</div>
                             </div>
-                            <!-- ticket item end -->
-
-                            <!-- ticket item begin -->
-                            <div class="item">
-                                <div class="relative overflow-hidden h-100 border-white-op-3 rounded-1 bg-blur">
-                                    <div class="gradient-edge-bottom color op-5"></div>
-                                    <div class="p-40 relative z-2">
-                                        <div class="text-center">
-                                            <h2 class="fs-40 mb-0">Virtual Delegate</h2>
-                                            <h3 class="id-color mb-4">USD 50</h3>
-                                            <h4>Includes:</h4>
-                                        </div>
-
-                                        <div class="border-white-bottom-op-2 mb-4"></div>
-
-                                        <ul class="ul-check mb-4">
-                                            <li>Live-streamed plenary sessions and keynotes.</li>
-                                            <li>On-demand access to recorded sessions.</li>
-                                            <li>Interactive Q&amp;A with speakers.</li>
-                                            <li>Digital conference materials and certificate.</li>
-                                        </ul>
-
-                                        <a class="btn-main fx-slide w-100" href="tickets.html"><span>Register Now</span></a>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="reg-addon-card">
+                            <div class="reg-addon-icon"><i class="fa fa-water"></i></div>
+                            <div>
+                                <div class="reg-addon-title">Excursion — Source of the Nile &amp; Greater Kampala Tour</div>
+                                <div class="reg-addon-prices">$70 per person</div>
                             </div>
-                            <!-- ticket item end -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Early Bird deadline + CTA -->
+                <div class="row g-4 justify-content-center mt-4 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="col-lg-8 text-center">
+                        <div class="reg-cta-box">
+                            <div class="reg-cta-deadline">
+                                <i class="fa fa-clock me-2"></i>
+                                Early Bird deadline: <strong>April 15, 2026</strong> &nbsp;|&nbsp; Late Registration closes: <strong>May 3, 2026</strong>
+                            </div>
+                            <a class="btn-main fx-slide px-5 me-3" href="https://events.ugandaevaluationassociation.org/" target="_blank"><span>Register at Official Site</span></a>
+                            <a class="btn-line fx-slide px-4 mt-sm-3" href="#section-faq"><span>View FAQs</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="section-venue" class="bg-light text-dark pt-80 relative jarallax" aria-label="section">
+        <section id="section-venue" class="bg-light text-dark pt-80 relative" aria-label="section">
           <div class="container relative z-2">
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-6 text-center">
                     <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Event Location</div>
-                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Location &amp; Venue</h2>
-                    <p class="lead wow fadeInUp" data-wow-delay=".6s">Uganda Evaluation Week 2026 will be held at Silver Springs Hotel — one of Kampala's premier conference venues, conveniently located near the city centre with excellent transport links and accommodation on-site.</p>
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Venue &amp; Location</h2>
+                    <p class="lead wow fadeInUp" data-wow-delay=".4s">Uganda Evaluation Week 2026 will be held at <strong>Silver Springs Hotel</strong> — a premier 4-star conference venue in the heart of Bugolobi, Kampala, offering world-class facilities, on-site accommodation, and excellent transport links.</p>
                 </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-sm-6">
-                    <img src="images/misc/l1.webp" class="w-100 rounded-1 wow scale-in-mask" alt="">
-                </div>
-
-                <div class="col-sm-6">
-                    <img src="images/misc/l2.webp" class="w-100 rounded-1 wow scale-in-mask" alt="">
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-lg-4 col-md-6 mb-sm-30">
-                    <div class="d-flex justify-content-center wow fadeInUp" data-wow-delay=".2s">
-                        <i class="fs-60 id-color icofont-google-map"></i>
-                        <div class="ms-3">
-                            <h4 class="mb-0">Address</h4>
-                            <p>Silver Springs Hotel, Buganda Road, Kampala, Uganda</p>
+            <div class="row g-4 mt-2">
+                <!-- Map + hotel image -->
+                <div class="col-lg-7 wow scale-in-mask">
+                    <div class="venue-map-wrap">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7480127!2d32.6113!3d0.3136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb79f7c9d8c1%3A0x9a7f0e9e67c28fce!2sSilver%20Springs%20Hotel%20Uganda!5e0!3m2!1sen!2sug!4v1700000000000"
+                            width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" class="venue-map-iframe">
+                        </iframe>
+                        <div class="venue-map-badge">
+                            <i class="fa fa-location-dot me-2"></i>Silver Springs Hotel, Bugolobi, Kampala
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-sm-30">
-                    <div class="d-flex justify-content-center wow fadeInUp" data-wow-delay=".4s">
-                        <i class="fs-60 id-color icofont-phone"></i>
-                        <div class="ms-3">
-                            <h4 class="mb-0">Phone</h4>
-                            <p>Call: +256 414 123 456</p>
+                <!-- Hotel info -->
+                <div class="col-lg-5">
+                    <div class="venue-info-card wow fadeInRight">
+                        <div class="venue-hotel-header">
+                            <div class="venue-hotel-stars">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <h3 class="venue-hotel-name">Silver Springs Hotel</h3>
+                            <p class="venue-hotel-tagline">Bugolobi Portbell Road, Plot 76A/D &mdash; Kampala, Uganda</p>
                         </div>
+
+                        <div class="venue-contact-list">
+                            <div class="venue-contact-item">
+                                <div class="venue-contact-icon"><i class="fa fa-location-dot"></i></div>
+                                <div>
+                                    <div class="venue-contact-label">Address</div>
+                                    <div class="venue-contact-value">Bugolobi Portbell Road, Kampala, Uganda</div>
+                                </div>
+                            </div>
+                            <div class="venue-contact-item">
+                                <div class="venue-contact-icon"><i class="fa fa-phone"></i></div>
+                                <div>
+                                    <div class="venue-contact-label">Hotel Reception</div>
+                                    <div class="venue-contact-value"><a href="tel:+256392905548">+256 392 905 548</a></div>
+                                </div>
+                            </div>
+                            <div class="venue-contact-item">
+                                <div class="venue-contact-icon"><i class="fa fa-envelope"></i></div>
+                                <div>
+                                    <div class="venue-contact-label">Hotel Email</div>
+                                    <div class="venue-contact-value"><a href="mailto:silverspringshotel@yahoo.com">silverspringshotel@yahoo.com</a></div>
+                                </div>
+                            </div>
+                            <div class="venue-contact-item">
+                                <div class="venue-contact-icon"><i class="fa fa-globe"></i></div>
+                                <div>
+                                    <div class="venue-contact-label">Hotel Website</div>
+                                    <div class="venue-contact-value"><a href="https://silverspringshotelug.com" target="_blank">silverspringshotelug.com</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="venue-amenities">
+                            <div class="venue-amenity"><i class="fa fa-wifi"></i> Free Wi-Fi</div>
+                            <div class="venue-amenity"><i class="fa fa-swimming-pool"></i> Pool &amp; Spa</div>
+                            <div class="venue-amenity"><i class="fa fa-bed"></i> On-site Rooms</div>
+                            <div class="venue-amenity"><i class="fa fa-utensils"></i> Restaurant</div>
+                            <div class="venue-amenity"><i class="fa fa-car"></i> Airport Shuttle</div>
+                            <div class="venue-amenity"><i class="fa fa-building"></i> Conference Halls</div>
+                        </div>
+
+                        <a class="btn-main fx-slide w-100 mt-3" href="https://silverspringshotelug.com" target="_blank"><span>View Hotel &amp; Photos</span></a>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-sm-30">
-                    <div class="d-flex justify-content-center wow fadeInUp" data-wow-delay=".6s">
-                        <i class="fs-60 id-color icofont-envelope"></i>
-                        <div class="ms-3">
-                            <h4 class="mb-0">Email</h4>
-                            <p>info@uea.or.ug</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
           </div>
@@ -1318,7 +1906,7 @@
             </div>
         </section>
 
-        <section class="bg-muted-teal text-light pt-80 relative jarallax" aria-label="section">
+        <section id="section-stay-connected" class="bg-muted-teal text-light pt-80 relative jarallax" aria-label="section">
             <img src="images/background/3.webp" class="jarallax-img" alt="">
             <div class="gradient-edge-top"></div>
             <div class="gradient-edge-bottom"></div>
@@ -1329,7 +1917,7 @@
                     <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Stay Connected</div>
                     <h2 class="wow fadeInUp" data-wow-delay=".2s">Join the Evaluation Community</h2>
                     <p class="wow fadeInUp" data-wow-delay=".4s">
-                      Subscribe to the UEA newsletter for updates on Uganda Evaluation Week 2026 — including programme announcements, speaker reveals, abstract submission deadlines, and member news from across the evaluation community.
+                      Subscribe to the UEA newsletter for updates on Uganda Evaluation Week 2026 — programme announcements, speaker reveals, abstract submission deadlines, and member news from across the evaluation community.
                     </p>
                 </div>
             </div>
@@ -1341,19 +1929,43 @@
               <div class="col-auto mb-3 wow fadeInUp" data-wow-delay=".6s">
                 <button type="submit" class="btn bg-color text-light btn-lg px-4">SIGN UP</button>
               </div>
-
-              <div class="col-12 text-center wow fadeInUp" data-wow-delay=".8s">
-                <div class="form-check d-flex justify-content-center mb-2">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="updatesCheck" checked>
-                  <label class="form-check-label" for="updatesCheck">
-                    Keep me updated on other news and exclusive offers
-                  </label>
-                </div>
-                <p class="small text-muted wow fadeInUp" data-wow-delay="1s">
-                  Note: You can opt-out at any time. See our <a href="#" class="text-decoration-underline">Privacy Policy</a> and <a href="#" class="text-decoration-underline">Terms</a>.
-                </p>
-              </div>
             </form>
+
+            <!-- Quick links & contacts -->
+            <div class="row g-4 justify-content-center mt-4 wow fadeInUp" data-wow-delay=".7s">
+                <div class="col-lg-10">
+                    <div class="stay-links-grid">
+
+                        <div class="stay-link-card">
+                            <div class="stay-link-icon"><i class="fa fa-globe"></i></div>
+                            <div class="stay-link-label">UEA Website</div>
+                            <a href="https://www.ugandaevaluationassociation.org/" target="_blank" class="stay-link-url">ugandaevaluationassociation.org</a>
+                        </div>
+
+                        <div class="stay-link-card">
+                            <div class="stay-link-icon"><i class="fa fa-envelope"></i></div>
+                            <div class="stay-link-label">Conference Email</div>
+                            <a href="mailto:uew@ugandaevaluationassociation.org" class="stay-link-url">uew@ugandaevaluationassociation.org</a>
+                        </div>
+
+                        <div class="stay-link-card">
+                            <div class="stay-link-icon"><i class="fa fa-phone"></i></div>
+                            <div class="stay-link-label">UEA Secretariat</div>
+                            <a href="tel:+256752456789" class="stay-link-url">+256 752 456 789</a>
+                            <a href="mailto:darlingtonsenoga@yahoo.com" class="stay-link-url" style="margin-top:4px;">darlingtonsenoga@yahoo.com</a>
+                        </div>
+
+                        <div class="stay-link-card stay-link-card-cta">
+                            <div class="stay-link-icon"><i class="fa fa-id-card"></i></div>
+                            <div class="stay-link-label">Become a UEA Member</div>
+                            <a href="https://www.ugandaevaluationassociation.org/membership/" target="_blank" class="stay-link-url">Join UEA &rarr;</a>
+                            <p class="stay-link-desc">Access member rates, professional development &amp; the UEA network</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
           </div>
         </section>
 
@@ -1362,37 +1974,65 @@
     <!-- footer begin -->
     <footer class="text-light section-dark">
         <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-md-12">
-                    <div class="d-lg-flex align-items-center justify-content-between text-center">
-                        <div>
-                            <h3 class="fs-20">Address</h3>
-                            Plot 2, Luthuli Avenue, Bugolobi<br>
-                            Kampala, Uganda
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <img src="images/logo.png" class="w-150px mb-4" alt="UEW 2026">
+                    <p class="small" style="color: rgba(230,231,232,0.5); line-height: 1.7;">The 9th Uganda Evaluation Week — marking 25 years of the Uganda Evaluation Association, organised with the Office of the Prime Minister.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#section-about">About UEW</a></li>
+                        <li><a href="#section-why-attend">Why Attend</a></li>
+                        <li><a href="#section-speakers">Speakers</a></li>
+                        <li><a href="#section-schedule">Schedule</a></li>
+                        <li><a href="#section-tickets">Registration</a></li>
+                        <li><a href="sponsors.html">Sponsors &amp; Partners</a></li>
+                        <li><a href="exhibitors.html">Exhibitors</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">UEA</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://www.ugandaevaluationassociation.org/" target="_blank">UEA Website</a></li>
+                        <li><a href="https://www.ugandaevaluationassociation.org/membership/" target="_blank">Join UEA / Membership</a></li>
+                        <li><a href="#section-faq">FAQ</a></li>
+                        <li><a href="#section-venue">Venue</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">Contact</h5>
+                    <div class="footer-contact-list">
+                        <div class="footer-contact-item">
+                            <i class="fa fa-location-dot"></i>
+                            <span>Silver Springs Hotel, Bugolobi, Kampala, Uganda</span>
                         </div>
-                        <div>
-                            <img src="images/logo.webp" class="w-150px" alt=""><br>
-                            <div class="social-icons mb-sm-30 mt-4">
-                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            </div>
+                        <div class="footer-contact-item">
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:uew@ugandaevaluationassociation.org">uew@ugandaevaluationassociation.org</a>
                         </div>
-                        <div>
-                            <h3 class="fs-20">Contact Us</h3>
-                            T. +256 414 123 456<br>
-                            M. info@uea.or.ug
+                        <div class="footer-contact-item">
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:+256752456789">+256 752 456 789</a>
                         </div>
                     </div>
-                </div>                    
+                </div>
             </div>
         </div>
         <div class="subfooter">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        Copyright 2026 - Uganda Evaluation Association. All rights reserved.
+                        &copy; 2026 Uganda Evaluation Association. All rights reserved. &nbsp;|&nbsp; <a href="https://www.ugandaevaluationassociation.org/" target="_blank" style="color: #cd912d;">ugandaevaluationassociation.org</a>
                     </div>
                 </div>
             </div>

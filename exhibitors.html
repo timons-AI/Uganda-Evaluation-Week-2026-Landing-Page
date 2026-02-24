@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exhibitors | 9th Uganda Evaluation Week 2026</title>
+    <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Exhibitors at Uganda Evaluation Week 2026 — Showcasing M&E tools, innovations, and solutions" name="description">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/vendors.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link id="colors" href="css/colors/scheme-uew.css" rel="stylesheet" type="text/css">
+    <style>
+        .ex-hero {
+            background: linear-gradient(135deg, #1a2e3a 0%, #2f4a5a 50%, #1a2e3a 100%);
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .ex-hero-grid {
+            position: absolute;
+            top:0;left:0;right:0;bottom:0;
+            background-image:
+                linear-gradient(rgba(205,145,45,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(205,145,45,0.06) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        /* Exhibitor category cards */
+        .ex-category-card {
+            border-radius: 12px;
+            padding: 28px 26px;
+            border: 1px solid rgba(0,0,0,0.08);
+            background: #fff;
+            height: 100%;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .ex-category-card:hover {
+            box-shadow: 0 12px 40px rgba(47,74,90,0.12);
+            transform: translateY(-4px);
+        }
+        .ex-category-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(47,74,90,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2f4a5a;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+        .ex-category-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2b2b2b;
+            margin-bottom: 8px;
+        }
+        .ex-category-desc {
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.6;
+        }
+        /* Exhibitor booth cards */
+        .ex-booth-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .ex-booth-card {
+            background: #ffffff;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.07);
+            padding: 24px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+        }
+        .ex-booth-card:hover {
+            box-shadow: 0 10px 30px rgba(47,74,90,0.12);
+            border-color: rgba(205,145,45,0.3);
+            transform: translateY(-3px);
+        }
+        .ex-booth-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            background: rgba(47,74,90,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 1.8rem;
+            color: #ccc;
+        }
+        .ex-booth-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #2b2b2b;
+            margin-bottom: 4px;
+        }
+        .ex-booth-type {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #cd912d;
+        }
+        /* Booth pricing table */
+        .ex-pricing-card {
+            background: linear-gradient(135deg, #2f4a5a 0%, #1a2e3a 100%);
+            border-radius: 14px;
+            padding: 34px 32px;
+            border: 1px solid rgba(205,145,45,0.2);
+            color: #fff;
+            height: 100%;
+        }
+        .ex-pricing-card.featured {
+            background: linear-gradient(135deg, #cd912d 0%, #e47925 100%);
+            border-color: transparent;
+            box-shadow: 0 16px 48px rgba(205,145,45,0.3);
+        }
+        .ex-price-tag {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            margin: 12px 0;
+        }
+        .ex-price-note {
+            font-size: 0.7rem;
+            opacity: 0.65;
+            margin-bottom: 20px;
+        }
+        .ex-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .ex-feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        .ex-feature-list li i {
+            color: #e7d14a;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .ex-pricing-card.featured .ex-feature-list li i {
+            color: rgba(255,255,255,0.9);
+        }
+        /* CTA form card */
+        .ex-cta-card {
+            background: linear-gradient(135deg, #2f4a5a 0%, #1a2e3a 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(205,145,45,0.2);
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="float-text show-on-scroll"><span><a href="#">Scroll to top</a></span></div>
+        <div class="scrollbar-v show-on-scroll"></div>
+        <div id="de-loader"></div>
+
+        <header class="transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex">
+                            <div class="de-flex-col">
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img src="images/logo.png" alt="Uganda Evaluation Association">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="de-flex-col header-col-mid">
+                                    <ul id="mainmenu">
+                                        <li><a class="menu-item" href="index.html">Home</a></li>
+                                        <li><a class="menu-item" href="index.html#section-about">About</a></li>
+                                        <li><a class="menu-item" href="index.html#section-tickets">Registration</a></li>
+                                        <li><a class="menu-item" href="index.html#section-venue">Venue</a></li>
+                                        <li><a class="menu-item" href="sponsors.html">Sponsors &amp; Partners</a></li>
+                                        <li><a class="menu-item active" href="exhibitors.html">Exhibitors</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="de-flex-col">
+                                <a class="btn-main fx-slide w-100" href="https://events.ugandaevaluationassociation.org/" target="_blank"><span>Register Here</span></a>
+                                <div class="menu_side_area"><span id="menu-btn"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="ex-hero section-dark text-light">
+            <div class="ex-hero-grid"></div>
+            <div class="container relative z-2">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="subtitle mb-3">Uganda Evaluation Week 2026</div>
+                        <h1 class="mb-4">Exhibition &amp;<br>Innovation Hub</h1>
+                        <p class="lead mb-5" style="color: rgba(230,231,232,0.75); max-width: 580px;">Showcase your M&amp;E tools, research, innovations, and services to 300+ evaluation professionals, government planners, development partners, and academics at Uganda's leading evaluation conference.</p>
+                        <div class="d-flex flex-wrap gap-3 align-items-center">
+                            <a class="btn-main fx-slide" href="#book-booth"><span>Book Your Booth</span></a>
+                            <div style="display: flex; flex-direction: column; gap: 4px;">
+                                <div style="font-size: 0.55rem; text-transform: uppercase; letter-spacing: 3px; color: rgba(205,145,45,0.7);">Exhibition Space From</div>
+                                <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">$200 <span style="font-size: 0.85rem; font-weight: 400; color: rgba(230,231,232,0.5);">/ booth</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who should exhibit -->
+        <section class="bg-light text-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-center mb-5">
+                    <div class="col-lg-7 text-center">
+                        <div class="subtitle wow fadeInUp">Who Should Exhibit</div>
+                        <h2 class="wow fadeInUp">Showcase Your Work to Africa's Evaluation Community</h2>
+                        <p class="lead wow fadeInUp">The UEW Innovation Hub and Exhibition is open to organisations offering tools, services, research, or innovations relevant to monitoring, evaluation, accountability, and learning.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <div class="ex-category-card">
+                            <div class="ex-category-icon"><i class="fa fa-laptop-code"></i></div>
+                            <div class="ex-category-title">Digital M&amp;E Platforms</div>
+                            <div class="ex-category-desc">ODK, KoboToolbox, DHIS2, data visualisation, mobile data collection tools, and M&amp;E software solutions.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                        <div class="ex-category-card">
+                            <div class="ex-category-icon"><i class="fa fa-robot"></i></div>
+                            <div class="ex-category-title">AI &amp; Data Analytics</div>
+                            <div class="ex-category-desc">Artificial intelligence tools, big data analytics, predictive systems, and real-time monitoring dashboards for development programmes.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="ex-category-card">
+                            <div class="ex-category-icon"><i class="fa fa-book-open"></i></div>
+                            <div class="ex-category-title">Research &amp; Publications</div>
+                            <div class="ex-category-desc">Academic publishers, research institutions, think tanks, and organisations presenting evaluation research and evidence products.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                        <div class="ex-category-card">
+                            <div class="ex-category-icon"><i class="fa fa-graduation-cap"></i></div>
+                            <div class="ex-category-title">Capacity Building</div>
+                            <div class="ex-category-desc">Training providers, certification bodies, universities, and professional development programmes for M&amp;E practitioners.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="ex-category-card">
+                            <div class="ex-category-icon"><i class="fa fa-chart-bar"></i></div>
+                            <div class="ex-category-title">Consulting &amp; Advisory</div>
+                            <div class="ex-category-desc">Evaluation consulting firms, M&amp;E advisory services, and independent consultants seeking to connect with development sector clients.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="ex-category-card">
+                            <div class="ex-category-icon"><i class="fa fa-leaf"></i></div>
+                            <div class="ex-category-title">Civil Society &amp; NGOs</div>
+                            <div class="ex-category-desc">NGOs, community-based organisations, and civil society groups showcasing evaluation-informed programmes and citizen-led evidence.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Exhibitors -->
+        <section class="bg-light text-dark pt-0">
+            <div class="container">
+                <div class="row g-4 justify-content-center mb-4">
+                    <div class="col-lg-6 text-center">
+                        <div class="subtitle wow fadeInUp">Confirmed Exhibitors</div>
+                        <h2 class="wow fadeInUp">Innovation Hub — UEW 2026</h2>
+                        <p class="lead wow fadeInUp">Exhibitor confirmations are open. More organisations joining soon.</p>
+                    </div>
+                </div>
+
+                <div class="ex-booth-grid">
+                    <!-- Placeholder booth cards — replace with real exhibitors -->
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
+                        <div class="ex-booth-name">Your Organisation</div>
+                        <div class="ex-booth-type">Booth Slot Available</div>
+                    </div>
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
+                        <div class="ex-booth-name">Your Organisation</div>
+                        <div class="ex-booth-type">Booth Slot Available</div>
+                    </div>
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
+                        <div class="ex-booth-name">Your Organisation</div>
+                        <div class="ex-booth-type">Booth Slot Available</div>
+                    </div>
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
+                        <div class="ex-booth-name">Your Organisation</div>
+                        <div class="ex-booth-type">Booth Slot Available</div>
+                    </div>
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
+                        <div class="ex-booth-name">Your Organisation</div>
+                        <div class="ex-booth-type">Booth Slot Available</div>
+                    </div>
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
+                        <div class="ex-booth-name">Your Organisation</div>
+                        <div class="ex-booth-type">Booth Slot Available</div>
+                    </div>
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
+                        <div class="ex-booth-name">Your Organisation</div>
+                        <div class="ex-booth-type">Booth Slot Available</div>
+                    </div>
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
+                        <div class="ex-booth-name">Your Organisation</div>
+                        <div class="ex-booth-type">Booth Slot Available</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booth Pricing -->
+        <section id="book-booth" class="bg-deep-slate text-light pt-80 relative jarallax">
+            <img src="images/background/4.webp" class="jarallax-img" alt="">
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-6"></div>
+            <div class="container relative z-2">
+                <div class="row g-4 justify-content-center mb-5">
+                    <div class="col-lg-7 text-center">
+                        <div class="subtitle s2 mb-3">Exhibition Packages</div>
+                        <h2>Book Your Exhibition Space</h2>
+                        <p class="lead">Limited booth spaces available. Early booking recommended to secure your preferred position in the Innovation Hub.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ex-pricing-card">
+                            <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; color: rgba(205,145,45,0.7); margin-bottom: 8px;">National</div>
+                            <h3 class="text-light">National Booth</h3>
+                            <div class="ex-price-tag">$200</div>
+                            <div class="ex-price-note">Per booth / area &mdash; flat rate</div>
+                            <hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+                            <ul class="ex-feature-list">
+                                <li><i class="fa fa-check"></i> Dedicated booth space at the Innovation Hub</li>
+                                <li><i class="fa fa-check"></i> Organisation name in conference programme</li>
+                                <li><i class="fa fa-check"></i> Access to all conference networking events</li>
+                                <li><i class="fa fa-check"></i> 1 exhibitor pass included</li>
+                                <li><i class="fa fa-check"></i> Electricity &amp; Wi-Fi access</li>
+                            </ul>
+                            <a class="btn-main fx-slide w-100 mt-4" href="mailto:uew@ugandaevaluationassociation.org?subject=National Exhibition Booth Enquiry — UEW 2026"><span>Enquire Now</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ex-pricing-card featured">
+                            <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; color: rgba(255,255,255,0.7); margin-bottom: 8px;">International</div>
+                            <h3 class="text-light">International Booth</h3>
+                            <div class="ex-price-tag">$250</div>
+                            <div class="ex-price-note">Per booth / area &mdash; flat rate</div>
+                            <hr style="border-color: rgba(255,255,255,0.25); margin: 20px 0;">
+                            <ul class="ex-feature-list">
+                                <li><i class="fa fa-check"></i> Premium booth location in the Innovation Hub</li>
+                                <li><i class="fa fa-check"></i> Organisation logo on conference website &amp; materials</li>
+                                <li><i class="fa fa-check"></i> 2 exhibitor passes included</li>
+                                <li><i class="fa fa-check"></i> Access to all networking events &amp; receptions</li>
+                                <li><i class="fa fa-check"></i> Electricity, Wi-Fi &amp; display support</li>
+                                <li><i class="fa fa-check"></i> Featured in post-event summary report</li>
+                            </ul>
+                            <a class="btn-main fx-slide w-100 mt-4" style="background: #ffffff !important; color: #2f4a5a !important;" href="mailto:uew@ugandaevaluationassociation.org?subject=International Exhibition Booth Enquiry — UEW 2026"><span>Enquire Now</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ex-pricing-card">
+                            <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; color: rgba(205,145,45,0.7); margin-bottom: 8px;">For Young Evaluators</div>
+                            <h3 class="text-light">YEE Innovation Corner</h3>
+                            <div class="ex-price-tag" style="font-size: 1.5rem;">Contact Us</div>
+                            <div class="ex-price-note">Subsidised rates for Young &amp; Emerging Evaluators</div>
+                            <hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+                            <ul class="ex-feature-list">
+                                <li><i class="fa fa-check"></i> Poster &amp; project display space</li>
+                                <li><i class="fa fa-check"></i> Presentation slot in YEE Innovation Showcase</li>
+                                <li><i class="fa fa-check"></i> Mentorship connections with senior evaluators</li>
+                                <li><i class="fa fa-check"></i> Featured in Young Evaluators Network highlights</li>
+                                <li><i class="fa fa-check"></i> Certificate of exhibition participation</li>
+                            </ul>
+                            <a class="btn-main fx-slide w-100 mt-4" href="mailto:uew@ugandaevaluationassociation.org?subject=YEE Innovation Corner Enquiry — UEW 2026"><span>Apply for YEE Space</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact CTA -->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-8">
+                        <div class="ex-cta-card text-center">
+                            <h3 class="text-light mb-3">Ready to Exhibit?</h3>
+                            <p style="color: rgba(230,231,232,0.65); margin-bottom: 28px;">Contact us to reserve your booth, discuss bespoke exhibition packages, or request the full exhibitor information pack. Spaces are limited &mdash; early registration is encouraged.</p>
+                            <div class="d-flex flex-wrap justify-content-center gap-3">
+                                <a class="btn-main fx-slide px-5" href="mailto:uew@ugandaevaluationassociation.org?subject=Exhibition Enquiry — UEW 2026"><span>Email Us to Book</span></a>
+                                <div style="display: flex; align-items: center; gap: 10px; color: rgba(230,231,232,0.6);">
+                                    <i class="fa fa-phone" style="color: #cd912d;"></i>
+                                    <a href="tel:+256752456789" style="color: rgba(230,231,232,0.7); text-decoration: none;">+256 752 456 789</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- footer begin -->
+    <footer class="text-light section-dark">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="images/logo.jpg" class="w-150px mb-4" alt="">
+                    <p class="small" style="color: rgba(230,231,232,0.5);">9th Uganda Evaluation Week 2026 &mdash; 25 Years of UEA</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#section-tickets">Registration</a></li>
+                        <li><a href="sponsors.html">Sponsors &amp; Partners</a></li>
+                        <li><a href="index.html#section-venue">Venue</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">Exhibition Contact</h5>
+                    <div class="footer-contact-list">
+                        <div class="footer-contact-item">
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:uew@ugandaevaluationassociation.org">uew@ugandaevaluationassociation.org</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:+256752456789">+256 752 456 789</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fa fa-globe"></i>
+                            <a href="https://www.ugandaevaluationassociation.org/" target="_blank">ugandaevaluationassociation.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        &copy; 2026 Uganda Evaluation Association. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <script src="js/vendors.js"></script>
+    <script src="js/designesia.js"></script>
+</body>
+</html>
