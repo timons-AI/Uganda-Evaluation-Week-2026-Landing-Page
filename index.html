@@ -30,6 +30,8 @@
             position: relative;
         }
 
+
+        
         /* Layer 1 — coloured blob orbs */
         #section-tickets::before {
             content: '';
@@ -92,43 +94,80 @@
             z-index: 0;
         }
 
-        /* Photo backdrop — slow drift */
-        .lph-bg {
+        /* ---- Crossfading slide images ---- */
+        .lph-slide {
             position: absolute;
             inset: 0;
-            background-image: url('images/slider/3.webp');
             background-size: cover;
-            background-position: center 30%;
-            opacity: 0.2;
+            background-position: center;
+            opacity: 0;
             z-index: 0;
-            animation: lph-bg-drift 20s ease-in-out infinite alternate;
+            will-change: transform, opacity;
         }
-        @keyframes lph-bg-drift {
-            from { transform: scale(1.05) translateX(0); }
-            to   { transform: scale(1.05) translateX(-2%); }
+        .lph-slide-1 {
+            background-image: url('images/slider/3.webp');
+            animation:
+                lph-img-cycle 12s ease-in-out infinite,
+                lph-kb-1      14s ease-in-out infinite alternate;
+        }
+        .lph-slide-2 {
+            background-image: url('images/slider/4.webp');
+            animation:
+                lph-img-cycle 12s ease-in-out infinite,
+                lph-kb-2      14s ease-in-out infinite alternate;
+            animation-delay: 6s, 6s;
+        }
+        @keyframes lph-img-cycle {
+            0%   { opacity: 0; }
+            8%   { opacity: 1; }
+            50%  { opacity: 1; }
+            58%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        /* Ken Burns: slow zoom + subtle drift */
+        @keyframes lph-kb-1 {
+            from { transform: scale(1.00) translate(0%,    0%); }
+            to   { transform: scale(1.07) translate(-1.5%, -1%); }
+        }
+        @keyframes lph-kb-2 {
+            from { transform: scale(1.07) translate(1.5%,  0%); }
+            to   { transform: scale(1.00) translate(0%,   -1%); }
         }
 
-        /* Animated grain overlay */
-        .lph-grain {
+        /* Directional dark overlay — heavier on left where text lives */
+        .lph-overlay {
             position: absolute;
-            inset: -50%;
-            width: 200%; height: 200%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            opacity: 0.032;
+            inset: 0;
+            background:
+                linear-gradient(115deg,
+                    rgba(7,9,12,0.88) 0%,
+                    rgba(7,9,12,0.72) 38%,
+                    rgba(7,9,12,0.48) 68%,
+                    rgba(7,9,12,0.38) 100%),
+                linear-gradient(180deg,
+                    rgba(7,9,12,0.35) 0%,
+                    transparent      28%,
+                    transparent      68%,
+                    rgba(7,9,12,0.55) 100%);
             pointer-events: none;
             z-index: 1;
-            animation: lph-grain 7s steps(8) infinite;
         }
-        @keyframes lph-grain {
-            0%,100%{transform:translate(0,0)}
-            12%{transform:translate(-4%,-4%)}
-            25%{transform:translate(-8%,4%)}
-            37%{transform:translate(4%,-8%)}
-            50%{transform:translate(-4%,12%)}
-            62%{transform:translate(-8%,4%)}
-            75%{transform:translate(12%,0)}
-            87%{transform:translate(0,8%)}
+
+        /* Static photo grain — tiles quietly like real ISO noise */
+        .lph-grain {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 250px 250px;
+            opacity: 0.09;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 2;
         }
+
+        /* Glow divs retired */
+        .lph-glow-1, .lph-glow-2 { display: none; }
 
         /* Ghost "09" behind content */
         .lph-ghost-num {
@@ -152,23 +191,8 @@
             to   { opacity: 1; transform: translateY(-52%) translateX(0); }
         }
 
-        /* Ambient glows */
-        .lph-glow-1 {
-            position: absolute;
-            width: 1000px; height: 1000px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(205,145,45,0.06) 0%, transparent 65%);
-            top: -300px; left: -300px;
-            pointer-events: none; z-index: 1;
-        }
-        .lph-glow-2 {
-            position: absolute;
-            width: 700px; height: 700px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(47,74,90,0.22) 0%, transparent 70%);
-            bottom: -100px; right: 15%;
-            pointer-events: none; z-index: 1;
-        }
+        /* Glow divs retired — blobs are in .lph-bg gradient */
+        .lph-glow-1, .lph-glow-2 { display: none; }
 
         /* Vertical structural line */
         .lph-vline {
@@ -437,25 +461,67 @@
         /* ============================================================
            RESPONSIVE
            ============================================================ */
+
+        /* Large desktop */
         @media (max-width: 1200px) {
             .lph-content { padding: 0 80px; }
             .lph-vline { left: 40px; }
         }
+
+        /* Tablet landscape / small laptops — CRITICAL cut-off fix */
         @media (max-width: 991px) {
-            .lph-content { padding: 0 40px; }
+            /* Let the section grow instead of clipping content */
+            .lph {
+                height: auto;
+                min-height: 100svh;
+                overflow: visible;
+            }
+            /* Push content below the navbar with top padding, flow naturally */
+            .lph-content {
+                padding: 100px 40px 44px;
+                align-items: flex-start;
+            }
+            .lph-inner { padding-top: 0; padding-bottom: 0; max-width: 100%; }
+            /* Tighten spacing so everything fits comfortably */
+            .lph-eyebrow   { margin-bottom: 14px; }
+            .lph-edition   { margin-bottom: 18px; }
+            .lph-headline  { margin-bottom: 16px; }
+            .lph-word      { font-size: clamp(2.8rem, 5.2vw, 4.6rem); }
+            .lph-theme     { margin-bottom: 20px; font-size: 0.82rem; }
+            .lph-meta      { margin-bottom: 24px; }
+            /* Hide desktop-only decorations */
             .lph-vline, .lph-ghost-num, .lph-scroll { display: none; }
-            .lph-inner { padding-top: 100px; padding-bottom: 40px; }
+            /* Stats stay in a row */
+            .lph-stats { flex-wrap: nowrap; }
+            .lph-stat  { padding: 16px 10px; }
         }
-        @media (max-width: 575px) {
-            .lph-content { padding: 0 24px; }
-            .lph-word { font-size: clamp(2.8rem, 14vw, 4.4rem); }
-            .lph-inner { padding-top: 90px; }
-            .lph-cta { flex-direction: column; align-items: flex-start; }
+
+        /* Tablet portrait */
+        @media (max-width: 768px) {
+            .lph { min-height: 100dvh; }
+            .lph-content { padding: 90px 28px 36px; }
+            .lph-word { font-size: clamp(2.6rem, 9vw, 3.8rem); }
+            .lph-theme { font-size: 0.8rem; }
+            .lph-chip  { padding: 7px 12px; font-size: 0.62rem; }
+            .lph-cta   { flex-direction: column; align-items: flex-start; gap: 12px; }
+            /* Stats wrap into 2×2 grid */
             .lph-stats { display: grid; grid-template-columns: 1fr 1fr; }
-            .lph-stat { border-bottom: 1px solid rgba(255,255,255,0.05); }
-            .lph-stat:nth-child(2n) { border-right: none; }
-            .lph-stat:nth-child(3), .lph-stat:nth-child(4) { border-bottom: none; }
+            .lph-stat  { border-bottom: 1px solid rgba(255,255,255,0.05) !important; }
+            .lph-stat:nth-child(2n) { border-right: none !important; }
+            .lph-stat:nth-child(3), .lph-stat:nth-child(4) { border-bottom: none !important; }
         }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .lph-content { padding: 80px 20px 28px; }
+            .lph-word { font-size: clamp(2.2rem, 12vw, 3rem); }
+            .lph-eyebrow-text { letter-spacing: 3px; }
+            .lph-meta  { gap: 7px; }
+            .lph-chip  { padding: 6px 10px; font-size: 0.6rem; }
+            .lph-stat-num { font-size: 1.3rem; }
+            .lph-stat  { padding: 14px 8px; }
+        }
+
     </style>
 
 </head>
@@ -520,10 +586,10 @@
 
         <!-- Hero — EVALUATE · IMPACT · TRANSFORM -->
         <section id="section-hero" class="lph">
-            <div class="lph-bg"></div>
+            <div class="lph-slide lph-slide-1"></div>
+            <div class="lph-slide lph-slide-2"></div>
+            <div class="lph-overlay"></div>
             <div class="lph-grain"></div>
-            <div class="lph-glow-1"></div>
-            <div class="lph-glow-2"></div>
             <div class="lph-vline"></div>
             <div class="lph-ghost-num">09</div>
 
@@ -630,6 +696,13 @@
                         <span class="opm-line-3">Republic of Uganda</span>
                     </div>
                 </a>
+                <!-- Divider -->
+                <div class="org-logo-divider"></div>
+                <!-- Partner Logos -->
+                <a href="sponsors.html" class="org-logo-item">
+                    <img src="images/feedback/The Republic of Uganda.png" alt="UEW 2026 Partners" class="org-logo-img">   
+                </a>
+
             </div>
         </section>
 
@@ -932,7 +1005,7 @@
                     <!-- Josephine Watera - President, UEA -->
                     <div class="col-lg-4">
                         <div class="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
-                            <img src="images/team/4.webp" class="w-100 hover-scale-1-1" alt="Josephine Watera">
+                            <img src="images/presenters/Josephine Watera Photo.jpg" class="w-100 hover-scale-1-1" alt="Josephine Watera">
                             <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
                             <div class="abs w-100 start-0 bottom-0 z-3">
                                 <div class="bg-blur p-4 m-4 rounded-1 text-light text-center relative z-2">
@@ -948,7 +1021,7 @@
                     <!-- Commissioner Timothy Lubanga - OPM -->
                     <div class="col-lg-4">
                         <div class="hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
-                            <img src="images/team/5.webp" class="w-100 hover-scale-1-1" alt="Commissioner Timothy Lubanga">
+                            <img src="images/presenters/Timothy Lubanga Photo.png" class="w-100 hover-scale-1-1" alt="Commissioner Timothy Lubanga">
                             <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
                             <div class="abs w-100 start-0 bottom-0 z-3">
                                 <div class="bg-blur p-4 m-4 rounded-1 text-light text-center relative z-2">
@@ -1754,8 +1827,8 @@
                                 <i class="fa fa-clock me-2"></i>
                                 Early Bird deadline: <strong>April 15, 2026</strong> &nbsp;|&nbsp; Late Registration closes: <strong>May 3, 2026</strong>
                             </div>
-                            <a class="btn-main fx-slide px-5 me-3" href="https://events.ugandaevaluationassociation.org/" target="_blank"><span>Register at Official Site</span></a>
-                            <a class="btn-line fx-slide px-4 mt-sm-3" href="#section-faq"><span>View FAQs</span></a>
+                                <a class="btn-main fx-slide px-5 me-3" href="https://events.ugandaevaluationassociation.org/" target="_blank"><span>Register at Official Site</span></a>
+                                <a class="btn-line fx-slide px-4 mt-sm-3" href="#section-faq"><span>View FAQs</span></a>
                         </div>
                     </div>
                 </div>
@@ -1763,7 +1836,7 @@
         </section>
 
         <section id="section-venue" class="bg-light text-dark pt-80 relative" aria-label="section">
-          <div class="container relative z-2">
+        <div class="container relative z-2">
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-6 text-center">
                     <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Event Location</div>
