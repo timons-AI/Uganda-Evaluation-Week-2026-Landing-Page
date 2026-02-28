@@ -2009,18 +2009,34 @@ header.header-scroll .menu-item:hover {
     position: relative;
     padding: 110px 0 100px;
     overflow: hidden;
+    background-color: #0d1117;
+    background-image: url('../../images/conference-images/UEW2024_Speakers%20and%20Volunteers.JPG');
+    background-size: cover;
+    background-position: center 35%;
 }
 
-.uew-quote-overlay {
+/* Dark overlay so text is always legible */
+.uew-quote-section::before {
+    content: '';
     position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(180deg,
-            rgba(7,9,12,0.55) 0%,
-            rgba(7,9,12,0.82) 50%,
-            rgba(7,9,12,0.55) 100%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(7,9,12,0.60) 0%,
+        rgba(7,9,12,0.85) 50%,
+        rgba(7,9,12,0.60) 100%
+    );
     pointer-events: none;
+}
+
+/* Lift content above the ::before overlay */
+.uew-quote-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 /* The big decorative opening quotation mark */
