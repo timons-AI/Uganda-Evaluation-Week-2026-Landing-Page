@@ -1680,3 +1680,566 @@ header.header-scroll .menu-item:hover {
     padding: 0 14px;
   }
 }
+
+/* ============================================================
+   ABOUT — Event Structure Grid
+   ============================================================ */
+
+.about-structure {
+    margin-top: 28px;
+    border-top: 1px solid rgba(47,74,90,0.12);
+    padding-top: 22px;
+}
+
+.about-struct-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #cd912d;
+    margin-bottom: 14px;
+}
+
+.about-struct-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.about-struct-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(47,74,90,0.05);
+    border: 1px solid rgba(47,74,90,0.1);
+    border-radius: 6px;
+    padding: 12px 14px;
+    transition: background 0.2s;
+}
+
+.about-struct-item:hover {
+    background: rgba(205,145,45,0.06);
+    border-color: rgba(205,145,45,0.2);
+}
+
+.about-struct-item i {
+    color: #cd912d;
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.about-struct-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.about-struct-item strong {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2b2b2b;
+    line-height: 1.3;
+}
+
+.about-struct-item span {
+    font-size: 0.65rem;
+    color: rgba(43,43,43,0.5);
+}
+
+@media (max-width: 575px) {
+    .about-struct-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   FLOATING REGISTER BUTTON
+   ============================================================ */
+
+.float-register-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 28px;
+    z-index: 9990;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.float-register-btn.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.float-register-btn a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #cd912d;
+    color: #fff !important;
+    padding: 13px 22px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(205,145,45,0.38);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.float-register-btn a:hover {
+    background: #b87d20;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(205,145,45,0.48);
+    color: #fff !important;
+}
+
+@media (max-width: 480px) {
+    .float-register-btn {
+        bottom: 20px;
+        right: 16px;
+    }
+    .float-register-btn a {
+        padding: 11px 18px;
+        font-size: 0.68rem;
+    }
+}
+
+/* ============================================================
+   FAQ — Group Header Labels
+   ============================================================ */
+
+.faq-group-header {
+    display: flex;
+    align-items: center;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #cd912d;
+    margin-top: 36px;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(205,145,45,0.2);
+}
+
+.faq-group-header:first-child {
+    margin-top: 0;
+}
+
+/* ============================================================
+   WHY ATTEND — Editorial Redesign
+   ============================================================ */
+
+.wa-section {
+    padding: 80px 0 90px;
+}
+
+.wa-section-divider {
+    height: 56px;
+}
+
+/* ---- Photo frame ---- */
+.wa-photo-frame {
+    position: relative;
+    border-radius: 8px;
+}
+
+.wa-photo-frame img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    object-position: center 18%;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Gold vertical accent strip — left */
+.wa-photo-frame::before {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 28px;
+    bottom: 28px;
+    width: 4px;
+    background: linear-gradient(180deg, transparent, #cd912d 20%, #cd912d 80%, transparent);
+    border-radius: 2px;
+    z-index: 2;
+}
+
+/* Alt frame: accent on the right */
+.wa-photo-frame-alt::before {
+    left: auto;
+    right: -14px;
+}
+
+/* Year badge */
+.wa-photo-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(205,145,45,0.92);
+    color: #fff;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 3px;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+}
+
+/* Delegate stat chip */
+.wa-photo-stat {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(7,9,12,0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(205,145,45,0.3);
+    color: rgba(255,255,255,0.9);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+/* ---- Reasons list ---- */
+.wa-reasons-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.wa-reason-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(47,74,90,0.1);
+    transition: background 0.2s;
+}
+
+.wa-reason-item:first-child { padding-top: 0; }
+.wa-reason-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+.wa-reason-num {
+    font-size: 0.52rem;
+    font-weight: 900;
+    color: #cd912d;
+    letter-spacing: 2px;
+    min-width: 26px;
+    padding-top: 12px;
+    flex-shrink: 0;
+    font-feature-settings: "tnum";
+}
+
+.wa-reason-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(205,145,45,0.08);
+    border: 1px solid rgba(205,145,45,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.wa-reason-icon i {
+    color: #cd912d;
+    font-size: 0.9rem;
+    transition: color 0.25s;
+}
+
+.wa-reason-item:hover .wa-reason-icon {
+    background: #cd912d;
+    border-color: #cd912d;
+    transform: scale(1.08);
+}
+
+.wa-reason-item:hover .wa-reason-icon i {
+    color: #fff;
+}
+
+.wa-reason-body h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2b2b2b;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.wa-reason-body p {
+    font-size: 0.85rem;
+    color: rgba(43,43,43,0.58);
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+    .wa-photo-frame::before { display: none; }
+    .wa-photo-frame img { height: 340px; }
+
+    /* On mobile, photos appear above their reason rows */
+    .col-lg-5.order-lg-2 { margin-bottom: 32px; }
+}
+
+@media (max-width: 575px) {
+    .wa-photo-frame img { height: 260px; }
+    .wa-reason-item { gap: 14px; }
+    .wa-reason-icon { width: 38px; height: 38px; }
+}
+
+/* ============================================================
+   QUOTE SECTION — Redesign
+   ============================================================ */
+
+.uew-quote-section {
+    position: relative;
+    padding: 110px 0 100px;
+    overflow: hidden;
+}
+
+.uew-quote-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg,
+            rgba(7,9,12,0.55) 0%,
+            rgba(7,9,12,0.82) 50%,
+            rgba(7,9,12,0.55) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* The big decorative opening quotation mark */
+.uew-quote-mark {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(5rem, 12vw, 9rem);
+    line-height: 0.6;
+    color: #cd912d;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.uew-quote-text {
+    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.93);
+    border: none;
+    padding: 0;
+    margin: 0 0 40px;
+    letter-spacing: 0.2px;
+}
+
+.uew-quote-attribution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.uew-quote-rule {
+    width: 48px;
+    height: 2px;
+    background: #cd912d;
+    border-radius: 1px;
+    margin-bottom: 4px;
+}
+
+.uew-quote-name {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.uew-quote-sub {
+    font-size: 0.62rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.42);
+}
+
+/* ============================================================
+   UEW IN PICTURES — Gallery Grid
+   ============================================================ */
+
+.uew-gallery-section {
+    padding: 80px 0;
+}
+
+/*
+  Desktop grid (5 photos):
+  [ tall: PM & Volunteers ] [ Key Speaker   ]
+  [                       ] [ UEA Leadership ]
+  [ Speakers & Volunteers — wide ] [ MC & Volunteers — wide ]
+*/
+.uew-gallery-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 10px;
+}
+
+/* Large left: spans 2 rows */
+.uew-gal-tall {
+    grid-row: span 2;
+}
+
+/* Bottom-row wide: each spans 1.5 cols visually via equal halves */
+.uew-gal-wide {
+    grid-column: span 1;
+}
+
+/* Override bottom two to sit on their own row spanning full width halved */
+.uew-gallery-grid .uew-gal-wide:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+.uew-gallery-grid .uew-gal-wide:nth-child(5) {
+    grid-column: 3 / 4;
+    grid-row: 2;
+}
+
+/* Individual photo card */
+.uew-gal-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    display: block;
+    cursor: pointer;
+    background: #1a1a1a;
+}
+
+.uew-gal-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform 0.55s cubic-bezier(.25,.46,.45,.94),
+                filter 0.55s ease;
+    display: block;
+}
+
+.uew-gal-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.7);
+}
+
+/* Overlay — slides up on hover */
+.uew-gal-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 22px;
+    background: linear-gradient(
+        to top,
+        rgba(7,9,12,0.72) 0%,
+        rgba(7,9,12,0.18) 40%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.uew-gal-item:hover .uew-gal-overlay {
+    opacity: 1;
+}
+
+.uew-gal-caption {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    transform: translateY(8px);
+    transition: transform 0.35s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.uew-gal-caption::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: #cd912d;
+    flex-shrink: 0;
+}
+
+.uew-gal-item:hover .uew-gal-caption {
+    transform: translateY(0);
+}
+
+/* Edition watermark on the tall item */
+.uew-gal-tall::after {
+    content: '2024';
+    position: absolute;
+    top: 16px;
+    left: 18px;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    background: rgba(205,145,45,0.85);
+    padding: 4px 10px;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+    .uew-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 240px 240px 240px;
+    }
+    .uew-gal-tall {
+        grid-row: span 2;
+        grid-column: 1;
+    }
+    .uew-gallery-grid .uew-gal-wide:nth-child(4) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .uew-gallery-grid .uew-gal-wide:nth-child(5) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+}
+
+@media (max-width: 640px) {
+    .uew-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 200px);
+    }
+    .uew-gal-tall {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+    .uew-gallery-grid a:nth-child(2) { grid-column: 1; grid-row: 2; }
+    .uew-gallery-grid a:nth-child(3) { grid-column: 2; grid-row: 2; }
+    .uew-gallery-grid .uew-gal-wide:nth-child(4) { grid-column: 1; grid-row: 3; }
+    .uew-gallery-grid .uew-gal-wide:nth-child(5) { grid-column: 2; grid-row: 3; }
+}

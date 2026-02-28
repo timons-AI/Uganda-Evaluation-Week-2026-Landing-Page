@@ -105,24 +105,35 @@
             will-change: transform, opacity;
         }
         .lph-slide-1 {
-            background-image: url('images/slider/3.webp');
+            background-image: url("images/conference-images/UEW2024_Prime Minister and Volunteers.JPG");
+            background-position: center 30%;
             animation:
-                lph-img-cycle 12s ease-in-out infinite,
-                lph-kb-1      14s ease-in-out infinite alternate;
+                lph-img-cycle 18s ease-in-out infinite,
+                lph-kb-1      20s ease-in-out infinite alternate;
         }
         .lph-slide-2 {
-            background-image: url('images/slider/4.webp');
+            background-image: url("images/conference-images/UEW2024_Key Speaker.jpg");
+            background-position: center 20%;
             animation:
-                lph-img-cycle 12s ease-in-out infinite,
-                lph-kb-2      14s ease-in-out infinite alternate;
+                lph-img-cycle 18s ease-in-out infinite,
+                lph-kb-2      20s ease-in-out infinite alternate;
             animation-delay: 6s, 6s;
         }
+        .lph-slide-3 {
+            background-image: url("images/conference-images/UEW2024_Speakers and Volunteers.JPG");
+            background-position: center 25%;
+            animation:
+                lph-img-cycle 18s ease-in-out infinite,
+                lph-kb-3      20s ease-in-out infinite alternate;
+            animation-delay: 12s, 12s;
+        }
+        /* 3-slide cycle: each photo on screen for 6 s of the 18 s loop */
         @keyframes lph-img-cycle {
-            0%   { opacity: 0; }
-            8%   { opacity: 1; }
-            50%  { opacity: 1; }
-            58%  { opacity: 0; }
-            100% { opacity: 0; }
+            0%    { opacity: 0; }
+            6%    { opacity: 1; }
+            27%   { opacity: 1; }
+            33%   { opacity: 0; }
+            100%  { opacity: 0; }
         }
         /* Ken Burns: slow zoom + subtle drift */
         @keyframes lph-kb-1 {
@@ -132,6 +143,10 @@
         @keyframes lph-kb-2 {
             from { transform: scale(1.07) translate(1.5%,  0%); }
             to   { transform: scale(1.00) translate(0%,   -1%); }
+        }
+        @keyframes lph-kb-3 {
+            from { transform: scale(1.04) translate(0%,   1%); }
+            to   { transform: scale(1.00) translate(-1%,  0%); }
         }
 
         /* Directional dark overlay — heavier on left where text lives */
@@ -244,7 +259,7 @@
             50%{ box-shadow:0 0 28px rgba(205,145,45,0.12); }
         }
         .lph-eyebrow-text {
-            font-size: 0.58rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 5px;
             color: rgba(230,231,232,0.35);
@@ -265,7 +280,7 @@
         .lph-edition-num {
             background: #cd912d;
             color: #fff;
-            font-size: 0.52rem;
+            font-size: 0.65rem;
             font-weight: 800;
             letter-spacing: 2px;
             padding: 3px 9px;
@@ -273,7 +288,7 @@
             text-transform: uppercase;
         }
         .lph-edition-text {
-            font-size: 0.52rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: rgba(230,231,232,0.28);
@@ -420,7 +435,7 @@
             margin-bottom: 5px;
         }
         .lph-stat-label {
-            font-size: 0.47rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: rgba(230,231,232,0.26);
@@ -588,6 +603,7 @@
         <section id="section-hero" class="lph">
             <div class="lph-slide lph-slide-1"></div>
             <div class="lph-slide lph-slide-2"></div>
+            <div class="lph-slide lph-slide-3"></div>
             <div class="lph-overlay"></div>
             <div class="lph-grain"></div>
             <div class="lph-vline"></div>
@@ -671,19 +687,7 @@
         <section id="section-org-logos" class="org-logo-bar">
             <div class="org-logo-eyebrow">Organised by</div>
             <div class="org-logo-row">
-                <!-- 25 Years UEW Logo -->
-                <a href="#section-about" class="org-logo-item">
-                    <img src="images/feedback/UEW 9th Without BG(1).png" alt="9th Uganda Evaluation Week — 25 Years of UEA" class="org-logo-img">
-                </a>
-                <!-- Divider -->
-                <div class="org-logo-divider"></div>
-                <!-- UEA Logo -->
-                <a href="https://www.ugandaevaluationassociation.org/" target="_blank" class="org-logo-item">
-                    <img src="images/feedback/UEA Logo.png" alt="Uganda Evaluation Association" class="org-logo-img">
-                </a>
-                <!-- Divider -->
-                <div class="org-logo-divider"></div>
-                <!-- OPM -->
+                <!-- OPM — left as requested -->
                 <a href="#section-about" class="org-logo-item org-logo-opm">
                     <div class="org-logo-opm-crest">
                         <div class="opm-shield">
@@ -698,9 +702,21 @@
                 </a>
                 <!-- Divider -->
                 <div class="org-logo-divider"></div>
+                <!-- UEA Logo -->
+                <a href="https://www.ugandaevaluationassociation.org/" target="_blank" class="org-logo-item">
+                    <img src="images/feedback/UEA Logo.png" alt="Uganda Evaluation Association" class="org-logo-img">
+                </a>
+                <!-- Divider -->
+                <div class="org-logo-divider"></div>
+                <!-- 25 Years UEW Logo -->
+                <a href="#section-about" class="org-logo-item">
+                    <img src="images/feedback/UEW 9th Without BG(1).png" alt="9th Uganda Evaluation Week — 25 Years of UEA" class="org-logo-img">
+                </a>
+                <!-- Divider -->
+                <div class="org-logo-divider"></div>
                 <!-- Partner Logos -->
                 <a href="sponsors.html" class="org-logo-item">
-                    <img src="images/feedback/The Republic of Uganda.png" alt="UEW 2026 Partners" class="org-logo-img">   
+                    <img src="images/feedback/The Republic of Uganda.png" alt="UEW 2026 Partners" class="org-logo-img">
                 </a>
 
             </div>
@@ -777,6 +793,42 @@
                                       <span>Align Uganda's evaluation practices with global standards &amp; SDGs under NDP IV</span>
                                   </div>
                               </div>
+
+                              <!-- Event Structure -->
+                              <div class="about-structure wow fadeInUp" data-wow-delay=".85s">
+                                  <div class="about-struct-label">How it's structured</div>
+                                  <div class="about-struct-grid">
+                                      <div class="about-struct-item">
+                                          <i class="fa fa-chalkboard-teacher"></i>
+                                          <div>
+                                              <strong>Pre-Conference Workshops</strong>
+                                              <span>May 4–5 (Morning)</span>
+                                          </div>
+                                      </div>
+                                      <div class="about-struct-item">
+                                          <i class="fa fa-microphone-lines"></i>
+                                          <div>
+                                              <strong>Main Conference</strong>
+                                              <span>May 5 (Afternoon) – May 8</span>
+                                          </div>
+                                      </div>
+                                      <div class="about-struct-item">
+                                          <i class="fa fa-store"></i>
+                                          <div>
+                                              <strong>Innovation Hub &amp; Exhibitions</strong>
+                                              <span>Throughout the conference</span>
+                                          </div>
+                                      </div>
+                                      <div class="about-struct-item">
+                                          <i class="fa fa-route"></i>
+                                          <div>
+                                              <strong>Excursion</strong>
+                                              <span>Kampala &amp; Jinja Tour</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
                           </div>
                     </div>
 
@@ -807,7 +859,7 @@
                                     <div class="about-theme-sub">NDP IV &mdash; Uganda 2026</div>
                                 </div>
                             </div>
-                            <img src="images/misc/c1.webp" class="about-bg-img" alt="">
+                            <img src="images/conference-images/UEW2024_UEA Leadership.JPG" class="about-bg-img" alt="UEA Leadership at Uganda Evaluation Week 2024" style="object-position: center 15%;">
                         </div>
                     </div>
 
@@ -851,139 +903,126 @@
             </div>
         </section>
 
-        <section id="section-why-attend" class="bg-light text-dark">
+        <section id="section-why-attend" class="wa-section bg-light text-dark">
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-6 offset-lg-3 text-center">
-                        <div class="subtitle wow fadeInUp mb-3">Why Attend</div>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">What You’ll Gain</h2>
-                        <p class="lead mb-0 wow fadeInUp">Connect with leading evaluation practitioners, policy makers, and development professionals shaping evidence-based decision-making across Africa and beyond.</p>
+
+                <!-- Heading -->
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-7">
+                        <div class="subtitle wow fadeInUp">Why Attend</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">What You’ll Gain at UEW 2026</h2>
+                        <p class="lead mb-0 wow fadeInUp" data-wow-delay=".3s">Connect with leading evaluation practitioners, policy makers, and development professionals shaping evidence-based decision-making across Africa and beyond.</p>
                     </div>
                 </div>
 
-                <div class="spacer-single"></div>
+                <div class="wa-section-divider"></div>
 
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hover">
-                            <div class="bg-white relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
-                                <div class="abs p-40 bottom-0 z-2">
-                                    <div class="relative wow fadeInUp">
-                                        <h4>Evaluation Excellence</h4>
-                                        <p class="mb-0">Access cutting-edge evaluation methodologies, frameworks, and innovations from leading M&amp;E practitioners <strong>across Uganda, Africa and beyond.</strong></p>
-                                    </div>
-                                </div>
-                                <div class="gradient-edge-bottom h-100"></div>
-                                <img src="images/misc/s3.webp" class="w-100 hover-scale-1-1" alt="">
-                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
-                            </div>
+                <!-- Row 1: Photo left | Reasons 01–03 right -->
+                <div class="row g-5 align-items-center mb-5 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="col-lg-5">
+                        <div class="wa-photo-frame">
+                            <img src="images/conference-images/UEW2024_Key Speaker.jpg"
+                                 alt="Keynote speaker at Uganda Evaluation Week 2024" loading="lazy">
+                            <div class="wa-photo-badge">UEW 2024</div>
                         </div>
                     </div>
+                    <div class="col-lg-7">
+                        <div class="wa-reasons-list">
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hover">
-                            <div class="bg-white relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
-                                <div class="abs p-40 bottom-0 z-2">
-                                    <div class="relative wow fadeInUp">
-                                        <h4>Practical Capacity Building</h4>
-                                        <p class="mb-0">Participate in hands-on workshops covering data collection tools, analysis methods, and evidence use in development programming.</p>
-                                    </div>
+                            <div class="wa-reason-item">
+                                <span class="wa-reason-num">01</span>
+                                <div class="wa-reason-icon"><i class="fa fa-microchip"></i></div>
+                                <div class="wa-reason-body">
+                                    <h4>Evaluation Excellence</h4>
+                                    <p>Access cutting-edge evaluation methodologies, frameworks, and innovations from leading M&amp;E practitioners across Uganda, Africa, and beyond.</p>
                                 </div>
-                                <div class="gradient-edge-bottom h-100"></div>
-                                <img src="images/misc/s4.webp" class="w-100 hover-scale-1-1" alt="">
-                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
                             </div>
+
+                            <div class="wa-reason-item">
+                                <span class="wa-reason-num">02</span>
+                                <div class="wa-reason-icon"><i class="fa fa-chalkboard-teacher"></i></div>
+                                <div class="wa-reason-body">
+                                    <h4>Practical Capacity Building</h4>
+                                    <p>Participate in hands-on workshops covering data collection tools, analysis methods, and evidence use in development programming.</p>
+                                </div>
+                            </div>
+
+                            <div class="wa-reason-item">
+                                <span class="wa-reason-num">03</span>
+                                <div class="wa-reason-icon"><i class="fa fa-users"></i></div>
+                                <div class="wa-reason-body">
+                                    <h4>Pan-African Networking</h4>
+                                    <p>Build lasting connections with academia, development partners, evaluators, and practitioners from across Uganda, Africa, and the global development community.</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hover">
-                            <div class="bg-white relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
-                                <div class="abs p-40 bottom-0 z-2">
-                                    <div class="relative wow fadeInUp">
-                                        <h4>Pan-African Networking</h4>
-                                        <p class="mb-0">Build lasting professional <strong>connections with academia, development partners,</strong> evaluators, researchers, and practitioners from across Uganda, Africa, and the global development community.</p>
-                                    </div>
-                                </div>
-                                <div class="gradient-edge-bottom h-100"></div>
-                                <img src="images/misc/s5.webp" class="w-100 hover-scale-1-1" alt="">
-                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hover">
-                            <div class="bg-white relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
-                                <div class="abs p-40 bottom-0 z-2">
-                                    <div class="relative wow fadeInUp">
-                                        <h4>Policy Influence</h4>
-                                        <p class="mb-0">Engage directly with government officials and policy makers to champion evidence-based planning and accountable use of <strong>development and investment resources.</strong></p>
-                                    </div>
-                                </div>
-                                <div class="gradient-edge-bottom h-100"></div>
-                                <img src="images/misc/s6.webp" class="w-100 hover-scale-1-1" alt="">
-                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hover">
-                            <div class="bg-white relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
-                                <div class="abs p-40 bottom-0 z-2">
-                                    <div class="relative wow fadeInUp">
-                                        <h4>Career Development for YEEs</h4>
-                                        <p class="mb-0">Advance your evaluation career <strong>through mentorship program,</strong> professional development sessions, certification workshops, and recognition of evaluation excellence.</p>
-                                    </div>
-                                </div>
-                                <div class="gradient-edge-bottom h-100"></div>
-                                <img src="images/misc/s7.webp" class="w-100 hover-scale-1-1" alt="">
-                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hover">
-                            <div class="bg-white relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
-                                <div class="abs p-40 bottom-0 z-2">
-                                    <div class="relative wow fadeInUp">
-                                        <h4>Knowledge Exchange</h4>
-                                        <p class="mb-0">Share lessons learned, case studies, and evaluation findings from real development programmes and contribute to the growing body of African evaluation evidence.</p>
-                                    </div>
-                                </div>
-                                <div class="gradient-edge-bottom h-100"></div>
-                                <img src="images/misc/s8.webp" class="w-100 hover-scale-1-1" alt="">
-                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Row 2: Reasons 04–06 left | Photo right -->
+                <div class="row g-5 align-items-center wow fadeInUp" data-wow-delay=".3s">
+                    <div class="col-lg-7 order-lg-1 order-2">
+                        <div class="wa-reasons-list">
+
+                            <div class="wa-reason-item">
+                                <span class="wa-reason-num">04</span>
+                                <div class="wa-reason-icon"><i class="fa fa-landmark"></i></div>
+                                <div class="wa-reason-body">
+                                    <h4>Policy Influence</h4>
+                                    <p>Engage directly with government officials and policy makers to champion evidence-based planning and accountable use of development and investment resources.</p>
+                                </div>
+                            </div>
+
+                            <div class="wa-reason-item">
+                                <span class="wa-reason-num">05</span>
+                                <div class="wa-reason-icon"><i class="fa fa-graduation-cap"></i></div>
+                                <div class="wa-reason-body">
+                                    <h4>Career Development for YEEs</h4>
+                                    <p>Advance your evaluation career through mentorship, professional development sessions, certification workshops, and recognition of evaluation excellence.</p>
+                                </div>
+                            </div>
+
+                            <div class="wa-reason-item">
+                                <span class="wa-reason-num">06</span>
+                                <div class="wa-reason-icon"><i class="fa fa-book-open"></i></div>
+                                <div class="wa-reason-body">
+                                    <h4>Knowledge Exchange</h4>
+                                    <p>Share lessons, case studies, and evaluation findings from real development programmes and contribute to the growing body of African evaluation evidence.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-5 order-lg-2 order-1">
+                        <div class="wa-photo-frame wa-photo-frame-alt">
+                            <img src="images/conference-images/UEW2024_MC and Volunteers.JPG"
+                                 alt="MC and volunteers at Uganda Evaluation Week 2024" loading="lazy">
+                            <div class="wa-photo-stat">
+                                <i class="fa fa-globe me-2"></i>300+ Delegates &bull; 15+ Countries
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section class="bg-deep-slate text-light pt-80 relative jarallax" aria-label="section">
-            <img src="images/background/2.webp" class="jarallax-img" alt="">
-            <div class="gradient-edge-top"></div>
-            <div class="gradient-edge-bottom"></div>
-            <div class="sw-overlay op-8"></div>
-            <div class="container relative z-4">
-                <div class="row align-items-center g-5">
-                    <div class="col-md-4">
-                        <div class="relative w-100 d-inline-block pe-5">
-                            <div class="abs bg-color w-80px h-80px rounded-1 text-center end-0 z-2 wow scaleIn">
-                                <i class="icofont-quote-left text-white fs-40 d-block pt-3"></i>
-                            </div>
-                            <img src="images/misc/s9.webp" class="w-100 rounded-1 wow scale-in-mask" alt="">
+        <section class=”uew-quote-section text-light relative jarallax” aria-label=”UEA Quote”>
+            <img src=”images/conference-images/UEW2024_Speakers and Volunteers.JPG” class=”jarallax-img” style=”object-position: center 35%;” alt=””>
+            <div class=”uew-quote-overlay”></div>
+            <div class=”container relative z-4”>
+                <div class=”row justify-content-center”>
+                    <div class=”col-lg-9 text-center”>
+                        <div class=”uew-quote-mark wow fadeInUp”>&ldquo;</div>
+                        <blockquote class=”uew-quote-text wow fadeInUp” data-wow-delay=”.15s”>
+                            Good evaluation is not about proving — it is about improving. It empowers communities, informs decision-makers, and ensures that every development shilling is invested where it matters most for the people of Uganda and Africa.
+                        </blockquote>
+                        <div class=”uew-quote-attribution wow fadeInUp” data-wow-delay=”.3s”>
+                            <div class=”uew-quote-rule”></div>
+                            <div class=”uew-quote-name”>Uganda Evaluation Association</div>
+                            <div class=”uew-quote-sub”>25 Years of Evidence-Based Development &bull; Est. 2001</div>
                         </div>
-                    </div>
-
-                    <div class="col-md-8">
-                        <h3 class=”fs-32 mb-4 wow fadeInUp”>”Good evaluation is not about proving — it is about improving. It empowers communities, informs decision-makers, and ensures that every development shilling is invested where it matters most for the people of Uganda and Africa.”</h3>
-
-                        <span>Uganda Evaluation Association</span>
                     </div>
                 </div>
             </div>
@@ -994,9 +1033,9 @@
                 <div class="row g-4 justify-content-center">
                     <div class="col-lg-6 relative z-3">
                           <div class="text-center">
-                              <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Speakers</div>
-                              <h2 class="wow fadeInUp" data-wow-delay=".2s">Meet the Thought Leaders</h2>
-                              <p class="lead wow fadeInUp">Leading voices in monitoring, evaluation, accountability, and learning from across Uganda, Africa, and the global development community.</p>
+                              <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Featured Speakers</div>
+                              <h2 class="wow fadeInUp" data-wow-delay=".2s">Confirmed Speakers</h2>
+                              <p class="lead wow fadeInUp">Leading voices in monitoring, evaluation, accountability, and learning from across Uganda, Africa, and the global development community. Additional speakers will be announced as confirmations come in.</p>
                           </div>
                     </div>
                 </div>
@@ -1050,6 +1089,70 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- UEW 2024 in Pictures -->
+        <section id="section-gallery" class="uew-gallery-section bg-light text-dark">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-7 text-center">
+                        <div class="subtitle wow fadeInUp">Previous Edition</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">UEW 2024 in Pictures</h2>
+                        <p class="lead wow fadeInUp" data-wow-delay=".3s">A glimpse of what brings Uganda's evaluation community together every year — in person, across sectors, at the forefront of evidence-based development.</p>
+                    </div>
+                </div>
+
+                <div class="uew-gallery-grid wow fadeInUp" data-wow-delay=".2s">
+
+                    <!-- Top row: large left + two stacked right -->
+                    <a href="images/conference-images/UEW2024_Prime Minister and Volunteers.JPG"
+                       class="uew-gal-item uew-gal-tall" target="_blank" aria-label="Prime Minister with UEW volunteers">
+                        <img src="images/conference-images/UEW2024_Prime Minister and Volunteers.JPG"
+                             alt="Prime Minister with UEW 2024 Volunteers" loading="lazy">
+                        <div class="uew-gal-overlay">
+                            <span class="uew-gal-caption">Prime Minister &amp; UEW Volunteers</span>
+                        </div>
+                    </a>
+
+                    <a href="images/conference-images/UEW2024_Key Speaker.jpg"
+                       class="uew-gal-item" target="_blank" aria-label="UEW 2024 key speaker">
+                        <img src="images/conference-images/UEW2024_Key Speaker.jpg"
+                             alt="Key Speaker at UEW 2024" loading="lazy">
+                        <div class="uew-gal-overlay">
+                            <span class="uew-gal-caption">Keynote Address</span>
+                        </div>
+                    </a>
+
+                    <a href="images/conference-images/UEW2024_UEA Leadership.JPG"
+                       class="uew-gal-item" target="_blank" aria-label="UEA Leadership team">
+                        <img src="images/conference-images/UEW2024_UEA Leadership.JPG"
+                             alt="UEA Leadership at UEW 2024" loading="lazy">
+                        <div class="uew-gal-overlay">
+                            <span class="uew-gal-caption">UEA Leadership Team</span>
+                        </div>
+                    </a>
+
+                    <!-- Bottom row: two wide -->
+                    <a href="images/conference-images/UEW2024_Speakers and Volunteers.JPG"
+                       class="uew-gal-item uew-gal-wide" target="_blank" aria-label="Speakers and volunteers group photo">
+                        <img src="images/conference-images/UEW2024_Speakers and Volunteers.JPG"
+                             alt="Speakers and Volunteers at UEW 2024" loading="lazy">
+                        <div class="uew-gal-overlay">
+                            <span class="uew-gal-caption">Speakers &amp; Volunteers</span>
+                        </div>
+                    </a>
+
+                    <a href="images/conference-images/UEW2024_MC and Volunteers.JPG"
+                       class="uew-gal-item uew-gal-wide" target="_blank" aria-label="MC and volunteers">
+                        <img src="images/conference-images/UEW2024_MC and Volunteers.JPG"
+                             alt="MC and Volunteers at UEW 2024" loading="lazy">
+                        <div class="uew-gal-overlay">
+                            <span class="uew-gal-caption">MC &amp; Volunteers</span>
+                        </div>
+                    </a>
 
                 </div>
             </div>
@@ -1920,60 +2023,234 @@
           </div>
         </section>
 
-        <section  id="section-faq" class="bg-light text-dark">
+        <section id="section-faq" class="bg-light text-dark">
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-5">
+                <div class="row g-4 justify-content-center mb-5">
+                    <div class="col-lg-7 text-center">
                         <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Got Questions?</div>
                         <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Questions</h2>
+                        <p class="lead wow fadeInUp" data-wow-delay=".3s">Everything you need to know about attending, presenting, and participating in UEW 2026. Can't find your answer? Email us at <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a></p>
                     </div>
+                </div>
 
-                    <div class="col-lg-7">
-                        <div class="accordion s2 wow fadeInUp">
+                <div class="row g-4 justify-content-center wow fadeInUp" data-wow-delay=".2s">
+                    <div class="col-lg-10">
+                        <div class="accordion s2">
                             <div class="accordion-section">
-                                <div class="accordion-section-title" data-tab="#accordion-a1">
-                                    What is Uganda Evaluation Week?
+
+                                <!-- GROUP I: Registration & Tickets -->
+                                <div class="faq-group-header"><i class="fa fa-ticket me-2"></i>Registration &amp; Tickets</div>
+
+                                <div class="accordion-section-title" data-tab="#faq-r1">
+                                    What are the UEW Conference fees and how can I register?
                                 </div>
-                                <div class="accordion-section-content" id="accordion-a1">
-                                    Uganda Evaluation Week (UEW) is the flagship annual conference of the Uganda Evaluation Association (UEA). It brings together evaluation professionals, policy makers, government officials, development practitioners, academics, and students to advance the culture and practice of monitoring, evaluation, accountability, and learning (MEAL) in Uganda and across Africa.
+                                <div class="accordion-section-content" id="faq-r1">
+                                    The UEW Conference aims to attract a diverse audience and therefore offers a variety of options and discounted rates to encourage participation. <a href="#section-tickets">View the UEW Conference registration fees</a> on this page, then register at the <a href="https://events.ugandaevaluationassociation.org/" target="_blank">official registration portal</a>.
                                 </div>
 
-                                <div class="accordion-section-title" data-tab="#accordion-a2">
-                                    Who should attend Uganda Evaluation Week?
+                                <div class="accordion-section-title" data-tab="#faq-r2">
+                                    What do the Pre-Conference Workshop fees cover?
                                 </div>
-                                <div class="accordion-section-content" id="accordion-a2">
-                                    UEW 2026 is open to anyone working in or interested in monitoring and evaluation, development planning, policy, research, or public sector governance. This includes M&amp;E officers, programme managers, government planners, donor representatives, academics, consultants, and students in related fields.
-                                </div>
-
-                                <div class="accordion-section-title" data-tab="#accordion-a3">
-                                    How can I register for UEW 2026?
-                                </div>
-                                <div class="accordion-section-content" id="accordion-a3">
-                                    You can register online through the UEA website or by contacting the UEA Secretariat directly at info@uea.or.ug. Early registration is encouraged as places are limited. Group and institutional packages are also available for organisations wishing to send multiple delegates.
+                                <div class="accordion-section-content" id="faq-r2">
+                                    The Pre-Conference Workshop fees cover one-and-a-half-day participation in the various practical workshops scheduled for those days. Workshop spaces are capped at 30 participants. The fee does <strong>not</strong> cover participation in the following 3-day main Conference.
                                 </div>
 
-                                <div class="accordion-section-title" data-tab="#accordion-a4">
-                                    Can I submit a paper or present at UEW 2026?
+                                <div class="accordion-section-title" data-tab="#faq-r3">
+                                    Are there any special UEW Conference offers and discounts?
                                 </div>
-                                <div class="accordion-section-content" id="accordion-a4">
-                                    Yes! UEW welcomes abstract submissions for paper presentations, panel discussions, and poster displays. The call for abstracts is open to practitioners, researchers, and students. Accepted presenters receive a discounted registration rate. Visit the UEA website or email info@uea.or.ug for submission guidelines.
-                                </div>
-
-                                <div class="accordion-section-title" data-tab="#accordion-a5">
-                                    Is accommodation available at the venue?
-                                </div>
-                                <div class="accordion-section-content" id="accordion-a5">
-                                    Silver Springs Hotel offers on-site accommodation at preferential rates for UEW 2026 delegates. We recommend booking early to secure availability. The UEA Secretariat can assist international delegates with accommodation coordination and airport transfers.
+                                <div class="accordion-section-content" id="faq-r3">
+                                    Conference speakers and presenters will receive a <strong>free pass only for the day of their presentation</strong> with their confirmation/invitation. Volunteers receive a daily pass only for the day they provide onsite service.<br><br>
+                                    There are two discounted registration windows: <strong>Early Bird</strong> — register online before <strong>April 15</strong>, and <strong>Late Rate</strong> — register before <strong>May 4, 2026</strong>.
                                 </div>
 
-                                <div class="accordion-section-title" data-tab="#accordion-a6">
-                                    Will sessions be available online for those who cannot attend in person?
+                                <div class="accordion-section-title" data-tab="#faq-r4">
+                                    Are group bookings discounted? If yes, how can I register a group?
                                 </div>
-                                <div class="accordion-section-content" id="accordion-a6">
-                                    Yes. UEW 2026 offers a Virtual Delegate option providing access to live-streamed plenary sessions, keynote addresses, and selected workshops. Virtual delegates also receive on-demand recordings after the event. Register as a Virtual Delegate to join from anywhere in the world.
+                                <div class="accordion-section-content" id="faq-r4">
+                                    For groups of <strong>more than 8 participants</strong> the rate is discounted by <strong>15%</strong>. Please email <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a> for group reservations.
                                 </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-r5">
+                                    How can I become a partner, sponsor, or exhibitor at UEW 2026?
+                                </div>
+                                <div class="accordion-section-content" id="faq-r5">
+                                    We appreciate your interest in supporting the Conference. Please visit the <a href="sponsors.html">Sponsors &amp; Partners page</a> or contact us at <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a> for sponsorship packages and exhibition opportunities.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-r6">
+                                    What are the cancellation and refund policies?
+                                </div>
+                                <div class="accordion-section-content" id="faq-r6">
+                                    You can receive a <strong>full refund minus any transaction fees</strong> if you request a cancellation before <strong>midnight, May 1st, 2026</strong>. Requests after this date will not be refunded.<br><br>
+                                    If you cannot attend, your registration can be <strong>transferred to a substitute participant</strong> from your organisation. Forward your confirmation email with the substitute's full name, job title, and email address to <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a> or call <a href="tel:+256752456789">+256 752 456 789</a> / <a href="tel:+256776123523">+256 776 123 523</a>.<br><br>
+                                    Pre-Conference Workshop registrations <strong>cannot be split</strong> between participants across the two days. To correct or modify a registration, contact the Conference Team as soon as possible — your place is unconfirmed until full payment is received.
+                                </div>
+
+                                <!-- GROUP II: Presenters -->
+                                <div class="faq-group-header"><i class="fa fa-microphone-lines me-2"></i>Presenters</div>
+
+                                <div class="accordion-section-title" data-tab="#faq-p1">
+                                    Do all presentations need to be in-person at the Conference in Kampala?
+                                </div>
+                                <div class="accordion-section-content" id="faq-p1">
+                                    Yes. The workshops and main Conference will take place <strong>in-person only</strong> at Silver Springs Hotel, Kampala.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-p2">
+                                    What happens if I can no longer speak at the Conference after my application is accepted?
+                                </div>
+                                <div class="accordion-section-content" id="faq-p2">
+                                    Please inform our team as soon as possible so we can work with you on an alternative. Email <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a> or call <a href="tel:+256752456789">+256 752 456 789</a> / <a href="tel:+256776123523">+256 776 123 523</a>.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-p3">
+                                    Do you cover travel costs and fees for presenters?
+                                </div>
+                                <div class="accordion-section-content" id="faq-p3">
+                                    No. The UEW Conference does not cover travel costs or registration fees for presenters. However, presenters receive a <strong>free pass for the day of their presentation</strong> with their confirmation/invitation.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-p4">
+                                    Do speakers and presenters need to pay to attend other Conference days?
+                                </div>
+                                <div class="accordion-section-content" id="faq-p4">
+                                    Yes. Presenters must register for the Conference. They receive a <strong>free pass only for the day of their presentation</strong>. If they wish to attend other days of the main Conference, a <strong>daily fee of $50 per person</strong> (foreign nationals) or <strong>$25 per person</strong> (Ugandan nationals) applies.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-p5">
+                                    What A/V equipment will be available for presenters?
+                                </div>
+                                <div class="accordion-section-content" id="faq-p5">
+                                    All conference rooms will be equipped with <strong>display screens, projectors, and internet connection</strong>. Public address equipment will be available in plenary rooms only. Presenters are expected to use their own laptops and are responsible for all peripheral equipment including adaptors, converters, and cable connectors.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-p6">
+                                    What format and when should I submit my presentation?
+                                </div>
+                                <div class="accordion-section-content" id="faq-p6">
+                                    Please submit your session materials (PPT slides, etc.) <strong>at least 3 days prior</strong> to your scheduled session to <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a>. Please use an accessible presentation format.
+                                </div>
+
+                                <!-- GROUP III: Venue & Accommodation -->
+                                <div class="faq-group-header"><i class="fa fa-building me-2"></i>Venue &amp; Accommodation</div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v1">
+                                    Where and when are the Conference, Pre-Conference workshops, and side events taking place?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v1">
+                                    All UEW Conference sessions take place at <strong>Silver Springs Hotel, Bugolobi, Kampala</strong>. Pre-Conference Workshops run May 4–5 (morning), the Main Conference runs May 5 (afternoon) through May 8, 2026.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v2">
+                                    Is this a hybrid event? Do you offer virtual participation?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v2">
+                                    No. UEW 2026 is an <strong>in-person event only</strong>. Virtual participation or remote speakers are not offered.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v3">
+                                    Will the Conference be broadcast live on social media or another platform?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v3">
+                                    No. The Conference will not be broadcast live.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v4">
+                                    What language does the UEW Conference take place in?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v4">
+                                    The Conference takes place in <strong>English</strong>. On-site translation services will not be provided. Participants are welcome to bring a personal translator or use a translation application. To register a translator as a complimentary guest, email <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a>.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v5">
+                                    Will there be photography and videography during the Conference?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v5">
+                                    Yes. UEW Conference captures photographs, video, and audio for use in newsletters and promotional materials (print, electronic, and digital), including the UEW website. Participating in these events grants the UEW Conference the right to use your name and likeness for such purposes during and after the event.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v6">
+                                    Is the Conference accessible to people with disabilities?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v6">
+                                    We are committed to making UEW 2026 accessible to the widest range of people possible. If you have special aid requirements, please indicate this when registering and follow up by email at <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a>.<br><br>
+                                    If you require an aide to help navigate the venue, they will be registered as a complimentary guest. All personal information shared will be treated confidentially and in accordance with the laws of Uganda.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v7">
+                                    Is there on-site parking at the venue?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v7">
+                                    Yes. You will be directed at the gate by our volunteers.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v8">
+                                    Will free Wi-Fi be available on-site?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v8">
+                                    Yes, free Wi-Fi will be available. However, we strongly recommend you also have your own mobile data service, as bandwidth may be reduced due to the large number of people connected simultaneously.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v9">
+                                    Is funding available for travel, accommodation, or registration?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v9">
+                                    No. Funding is not available to cover travel, accommodation, or registration costs.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-v10">
+                                    Will local transportation be provided between the hotel and Conference venue?
+                                </div>
+                                <div class="accordion-section-content" id="faq-v10">
+                                    No. Each participant is responsible for their own transportation to and from the event session locations.
+                                </div>
+
+                                <!-- GROUP IV: General Information & Logistics -->
+                                <div class="faq-group-header"><i class="fa fa-circle-info me-2"></i>General Information &amp; Logistics</div>
+
+                                <div class="accordion-section-title" data-tab="#faq-g1">
+                                    Where can I find travel and logistics information to plan my trip?
+                                </div>
+                                <div class="accordion-section-content" id="faq-g1">
+                                    Our team has compiled travel and logistics information for attendees. Please contact the Conference Team at <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a> for a detailed travel guide.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-g2">
+                                    How can I transfer from the airport to the hotel?
+                                </div>
+                                <div class="accordion-section-content" id="faq-g2">
+                                    Entebbe International Airport is approximately <strong>one hour's drive</strong> from Central Kampala. Regular airport taxis and Uber are available at the airport. A one-way trip costs approximately <strong>$30–$35</strong>.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-g3">
+                                    Are there alternative hotel options near the Conference venue?
+                                </div>
+                                <div class="accordion-section-content" id="faq-g3">
+                                    Yes, there are several accommodation options near Silver Springs Hotel in Bugolobi, Kampala. Contact the Conference Team at <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a> for a compiled reference list.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-g4">
+                                    Where can I dine out in Kampala?
+                                </div>
+                                <div class="accordion-section-content" id="faq-g4">
+                                    Ask your hotel concierge for reliable dining options around your hotel. Silver Springs Hotel also has its own restaurant on-site.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#faq-g5">
+                                    What are the UEW Conference etiquette protocols?
+                                </div>
+                                <div class="accordion-section-content" id="faq-g5">
+                                    <ul style="padding-left:1.2rem; margin-bottom:0.5rem;">
+                                        <li>Always wear your name badge provided at the event, including before and after the scheduled programme.</li>
+                                        <li>We do not tolerate unprofessional behaviour or harassment in any form. Participants violating these rules may be sanctioned or expelled from all sessions without a refund. Report concerns to <a href="mailto:conference@ugandaevaluationassociation.org">conference@ugandaevaluationassociation.org</a>.</li>
+                                        <li>There is no official dress code. Business casual attire is appropriate. Bring comfortable shoes and a light sweater for air-conditioned rooms.</li>
+                                        <li><strong>Strictly prohibited:</strong> possession of knives, firearms, drones, and other restricted items, irrespective of registration under Ugandan law.</li>
+                                        <li>If you have lost something or found an item, please report it to the Conference Team immediately.</li>
+                                    </ul>
+                                </div>
+
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2042,6 +2319,14 @@
           </div>
         </section>
 
+    </div>
+
+    <!-- Floating Register Button -->
+    <div id="float-register" class="float-register-btn" aria-label="Register for UEW 2026">
+        <a href="https://events.ugandaevaluationassociation.org/" target="_blank">
+            <i class="fa fa-pen-to-square"></i>
+            <span>Register</span>
+        </a>
     </div>
 
     <!-- footer begin -->
@@ -2121,6 +2406,23 @@
     <script src="js/custom-marquee.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/custom-swiper-1.js"></script>
+
+    <script>
+        (function () {
+            var btn = document.getElementById('float-register');
+            var hero = document.getElementById('section-hero');
+            if (!btn) return;
+            function onScroll() {
+                var threshold = hero ? hero.offsetHeight * 0.75 : 500;
+                if (window.scrollY > threshold) {
+                    btn.classList.add('is-visible');
+                } else {
+                    btn.classList.remove('is-visible');
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+        }());
+    </script>
 
 </body>
 
