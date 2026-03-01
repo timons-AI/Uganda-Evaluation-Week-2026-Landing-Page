@@ -2002,95 +2002,176 @@ header.header-scroll .menu-item:hover {
 }
 
 /* ============================================================
-   QUOTE SECTION — Redesign
+   QUOTE / DECLARATION SECTION — "25 Years: A Declaration"
    ============================================================ */
 
 .uew-quote-section {
     position: relative;
-    padding: 110px 0 100px;
+    padding: 100px 0 110px;
     overflow: hidden;
-    background-color: #0d1117;
-    background-image: url('../../images/conference-images/UEW2024_Speakers%20and%20Volunteers.JPG');
-    background-size: cover;
-    background-position: center 35%;
+    background: #07090c;
 }
 
-/* Dark overlay so text is always legible */
-.uew-quote-section::before {
+/* Gold gradient line across the top */
+.uew-quote-section::after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    z-index: 1;
-    background: linear-gradient(
-        180deg,
-        rgba(7,9,12,0.60) 0%,
-        rgba(7,9,12,0.85) 50%,
-        rgba(7,9,12,0.60) 100%
-    );
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #cd912d 30%, #e7d14a 70%, transparent 100%);
     pointer-events: none;
+    z-index: 3;
 }
 
-/* Lift content above the ::before overlay */
+/* Radial gold glow orb */
+.uew-q-glow {
+    position: absolute;
+    width: 900px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(205,145,45,0.10) 0%, transparent 65%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Dot matrix — top-left corner */
+.uew-q-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 320px;
+    background-image: radial-gradient(rgba(205,145,45,0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ghost "25" numeral — right side, referencing 25 years of UEA */
+.uew-q-ghost {
+    position: absolute;
+    right: -2%;
+    top: 50%;
+    transform: translateY(-52%);
+    font-size: clamp(14rem, 28vw, 26rem);
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(205,145,45,0.07);
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+/* Content above all decorative layers */
 .uew-quote-section .container {
     position: relative;
     z-index: 2;
 }
 
-/* The big decorative opening quotation mark */
-.uew-quote-mark {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(5rem, 12vw, 9rem);
-    line-height: 0.6;
-    color: #cd912d;
-    opacity: 0.7;
-    margin-bottom: 10px;
-    display: block;
+/* Quote block: vertical gold line on the left */
+.uew-q-block {
+    position: relative;
+    padding-left: 36px;
+    margin-bottom: 44px;
 }
 
-.uew-quote-text {
-    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
-    font-weight: 400;
-    font-style: italic;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.93);
+.uew-q-block::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: linear-gradient(180deg, #cd912d 0%, #e7d14a 60%, transparent 100%);
+    border-radius: 2px;
+}
+
+/* Large decorative opening quotation mark — behind quote text */
+.uew-q-mark {
+    position: absolute;
+    top: -32px;
+    left: 24px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(9rem, 18vw, 16rem);
+    line-height: 0.8;
+    color: #cd912d;
+    opacity: 0.10;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+/* Quote text */
+.uew-q-text {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.7;
+    color: rgba(230,231,232,0.88);
     border: none;
     padding: 0;
-    margin: 0 0 40px;
-    letter-spacing: 0.2px;
+    margin: 0;
+    letter-spacing: 0.1px;
 }
 
-.uew-quote-attribution {
-    display: flex;
+/* Gold-highlighted key phrase */
+.uew-q-em {
+    font-style: italic;
+    font-weight: 500;
+    color: #cd912d;
+}
+
+/* Attribution block */
+.uew-q-attr {
+    padding-left: 36px;
+}
+
+.uew-q-badge {
+    display: inline-flex;
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    gap: 5px;
 }
 
-.uew-quote-rule {
-    width: 48px;
+.uew-q-badge-rule {
+    width: 40px;
     height: 2px;
-    background: #cd912d;
+    background: linear-gradient(90deg, #cd912d, #e7d14a);
     border-radius: 1px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
-.uew-quote-name {
-    font-size: 0.78rem;
+.uew-q-badge-name {
+    font-size: 0.72rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: #fff;
 }
 
-.uew-quote-sub {
-    font-size: 0.62rem;
+.uew-q-badge-sub {
+    font-size: 0.60rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: rgba(255,255,255,0.42);
+    color: rgba(207,201,194,0.55);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .uew-q-block { padding-left: 22px; }
+    .uew-q-attr  { padding-left: 22px; }
+    .uew-q-ghost { display: none; }
+    .uew-q-dots  { width: 180px; height: 180px; }
 }
 
 /* ============================================================
