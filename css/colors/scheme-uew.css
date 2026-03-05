@@ -488,6 +488,36 @@ div#logo img {
    NAVBAR BRAND STYLING
    ============================================ */
 
+/* Tighten nav items so 7 top-level items fit */
+:root {
+  --mainmenu-font-size: 13px;
+  --mainmenu-letter-spacing: 0;
+}
+
+#mainmenu > li > a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Dropdown panel */
+#mainmenu li ul {
+  background: #2b2b2b !important;
+  border-top: 2px solid #cd912d;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  min-width: 200px;
+}
+
+#mainmenu li li a {
+  color: rgba(230, 231, 232, 0.85) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.07) !important;
+  font-size: 13px;
+}
+
+#mainmenu li li a:hover {
+  background: #cd912d !important;
+  color: #ffffff !important;
+}
+
 /* Transparent header over hero */
 header.transparent .menu-item {
   color: rgba(255, 255, 255, 0.9) !important;
@@ -1222,9 +1252,9 @@ header.header-scroll .menu-item:hover {
    ============================================ */
 
 #section-org-logos {
-  background: #0d0d0d;
-  border-top: 1px solid rgba(205, 145, 45, 0.15);
-  border-bottom: 1px solid rgba(205, 145, 45, 0.15);
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 22px 60px;
   display: flex;
   flex-direction: column;
@@ -1237,7 +1267,7 @@ header.header-scroll .menu-item:hover {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 5px;
-  color: rgba(205, 145, 45, 0.6);
+  color: rgba(47, 74, 90, 0.55);
 }
 
 .org-logo-row {
@@ -1266,20 +1296,19 @@ header.header-scroll .menu-item:hover {
   width: auto;
   max-width: 200px;
   object-fit: contain;
-  /* Blend white-background logos cleanly on dark bg */
-  mix-blend-mode: screen;
-  filter: brightness(1.05);
-  transition: filter 0.3s ease;
+  filter: none;
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .org-logo-item:hover .org-logo-img {
-  filter: brightness(1.15);
+  filter: none;
+  opacity: 0.8;
 }
 
 .org-logo-divider {
   width: 1px;
   height: 50px;
-  background: linear-gradient(180deg, transparent, rgba(205, 145, 45, 0.35), transparent);
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.15), transparent);
   flex-shrink: 0;
 }
 
@@ -1293,11 +1322,11 @@ header.header-scroll .menu-item:hover {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 2px solid rgba(205, 145, 45, 0.5);
+  border: 2px solid rgba(205, 145, 45, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(205, 145, 45, 0.08);
+  background: rgba(205, 145, 45, 0.1);
   flex-shrink: 0;
 }
 
@@ -1315,7 +1344,7 @@ header.header-scroll .menu-item:hover {
 .opm-line-1 {
   font-size: 0.62rem;
   font-weight: 400;
-  color: rgba(230, 231, 232, 0.55);
+  color: rgba(47, 74, 90, 0.6);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -1323,7 +1352,7 @@ header.header-scroll .menu-item:hover {
 .opm-line-2 {
   font-size: 0.95rem;
   font-weight: 800;
-  color: #e6e7e8;
+  color: #2f4a5a;
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.1;
