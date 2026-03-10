@@ -22,7 +22,7 @@
         /* Registration page wrapper */
         .reg-page-header {
             background: #07090c;
-            padding: 28px 0 24px;
+            padding: 110px 0 28px;
             border-bottom: 1px solid rgba(205, 145, 45, 0.15);
             text-align: center;
         }
@@ -68,6 +68,12 @@
             min-height: 85vh;
             border: none;
             display: block;
+        }
+
+        @media (max-width: 768px) {
+            .reg-page-header {
+                padding: 90px 16px 22px;
+            }
         }
 
         /* Fallback message shown only if iframe is blocked */
@@ -171,7 +177,7 @@
         <!-- Embedded registration form -->
         <div class="reg-iframe-wrap">
             <iframe
-                src="https://upgrade-systems.com/uew2026/conferenceregistration.aspx"
+                src="https://upgrade-systems.com/web/uew2026/conferenceregistration.aspx"
                 title="UEW 2026 Conference Registration Form"
                 allowfullscreen
                 loading="eager">
@@ -181,7 +187,7 @@
         <!-- Fallback (shown by JS if iframe fails to load) -->
         <div class="reg-fallback" id="reg-fallback">
             <p>If the registration form does not load, please
-                <a href="https://upgrade-systems.com/uew2026/conferenceregistration.aspx" target="_blank">click here to
+                <a href="https://upgrade-systems.com/web/uew2026/conferenceregistration.aspx" target="_blank">click here to
                     open it directly</a>.
             </p>
         </div>
