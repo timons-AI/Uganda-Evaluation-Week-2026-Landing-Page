@@ -2369,3 +2369,179 @@ header.header-scroll .menu-item:hover {
     .uew-gallery-grid .uew-gal-wide:nth-child(4) { grid-column: 1; grid-row: 3; }
     .uew-gallery-grid .uew-gal-wide:nth-child(5) { grid-column: 2; grid-row: 3; }
 }
+
+/* ============================================================
+   SPEAKER CARDS — Standardized height + Bio modal
+   ============================================================ */
+
+/* Fixed-height frame so every card is the same regardless of photo size */
+.spk-card-frame {
+    position: relative;
+    height: 420px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.spk-card-frame img.w-100 {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Bio button inside the overlay */
+.speaker-bio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 5px 14px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid rgba(205, 145, 45, 0.55);
+    border-radius: 3px;
+    color: #cd912d;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.speaker-bio-btn:hover {
+    background: #cd912d;
+    color: #fff;
+    border-color: #cd912d;
+}
+
+/* ---- Bio modal overlay ---- */
+.spk-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 9, 12, 0.88);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(4px);
+}
+
+.spk-modal-overlay.is-open {
+    display: flex;
+}
+
+.spk-modal {
+    background: #131a20;
+    border: 1px solid rgba(205, 145, 45, 0.2);
+    border-radius: 6px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.spk-modal-head {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 36px 36px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.spk-modal-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    flex-shrink: 0;
+    border: 2px solid rgba(205, 145, 45, 0.4);
+}
+
+.spk-modal-meta {
+    flex: 1;
+    padding-top: 4px;
+}
+
+.spk-modal-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 5px;
+    line-height: 1.2;
+}
+
+.spk-modal-role {
+    font-size: 0.68rem;
+    color: #cd912d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.spk-modal-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    color: rgba(230, 231, 232, 0.4);
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    transition: color 0.2s;
+}
+
+.spk-modal-linkedin:hover {
+    color: #cd912d;
+}
+
+.spk-modal-body {
+    padding: 24px 36px 36px;
+    font-size: 0.875rem;
+    line-height: 1.85;
+    color: rgba(230, 231, 232, 0.72);
+}
+
+.spk-modal-body p {
+    margin-bottom: 14px;
+}
+
+.spk-modal-body p:last-child {
+    margin-bottom: 0;
+}
+
+.spk-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: rgba(230, 231, 232, 0.35);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    transition: color 0.2s;
+}
+
+.spk-modal-close:hover {
+    color: #cd912d;
+}
+
+@media (max-width: 576px) {
+    .spk-card-frame {
+        height: 360px;
+    }
+
+    .spk-modal-head {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 20px 18px;
+    }
+
+    .spk-modal-body {
+        padding: 18px 20px 24px;
+    }
+}
