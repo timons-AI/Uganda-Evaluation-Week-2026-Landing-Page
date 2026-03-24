@@ -2575,6 +2575,41 @@ header.header-scroll .menu-item:hover {
     margin-bottom: 0;
 }
 
+.spk-modal-quals {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.spk-modal-quals h5 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #cd912d;
+    margin-bottom: 10px;
+}
+
+.spk-modal-quals ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.spk-modal-quals ul li {
+    font-size: 0.82rem;
+    color: rgba(230, 231, 232, 0.65);
+    padding: 4px 0 4px 14px;
+    position: relative;
+}
+
+.spk-modal-quals ul li::before {
+    content: '◦';
+    position: absolute;
+    left: 0;
+    color: #cd912d;
+}
+
 .spk-modal-close {
     position: absolute;
     top: 14px;
