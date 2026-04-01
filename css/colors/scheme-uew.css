@@ -3081,3 +3081,118 @@ header.header-scroll .menu-item:hover {
         padding-right: 10px;
     }
 }
+
+/* ============================================================
+   CONFERENCE STRANDS SECTION (#section-strands)
+   ============================================================ */
+.strand-card {
+    background: #fff;
+    border: 1px solid #e8eaed;
+    border-radius: 12px;
+    padding: 28px 26px 24px;
+    height: 100%;
+    position: relative;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+}
+
+.strand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #cd912d;
+    border-radius: 12px 12px 0 0;
+}
+
+.strand-card:hover {
+    box-shadow: 0 8px 32px rgba(47, 74, 90, 0.12);
+    transform: translateY(-3px);
+}
+
+.strand-num {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: #cd912d;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.strand-icon {
+    font-size: 1.5rem;
+    color: #2f4a5a;
+    margin-bottom: 10px;
+}
+
+.strand-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #2f4a5a;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+.strand-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(205, 145, 45, 0.12);
+    color: #cd912d;
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.strand-topics {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.strand-topics li {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.5;
+    padding: 6px 0;
+    border-bottom: 1px solid #f2f2f2;
+    padding-left: 16px;
+    position: relative;
+}
+
+.strand-topics li:last-child {
+    border-bottom: none;
+}
+
+.strand-topics li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+    background: #4f8f8b;
+    border-radius: 50%;
+}
+
+.btn-strands-download {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff !important;
+    letter-spacing: 0.04em;
+}
+
+.btn-strands-download:hover {
+    opacity: 0.88;
+    color: #fff !important;
+}
