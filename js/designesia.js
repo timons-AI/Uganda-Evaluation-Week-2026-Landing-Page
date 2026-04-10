@@ -1278,9 +1278,7 @@
          de_tabs();
          owlnavcenter();
          menu_active();
-        $(function() {
-            $('.lazy').lazy();
-        });
+        // jQuery Lazy removed — lazy loading handled via native loading="lazy" attribute
 
         // button effect //
 
@@ -1366,11 +1364,7 @@
            return $state;
          };
 
-        skrollr.init();
-        var s = skrollr.init();
-        if (s.isMobile()) {
-            s.destroy();
-        }        
+        // skrollr removed — no parallax data-attributes used on this site
          
          // --------------------------------------------------
          // navigation for mobile

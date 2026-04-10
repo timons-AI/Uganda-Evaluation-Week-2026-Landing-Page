@@ -5,7 +5,12 @@
       "Bash(python3 -:*)",
       "Bash(node -e \":*)",
       "Bash(\"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent:*)",
-      "Bash(node inject-schedule.js)"
+      "Bash(node inject-schedule.js)",
+      "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/images/\"*)",
+      "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/js/\"*)",
+      "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/css/\"*)",
+      "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/images/conference-images/\"*)",
+      "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/images/presenters/\"*)"
     ]
   }
 }
