@@ -3089,9 +3089,10 @@ header.header-scroll .menu-item:hover {
 }
 
 .sched-excursion-body ul li {
-    display: flex;
+    display: grid;
+    grid-template-columns: 14px 58px 1fr;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0 10px;
     font-size: 0.78rem;
     color: #374151;
     padding: 7px 0;
@@ -3107,8 +3108,16 @@ header.header-scroll .menu-item:hover {
     color: #cd912d;
     font-size: 0.7rem;
     margin-top: 3px;
-    flex-shrink: 0;
-    width: 14px;
+}
+
+.exc-time {
+    font-weight: 700;
+    color: #2f4a5a;
+    white-space: nowrap;
+}
+
+.exc-desc {
+    color: #374151;
 }
 
 /* Excursion fee/booking note */
