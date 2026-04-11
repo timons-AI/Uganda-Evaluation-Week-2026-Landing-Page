@@ -2808,18 +2808,21 @@ header.header-scroll .menu-item:hover {
 }
 
 /* Plenary meta rows — color-coded by category */
-.sched-meta {
+.sched-meta,
+.sched-plenary p.sched-meta {
     display: flex;
     align-items: flex-start;
     gap: 8px;
     font-size: 0.82rem;
     color: #94a3b8;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     line-height: 1.5;
 }
 
 .sched-meta-label {
     flex-shrink: 0;
+    width: 148px;
+    text-align: center;
     font-size: 0.62rem;
     font-weight: 700;
     text-transform: uppercase;
