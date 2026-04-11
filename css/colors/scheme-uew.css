@@ -2807,6 +2807,60 @@ header.header-scroll .menu-item:hover {
     line-height: 1.5;
 }
 
+/* Plenary meta rows — color-coded by category */
+.sched-meta {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.sched-meta-label {
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    line-height: 1.7;
+    white-space: nowrap;
+}
+
+/* Strand — gold */
+.sched-meta.strand .sched-meta-label {
+    background: rgba(205, 145, 45, 0.18);
+    color: #cd912d;
+}
+
+/* Keynote Speaker — sky blue */
+.sched-meta.speaker .sched-meta-label {
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+}
+
+/* Keynote Panel — teal */
+.sched-meta.panel .sched-meta-label {
+    background: rgba(79, 143, 139, 0.2);
+    color: #5eead4;
+}
+
+/* Session Moderator — lavender */
+.sched-meta.moderator .sched-meta-label {
+    background: rgba(167, 139, 250, 0.15);
+    color: #a78bfa;
+}
+
+/* Divider between speaker block and panel block */
+.sched-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 10px 0;
+}
+
 /* Workshop grid */
 .sched-workshop-grid {
     display: grid;
