@@ -2406,6 +2406,31 @@ header.header-scroll .menu-item:hover {
     transform: scale(1.04);
 }
 
+.spk-card-frame-mono {
+    background:
+        radial-gradient(circle at top, rgba(205, 145, 45, 0.28), transparent 48%),
+        linear-gradient(160deg, #102733 0%, #173b4e 55%, #214e68 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spk-card-mono {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    border: 3px solid rgba(205, 145, 45, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
 /* Confirmed badge sits top-left of the photo */
 .spk-card-badge {
     position: absolute;
@@ -2521,6 +2546,19 @@ header.header-scroll .menu-item:hover {
     object-position: center top;
     flex-shrink: 0;
     border: 2px solid rgba(205, 145, 45, 0.4);
+}
+
+.spk-modal-photo-mono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background:
+        radial-gradient(circle at top, rgba(205, 145, 45, 0.28), transparent 48%),
+        linear-gradient(160deg, #102733 0%, #173b4e 55%, #214e68 100%);
 }
 
 .spk-modal-meta {
@@ -3393,12 +3431,12 @@ header.header-scroll .menu-item:hover {
 }
 
 .goh-card-photo {
-    width: 88px;
-    height: 88px;
+    width: 136px;
+    height: 136px;
     border-radius: 50%;
-    border: 2px solid rgba(205, 145, 45, 0.45);
+    border: 3px solid rgba(205, 145, 45, 0.45);
     overflow: hidden;
-    margin: 0 auto 18px;
+    margin: 0 auto 22px;
     background: #1a2e3b;
 }
 
@@ -3659,12 +3697,12 @@ header.header-scroll .menu-item:hover {
 
 /* Photo frame */
 .att-person-frame {
-    width: 76px;
-    height: 76px;
+    width: 118px;
+    height: 118px;
     border-radius: 50%;
-    margin: 26px auto 14px;
+    margin: 24px auto 16px;
     overflow: hidden;
-    border: 2px solid rgba(205, 145, 45, 0.22);
+    border: 3px solid rgba(205, 145, 45, 0.22);
     background: #f3f4f6;
     flex-shrink: 0;
 }
