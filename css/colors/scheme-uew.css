@@ -3752,6 +3752,31 @@ header.header-scroll .menu-item:hover {
     margin-bottom: 7px;
 }
 
+.att-person-card-featured {
+    border-top-color: #7ccf9b;
+    box-shadow: 0 18px 46px rgba(88, 185, 129, 0.18);
+    background: linear-gradient(180deg, #ffffff 0%, #f3fff8 100%);
+}
+
+.att-person-card-featured .att-person-info {
+    padding-bottom: 28px;
+}
+
+.att-person-card-featured .att-person-role-tag {
+    color: #3da66c;
+}
+
+.att-person-frame-featured {
+    width: 158px;
+    height: 158px;
+    margin-top: 20px;
+    margin-bottom: 18px;
+    border-width: 4px;
+    border-color: rgba(124, 207, 155, 0.75);
+    background: #effdf4;
+    box-shadow: 0 14px 34px rgba(88, 185, 129, 0.22);
+}
+
 .att-person-name {
     font-size: 0.92rem;
     font-weight: 800;
