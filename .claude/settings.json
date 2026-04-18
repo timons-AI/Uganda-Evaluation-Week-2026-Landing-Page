@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const fs=require\\('fs'\\); const html=fs.readFileSync\\('index.html','utf8'\\); const cssStart=html.indexOf\\('<style>'\\); const cssEnd=html.indexOf\\('</style>'\\); console.log\\('CSS block present:', cssStart>0 && cssEnd>cssStart ? 'YES' : 'NO'\\); console.log\\('File size:', html.length, 'bytes'\\);\")"
+    ]
+  }
+}

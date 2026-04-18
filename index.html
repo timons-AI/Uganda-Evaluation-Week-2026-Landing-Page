@@ -219,17 +219,9 @@
             z-index: 1;
         }
 
-        /* Static photo grain — tiles quietly like real ISO noise */
+        /* Static photo grain — removed for cleaner appearance */
         .lph-grain {
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 250px 250px;
-            opacity: 0.09;
-            mix-blend-mode: overlay;
-            pointer-events: none;
-            z-index: 2;
+            display: none;
         }
 
         /* Glow divs retired */
@@ -238,22 +230,9 @@
             display: none;
         }
 
-        /* Ghost "09" behind content */
+        /* Ghost "09" — removed for cleaner composition */
         .lph-ghost-num {
-            position: absolute;
-            right: -3%;
-            top: 50%;
-            transform: translateY(-52%);
-            font-size: clamp(18rem, 30vw, 36rem);
-            font-weight: 900;
-            line-height: 1;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(205, 145, 45, 0.06);
-            letter-spacing: -0.05em;
-            pointer-events: none;
-            z-index: 1;
-            user-select: none;
-            animation: lph-ghost-in 2s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+            display: none;
         }
 
         @keyframes lph-ghost-in {
@@ -274,20 +253,9 @@
             display: none;
         }
 
-        /* Vertical structural line */
+        /* Vertical structural line — removed for cleaner appearance */
         .lph-vline {
-            position: absolute;
-            left: 80px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: linear-gradient(180deg,
-                    transparent 0%,
-                    rgba(205, 145, 45, 0.18) 20%,
-                    rgba(205, 145, 45, 0.18) 80%,
-                    transparent 100%);
-            z-index: 2;
-            pointer-events: none;
+            display: none;
         }
 
         /* ---- Main content area ---- */
@@ -322,18 +290,17 @@
             background: #cd912d;
             flex-shrink: 0;
             box-shadow: 0 0 14px rgba(205, 145, 45, 0.7);
-            animation: lph-dot-pulse 2.5s ease infinite;
+            animation: lph-dot-pulse 3s ease-in-out infinite;
         }
 
         @keyframes lph-dot-pulse {
-
             0%,
             100% {
-                box-shadow: 0 0 14px rgba(205, 145, 45, 0.7);
+                box-shadow: 0 0 12px rgba(205, 145, 45, 0.6);
             }
 
             50% {
-                box-shadow: 0 0 28px rgba(205, 145, 45, 0.12);
+                box-shadow: 0 0 18px rgba(205, 145, 45, 0.25);
             }
         }
 
@@ -408,8 +375,7 @@
         }
 
         .lph-word-outline {
-            color: transparent;
-            -webkit-text-stroke: 2px rgba(230, 231, 232, 0.75);
+            color: rgba(230, 231, 232, 0.85);
         }
 
         .lph-word-gold {
@@ -507,7 +473,6 @@
         .lph-btn-primary:hover {
             background: transparent;
             color: #cd912d;
-            gap: 16px;
         }
 
         .lph-btn-ghost {
@@ -549,9 +514,9 @@
             align-items: center;
             justify-content: center;
             padding: 20px 16px;
-            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
             text-align: center;
-            transition: background 0.3s;
+            transition: all 0.25s;
         }
 
         .lph-stat:last-child {
@@ -559,7 +524,8 @@
         }
 
         .lph-stat:hover {
-            background: rgba(205, 145, 45, 0.04);
+            background: rgba(205, 145, 45, 0.08);
+            transform: translateY(-1px);
         }
 
         .lph-stat-num {
@@ -581,12 +547,12 @@
         /* Scroll indicator */
         .lph-scroll {
             position: absolute;
-            right: 36px;
-            bottom: 90px;
+            right: 40px;
+            bottom: 110px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             z-index: 4;
         }
 
@@ -619,11 +585,11 @@
 
         .lph-scroll-text {
             writing-mode: vertical-rl;
-            font-size: 0.4rem;
+            font-size: 0.38rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            color: rgba(230, 231, 232, 0.15);
+            letter-spacing: 3px;
+            color: rgba(230, 231, 232, 0.25);
         }
 
         /* ============================================================
@@ -2358,11 +2324,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="sched-break"><i class="fa fa-check-circle"></i> End of Workshops &middot; 4:00 PM</div>
+                                    <div class="sched-break"><i class="fa fa-check-circle"></i> End of Workshops &middot; 3:00 PM</div>
 
                                     <div class="sched-sub-header" style="margin-top:28px;">Opening Ceremony &middot; Evening</div>
                                     <div class="sched-plenary">
-                                        <span class="sched-plenary-eyebrow">Opening Ceremony &middot; 5:00 PM &ndash; 8:30 PM &middot; Main Conference Hall</span>
+                                        <span class="sched-plenary-eyebrow">Opening Ceremony &middot; 3:00 PM &ndash; 8:30 PM &middot; Main Conference Hall</span>
                                         <h4>Official Opening of UEW 2026</h4>
                                         <p style="color:#c0f139; margin-top:12px; margin-bottom:0; font-size:0.9rem; line-height:1.6;">We kindly invite our guests to wear traditional or national attire for the Opening Ceremony, so that our event visuals reflect the conference’s rich cultural diversity and heritage.</p>
                                         <p style="color:#fff; margin-top:8px; margin-bottom:0; font-size:0.9rem; line-height:1.6;">Thank you,<br />UEW Team</p>
@@ -2378,6 +2344,7 @@
                                             <li>Guest of Honour Speech &mdash; <em>Rt. Hon. Justine Kasule Lumumba, the Minister for General Duties, Office of the Prime Minister</em></li>
                                             <li>Partner &amp; Stakeholder Remarks</li>
                                             <li>Cultural Dance Performance</li>
+                                            <li>Cake cutting</li>
                                             <li>Official Opening Declaration &mdash; Guest of Honour</li>
                                             <li>Group Photo Session &mdash; VIPs and Organizers</li>
                                             <li>Networking Reception &amp; Dinner / Gala</li>
@@ -2396,7 +2363,7 @@
                                         <p class="sched-meta strand"><span class="sched-meta-label">Strand</span> Strand 1: Innovation &amp; Technology Use</p>
                                         <p class="sched-meta speaker"><span class="sched-meta-label">Keynote Speaker</span> Dr. Fredrick Kitoogo, Principal Uganda Institute of Information and Communications Technology (UICT)</p>
 
-                                        <p class="sched-meta panel"><span class="sched-meta-label">Keynote Panel</span> Dr. Awuor Ponge, Senior Researcher, African Policy Center (APC); TBD</p>
+                                        <p class="sched-meta panel"><span class="sched-meta-label">Keynote Panel</span> Dr. Awuor Ponge, Senior Researcher, African Policy Center (APC);<br>Dr Steven Masvaure, Senior Researcher, CLEAR-AA TBD</p>
                                         <p class="sched-meta moderator"><span class="sched-meta-label">Session Moderator</span> <em>Eugene Miheso Swinnerstone, Senior M&amp;E and ICT consultant, Trend Systems EA</em></p>
                                     </div>
 
@@ -2720,7 +2687,6 @@ Senior Lecturer, Applied Ethics & Development Evaluation, (DUCE), Tanzania; TBD<
                                             <li>Panel Discussion: <em>Bridging the Gap Between Evaluation Evidence and Policy Implementation</em> &mdash; Panelists: Timothy Lubanga, Commissioner M&E Office of the Prime Minister (OPM) : Matthew Lubuulwa, Senior Technical Officer Ministry of Finance Planning and Economic Development, Ministry of Finance Rep, Civil Society Rep, Private Sector Rep, Academic Rep</li>
                                             <li>Cultural Performance</li>
                                             <li>Closing Remarks &mdash;  Timothy Lubanga, Commissioner M&E Office of the Prime Minister (OPM)</li>
-                                            <li>Cake Cutting</li>
                                             <li>Guest of Honour Closing Speech &mdash; Rt. Hon. Minister for General Duties, Office of the Prime Minister</li>
                                             <li>Vote of Thanks &mdash; Dr Bagyendera Julian</li>
                                             <li>Closing Prayer</li>

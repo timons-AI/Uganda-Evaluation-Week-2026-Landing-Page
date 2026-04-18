@@ -3880,31 +3880,7 @@ header.header-scroll .menu-item:hover {
 
 /* Hero stay connected CTA */
 .lph-stay-connected-cta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #cd912d;
-    text-decoration: none;
-    padding: 10px 16px;
-    border: 1px solid #cd912d;
-    border-radius: 4px;
-    margin-bottom: 24px;
-    margin-left: auto;
-    transition: all 0.3s ease;
-    width: fit-content;
-}
-
-.lph-stay-connected-cta:hover {
-    background: #cd912d;
-    color: #2f4a5a;
-}
-
-.lph-stay-connected-cta i {
-    font-size: 1rem;
+    display: none;
 }
 
 /* Footer social icons (with image logos) */
