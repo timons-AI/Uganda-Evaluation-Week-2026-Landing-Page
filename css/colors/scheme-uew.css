@@ -3878,11 +3878,6 @@ header.header-scroll .menu-item:hover {
 .att-back-link:hover { color: #cd912d; }
 .att-back-link i { font-size: 0.7rem; }
 
-/* Hero stay connected CTA */
-.lph-stay-connected-cta {
-    display: none;
-}
-
 /* Footer social icons (with image logos) */
 footer .social-icons {
     display: flex;

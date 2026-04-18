@@ -98,10 +98,14 @@
            LANDING HERO — "EVALUATE · IMPACT · TRANSFORM"
            ============================================================ */
 
-        .lph {
+        section#section-hero.lph {
+            --lph-stats-h: 84px;
+            --lph-social-h: 52px;
             position: relative;
             height: 100vh;
             min-height: 720px;
+            padding: 0;
+            margin: 0;
             background: #07090c;
             overflow: hidden;
             display: flex;
@@ -219,45 +223,6 @@
             z-index: 1;
         }
 
-        /* Static photo grain — removed for cleaner appearance */
-        .lph-grain {
-            display: none;
-        }
-
-        /* Glow divs retired */
-        .lph-glow-1,
-        .lph-glow-2 {
-            display: none;
-        }
-
-        /* Ghost "09" — removed for cleaner composition */
-        .lph-ghost-num {
-            display: none;
-        }
-
-        @keyframes lph-ghost-in {
-            from {
-                opacity: 0;
-                transform: translateY(-52%) translateX(60px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(-52%) translateX(0);
-            }
-        }
-
-        /* Glow divs retired — blobs are in .lph-bg gradient */
-        .lph-glow-1,
-        .lph-glow-2 {
-            display: none;
-        }
-
-        /* Vertical structural line — removed for cleaner appearance */
-        .lph-vline {
-            display: none;
-        }
-
         /* ---- Main content area ---- */
         .lph-content {
             position: relative;
@@ -316,11 +281,9 @@
         .lph-edition {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 5px 14px 5px 6px;
-            border: 1px solid rgba(205, 145, 45, 0.2);
-            border-radius: 3px;
-            margin-bottom: 28px;
+            gap: 12px;
+            padding: 4px 4px 4px 4px;
+            margin-bottom: 30px;
             animation: lph-up 0.9s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
@@ -375,7 +338,8 @@
         }
 
         .lph-word-outline {
-            color: rgba(230, 231, 232, 0.85);
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(230, 231, 232, 0.55);
         }
 
         .lph-word-gold {
@@ -396,18 +360,18 @@
             }
         }
 
-        /* Conference theme */
+        /* Conference theme — the actual message, sized to match */
         .lph-theme {
-            font-size: clamp(0.75rem, 1vw, 0.88rem);
-            color: rgba(230, 231, 232, 0.85);
+            font-size: clamp(0.98rem, 1.25vw, 1.18rem);
+            color: rgba(230, 231, 232, 0.92);
             font-style: italic;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            line-height: 1.65;
-            margin-bottom: 32px;
-            max-width: 560px;
-            border-left: 2px solid rgba(205, 145, 45, 0.5);
-            padding-left: 16px;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            line-height: 1.55;
+            margin: 4px 0 36px;
+            max-width: 620px;
+            border-left: 2px solid #cd912d;
+            padding-left: 18px;
             animation: lph-up 0.9s 0.58s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
@@ -468,11 +432,20 @@
             background: #cd912d;
             color: #fff;
             border: 2px solid #cd912d;
+            box-shadow: 0 6px 22px -10px rgba(205, 145, 45, 0.75);
         }
 
         .lph-btn-primary:hover {
-            background: transparent;
-            color: #cd912d;
+            background: #b67e22;
+            border-color: #b67e22;
+            color: #fff;
+            box-shadow: 0 10px 26px -10px rgba(205, 145, 45, 0.9);
+        }
+
+        .lph-btn-primary:active {
+            background: #a46f1d;
+            border-color: #a46f1d;
+            transform: translateY(1px);
         }
 
         .lph-btn-ghost {
@@ -482,8 +455,13 @@
         }
 
         .lph-btn-ghost:hover {
-            border-color: rgba(205, 145, 45, 0.4);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(205, 145, 45, 0.55);
             color: #cd912d;
+        }
+
+        .lph-btn-ghost:active {
+            background: rgba(205, 145, 45, 0.08);
         }
 
         .lph-btn-arrow {
@@ -496,11 +474,71 @@
             transform: translateX(5px);
         }
 
+        /* ---- Social shelf — quiet band extending the stats strip ---- */
+        .lph-social {
+            flex-shrink: 0;
+            margin-top: auto;
+            width: 100%;
+            min-height: var(--lph-social-h);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.30);
+            position: relative;
+            z-index: 3;
+            animation: lph-up 0.9s 0.88s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .lph-social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: rgba(230, 231, 232, 0.58);
+            font-size: 0.98rem;
+            text-decoration: none;
+            transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+
+        .lph-social-icon:hover {
+            color: #cd912d;
+            background: rgba(205, 145, 45, 0.08);
+        }
+
+        .lph-social-icon:active {
+            transform: scale(0.94);
+        }
+
+        .lph-social-icon--mail {
+            color: rgba(205, 145, 45, 0.85);
+        }
+
+        .lph-social-icon--mail:hover {
+            color: #fff;
+            background: #cd912d;
+        }
+
+        .lph-social-divider {
+            width: 1px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.14);
+            margin: 0 10px;
+        }
+
         /* ---- Bottom stats strip ---- */
         .lph-stats {
             flex-shrink: 0;
-            border-top: 1px solid rgba(205, 145, 45, 0.1);
-            background: rgba(0, 0, 0, 0.35);
+            width: 100%;
+            min-height: var(--lph-stats-h);
+            background:
+                linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.06) 0%,
+                    rgba(255, 255, 255, 0.06) 1px,
+                    transparent 1px),
+                rgba(0, 0, 0, 0.42);
             display: flex;
             position: relative;
             z-index: 3;
@@ -513,54 +551,66 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px 16px;
-            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 22px 18px;
             text-align: center;
-            transition: all 0.25s;
+            position: relative;
         }
 
-        .lph-stat:last-child {
-            border-right: none;
-        }
-
-        .lph-stat:hover {
-            background: rgba(205, 145, 45, 0.08);
-            transform: translateY(-1px);
+        /* Quiet tonal dividers — visible without shouting */
+        .lph-stat + .lph-stat::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 28%;
+            bottom: 28%;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .lph-stat-num {
-            font-size: 1.55rem;
+            font-size: 2.15rem;
             font-weight: 900;
             color: #cd912d;
             line-height: 1;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
         }
 
         .lph-stat-label {
-            font-size: 0.6rem;
+            font-size: 0.62rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: rgba(230, 231, 232, 0.70);
+            letter-spacing: 3.5px;
+            color: rgba(230, 231, 232, 0.68);
             font-weight: 700;
         }
 
-        /* Scroll indicator */
+        /* Scroll indicator — anchored above the stats strip */
         .lph-scroll {
             position: absolute;
             right: 40px;
-            bottom: 110px;
+            bottom: calc(var(--lph-stats-h) + var(--lph-social-h) + 28px);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             z-index: 4;
+            pointer-events: none;
+        }
+
+        .lph-scroll-text {
+            writing-mode: vertical-rl;
+            font-size: 0.58rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: rgba(230, 231, 232, 0.45);
         }
 
         .lph-scroll-bar {
             width: 1px;
-            height: 60px;
+            height: 56px;
             background: linear-gradient(180deg,
-                    rgba(205, 145, 45, 0.5) 0%,
+                    rgba(205, 145, 45, 0.75) 0%,
                     transparent 100%);
             animation: lph-scroll-anim 1.8s ease-in-out infinite;
             transform-origin: top;
@@ -583,15 +633,6 @@
             }
         }
 
-        .lph-scroll-text {
-            writing-mode: vertical-rl;
-            font-size: 0.38rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: rgba(230, 231, 232, 0.25);
-        }
-
         /* ============================================================
            RESPONSIVE
            ============================================================ */
@@ -601,23 +642,19 @@
             .lph-content {
                 padding: 0 80px;
             }
-
-            .lph-vline {
-                left: 40px;
-            }
         }
 
-        /* Tablet landscape / small laptops — CRITICAL cut-off fix */
+        /* Tablet landscape / small laptops */
         @media (max-width: 991px) {
 
-            /* Let the section grow instead of clipping content */
             .lph {
+                --lph-stats-h: 76px;
+                --lph-social-h: 48px;
                 height: auto;
                 min-height: 100svh;
                 overflow: visible;
             }
 
-            /* Push content below the navbar with top padding, flow naturally */
             .lph-content {
                 padding: 100px 40px 44px;
                 align-items: flex-start;
@@ -629,53 +666,57 @@
                 max-width: 100%;
             }
 
-            /* Tighten spacing so everything fits comfortably */
-            .lph-eyebrow {
-                margin-bottom: 14px;
-            }
-
-            .lph-edition {
-                margin-bottom: 18px;
-            }
-
-            .lph-headline {
-                margin-bottom: 16px;
-            }
+            .lph-eyebrow { margin-bottom: 14px; }
+            .lph-edition { margin-bottom: 20px; }
+            .lph-headline { margin-bottom: 18px; }
 
             .lph-word {
                 font-size: clamp(2.8rem, 5.2vw, 4.6rem);
             }
 
+            .lph-word-outline {
+                -webkit-text-stroke-width: 1.2px;
+            }
+
             .lph-theme {
-                margin-bottom: 20px;
-                font-size: 0.82rem;
-            }
-
-            .lph-meta {
                 margin-bottom: 24px;
+                font-size: 0.95rem;
             }
 
-            /* Hide desktop-only decorations */
-            .lph-vline,
-            .lph-ghost-num,
-            .lph-scroll {
-                display: none;
-            }
+            .lph-meta { margin-bottom: 26px; }
 
-            /* Stats stay in a row */
+            .lph-scroll { display: none; }
+
             .lph-stats {
                 flex-wrap: nowrap;
             }
 
-            .lph-stat {
-                padding: 16px 10px;
-            }
+            .lph-stat { padding: 16px 10px; }
+
+            .lph-stat-num { font-size: 1.75rem; }
         }
 
         /* Tablet portrait */
         @media (max-width: 768px) {
             .lph {
+                --lph-stats-h: 0px;
+                --lph-social-h: 44px;
                 min-height: 100dvh;
+            }
+
+            .lph-social {
+                gap: 2px;
+            }
+
+            .lph-social-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 0.92rem;
+            }
+
+            .lph-social-divider {
+                margin: 0 8px;
+                height: 16px;
             }
 
             .lph-content {
@@ -687,7 +728,7 @@
             }
 
             .lph-theme {
-                font-size: 0.8rem;
+                font-size: 0.92rem;
             }
 
             .lph-chip {
@@ -697,28 +738,32 @@
 
             .lph-cta {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
                 gap: 12px;
             }
 
-            /* Stats wrap into 2×2 grid */
+            .lph-btn {
+                justify-content: center;
+            }
+
+            /* Stats wrap into 2×2 grid — dividers handled by ::before, no !important */
             .lph-stats {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                min-height: 0;
+            }
+
+            .lph-stat + .lph-stat::before {
+                display: none;
             }
 
             .lph-stat {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+                border-right: 1px solid rgba(255, 255, 255, 0.06);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             }
 
-            .lph-stat:nth-child(2n) {
-                border-right: none !important;
-            }
-
-            .lph-stat:nth-child(3),
-            .lph-stat:nth-child(4) {
-                border-bottom: none !important;
-            }
+            .lph-stat:nth-child(2n) { border-right: none; }
+            .lph-stat:nth-child(n+3) { border-bottom: none; }
         }
 
         /* Mobile */
@@ -735,22 +780,15 @@
                 letter-spacing: 3px;
             }
 
-            .lph-meta {
-                gap: 7px;
-            }
+            .lph-meta { gap: 7px; }
 
             .lph-chip {
                 padding: 6px 10px;
                 font-size: 0.6rem;
             }
 
-            .lph-stat-num {
-                font-size: 1.3rem;
-            }
-
-            .lph-stat {
-                padding: 14px 8px;
-            }
+            .lph-stat-num { font-size: 1.5rem; }
+            .lph-stat { padding: 14px 8px; }
         }
 
         /* ============================================================
@@ -1021,17 +1059,9 @@
             <div class="lph-slide lph-slide-2"></div>
             <div class="lph-slide lph-slide-3"></div>
             <div class="lph-overlay"></div>
-            <div class="lph-grain"></div>
-            <div class="lph-vline"></div>
-            <div class="lph-ghost-num">09</div>
 
             <div class="lph-content">
                 <div class="lph-inner">
-                    <a href="#section-stay-connected" class="lph-stay-connected-cta">
-                        <i class="fa fa-envelope"></i>
-                        <span>Stay Connected</span>
-                    </a>
-
                     <div class="lph-eyebrow">
                         <div class="lph-eyebrow-dot"></div>
                         <span class="lph-eyebrow-text">Uganda Evaluation Association Presents</span>
@@ -1077,6 +1107,23 @@
                 </div>
             </div>
 
+            <!-- Social shelf -->
+            <div class="lph-social" aria-label="Connect with UEW">
+                <a href="https://www.youtube.com/@ugandaevaluationassociation" target="_blank" rel="noopener" class="lph-social-icon" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/uganda-evaluation-association/" target="_blank" rel="noopener" class="lph-social-icon" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/ugandaeval?s=20" target="_blank" rel="noopener" class="lph-social-icon" aria-label="X (formerly Twitter)">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <span class="lph-social-divider" aria-hidden="true"></span>
+                <a href="#section-stay-connected" class="lph-social-icon lph-social-icon--mail" aria-label="Stay connected — newsletter and contact">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+            </div>
+
             <!-- Bottom stats strip -->
             <div class="lph-stats">
                 <div class="lph-stat">
@@ -1098,9 +1145,9 @@
             </div>
 
             <!-- Scroll indicator -->
-            <div class="lph-scroll">
+            <div class="lph-scroll" aria-hidden="true">
+                <div class="lph-scroll-text">Scroll</div>
                 <div class="lph-scroll-bar"></div>
-                <div class="lph-scroll-text">SCROLL</div>
             </div>
         </section>
 
@@ -2661,7 +2708,7 @@ Senior Lecturer, Applied Ethics & Development Evaluation, (DUCE), Tanzania; TBD<
                                 <li>
                                     <span class="sched-day-badge">Friday, 8 May 2026 &middot; Closing Plenary &amp; Excursions</span>
 
-                                    <div class="sched-sub-header">Morning Plenary &middot; 8:30 AM &ndash; 10:00 AM</div>
+                                    <div class="sched-sub-header">Morning Plenary &middot; 8:30 AM &ndash; 9:30 AM</div>
                                     <div class="sched-plenary">
                                         <span class="sched-plenary-eyebrow">Morning Plenary &middot; Main Conference Hall</span>
                                         <h4>Keynote 5: Institutionalizing Evidence Use: Accountability Systems for Sustainable Development</h4>
@@ -2674,11 +2721,11 @@ Senior Lecturer, Applied Ethics & Development Evaluation, (DUCE), Tanzania; TBD<
                                         <p class="sched-meta moderator"><span class="sched-meta-label">Session Moderator</span> <em>Dr. Martha Olwenyi, Lecturer, Uganda Management Institute (UMI)</em></p>
                                     </div>
 
-                                    <div class="sched-break"><i class="fa fa-coffee"></i> Tea Break &middot; 10:00 AM &ndash; 10:30 AM</div>
+                                    <div class="sched-break"><i class="fa fa-coffee"></i> Working Tea &middot; 9:30 AM &ndash; 10:00 AM</div>
 
-                                    <div class="sched-sub-header">Closing Plenary &middot; 10:30 AM &ndash; 12:00 PM</div>
+                                    <div class="sched-sub-header">Closing Plenary &middot; 9:30 AM &ndash; 11:00 PM</div>
                                     <div class="sched-plenary">
-                                        <span class="sched-plenary-eyebrow">Closing Plenary &middot; 10:30 AM &ndash; 12:00 PM &middot; Main Conference Hall</span>
+                                        <span class="sched-plenary-eyebrow">Closing Plenary &middot; 9:30 AM &ndash; 11:00 PM &middot; Main Conference Hall</span>
                                         <h4>From Evidence to Action: The Way Forward for Evaluation in Uganda</h4>
                                         <ul class="sched-event-list" style="margin-top:12px;">
                                             <li>Opening Remarks &mdash; Dr Watera Josephine (Conference Chair)</li>
@@ -2694,9 +2741,7 @@ Senior Lecturer, Applied Ethics & Development Evaluation, (DUCE), Tanzania; TBD<
                                         </ul>
                                     </div>
 
-                                    <div class="sched-break"><i class="fa fa-utensils"></i> Lunch &middot; 12:00 PM &ndash; 1:00 PM</div>
-
-                                    <div class="sched-sub-header">Afternoon Excursions &middot; Departure 1:00 PM &middot; Optional</div>
+                                    <div class="sched-sub-header">Afternoon Excursions &middot; Departure 11:00 PM &middot; Optional</div>
                                     <div class="sched-excursion-grid">
                                         <div class="sched-excursion-card">
                                             <div class="sched-excursion-head">
