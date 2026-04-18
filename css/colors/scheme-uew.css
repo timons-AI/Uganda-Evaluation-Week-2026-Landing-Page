@@ -1209,20 +1209,57 @@ header.header-scroll .menu-item:hover {
 
 /* CTA box */
 .reg-cta-box {
-  background: rgba(205,145,45,0.08);
-  border: 1px solid rgba(205,145,45,0.2);
-  border-radius: 12px;
-  padding: 28px 32px;
+  background: linear-gradient(135deg, rgba(47,74,90,0.22) 0%, rgba(205,145,45,0.10) 100%);
+  border: 1px solid rgba(205,145,45,0.22);
+  border-top: 3px solid #cd912d;
+  border-radius: 0 0 16px 16px;
+  padding: 36px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
 }
 
 .reg-cta-deadline {
-  font-size: 0.85rem;
-  color: rgba(230,231,232,0.7);
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
 }
 
-.reg-cta-deadline strong {
+.reg-cta-deadline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.reg-cta-deadline-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(230,231,232,0.5);
+}
+
+.reg-cta-deadline-date {
+  font-size: 1.05rem;
+  font-weight: 600;
   color: #cd912d;
+}
+
+.reg-cta-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(205,145,45,0.25);
+  flex-shrink: 0;
+}
+
+.reg-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 }
 
 /* ============================================
