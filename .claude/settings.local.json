@@ -10,7 +10,10 @@
       "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/js/\"*)",
       "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/css/\"*)",
       "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/images/conference-images/\"*)",
-      "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/images/presenters/\"*)"
+      "Bash(du -sh \"c:/Users/timo2/Downloads/Event Systems/aiventhtml-10/aiventhtml-10/AIvent/AIvent HTML/images/presenters/\"*)",
+      "Bash(grep -r \"social-icons\" \"c:\\\\\\\\Users\\\\\\\\timo2\\\\\\\\Downloads\\\\\\\\Event Systems\\\\\\\\aiventhtml-10\\\\\\\\aiventhtml-10\\\\\\\\AIvent\\\\\\\\AIvent HTML\\\\\\\\css\\\\\\\\\")",
+      "Bash(wc -l \"c:\\\\\\\\Users\\\\\\\\timo2\\\\\\\\Downloads\\\\\\\\Event Systems\\\\\\\\aiventhtml-10\\\\\\\\aiventhtml-10\\\\\\\\AIvent\\\\\\\\AIvent HTML\\\\\\\\css\\\\\\\\colors\\\\\\\\scheme-uew.css\")",
+      "Bash(tail -5 \"c:\\\\\\\\Users\\\\\\\\timo2\\\\\\\\Downloads\\\\\\\\Event Systems\\\\\\\\aiventhtml-10\\\\\\\\aiventhtml-10\\\\\\\\AIvent\\\\\\\\AIvent HTML\\\\\\\\css\\\\\\\\colors\\\\\\\\scheme-uew.css\")"
     ]
   }
 }

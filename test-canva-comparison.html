@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva Embed Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2f4a5a;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .comparison-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .comparison-section h2 {
+            color: #2f4a5a;
+            margin-bottom: 20px;
+            font-size: 18px;
+            border-bottom: 2px solid #cd912d;
+            padding-bottom: 10px;
+        }
+        .comparison-section p {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        /* Embedded iframe version */
+        .embed-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 100.0000%;
+            padding-bottom: 0;
+            box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+            margin-top: 1.6em;
+            margin-bottom: 0.9em;
+            overflow: hidden;
+            border-radius: 8px;
+            will-change: transform;
+        }
+        .embed-wrapper iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        /* Link version */
+        .link-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .link-wrapper a {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #cd912d;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.3s;
+            text-align: center;
+        }
+        .link-wrapper a:hover {
+            background: #b87a24;
+        }
+        .link-info {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 3px solid #cd912d;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Canva Design Comparison: Embed vs Link</h1>
+
+    <div class="container">
+        <!-- Version 1: Embedded Iframe -->
+        <div class="comparison-section">
+            <h2>1. Embedded Iframe</h2>
+            <p>Shows the design directly in the page using an embedded iframe. Responsive container with 1:1 aspect ratio.</p>
+
+            <div class="embed-wrapper">
+                <iframe loading="lazy"
+                    src="https://www.canva.com/design/DAHGVrWjnmU/k1Wg8-mmZdfZjN2Ccrc4VA/view?embed"
+                    allowfullscreen="allowfullscreen"
+                    allow="fullscreen">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Version 2: Direct Link -->
+        <div class="comparison-section">
+            <h2>2. Direct Link</h2>
+            <p>Users click a link to open the design in Canva (typically in a new tab or modal).</p>
+
+            <div class="link-wrapper">
+                <a href="https://www.canva.com/design/DAHGVrWjnmU/k1Wg8-mmZdfZjN2Ccrc4VA/view?utm_content=DAHGVrWjnmU&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+                   target="_blank"
+                   rel="noopener">
+                    View: UEW2026 - Program
+                </a>
+
+                <div class="link-info">
+                    <strong>How it works:</strong><br>
+                    • Clicking the button opens Canva in a new tab<br>
+                    • User stays on your site (can set target="_blank")<br>
+                    • Takes more clicks but cleaner page design<br>
+                    • Users see the full Canva interface
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="max-width: 1400px; margin: 40px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <h2 style="color: #2f4a5a; margin-bottom: 15px;">Comparison Summary</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <tr style="border-bottom: 1px solid #eee;">
+                <th style="text-align: left; padding: 10px; background: #f9f9f9;">Feature</th>
+                <th style="text-align: left; padding: 10px; background: #f9f9f9;">Embedded</th>
+                <th style="text-align: left; padding: 10px; background: #f9f9f9;">Link</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>User Experience</strong></td>
+                <td style="padding: 10px;">See design without leaving page</td>
+                <td style="padding: 10px;">Opens in new tab/window</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Page Load</strong></td>
+                <td style="padding: 10px;">Slower (loads iframe)</td>
+                <td style="padding: 10px;">Faster (just a link)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Mobile Responsive</strong></td>
+                <td style="padding: 10px;">Responsive wrapper</td>
+                <td style="padding: 10px;">Works on all devices</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Visual Prominence</strong></td>
+                <td style="padding: 10px;">Prominent, full-size</td>
+                <td style="padding: 10px;">Button/text only</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;"><strong>Best For</strong></td>
+                <td style="padding: 10px;">Showcasing the design in full</td>
+                <td style="padding: 10px;">Linking to downloadable resources</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
