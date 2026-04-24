@@ -3997,6 +3997,19 @@ header.header-scroll .menu-item:hover {
     margin-bottom: 7px;
 }
 
+/* Green accent variant — frame border + role tag only */
+.att-person-card-green .att-person-frame {
+    border-color: rgba(124, 207, 155, 0.75);
+}
+
+.att-person-card-green .att-person-role-tag {
+    color: #3da66c;
+}
+
+.att-person-card-green .att-person-name {
+    color: #1a2e3b;
+}
+
 .att-person-card-featured {
     border-top-color: #7ccf9b;
     box-shadow: 0 18px 46px rgba(88, 185, 129, 0.18);
