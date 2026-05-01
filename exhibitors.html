@@ -165,6 +165,51 @@
             border: 1px solid rgba(205,145,45,0.2);
             padding: 50px;
         }
+        /* Category section headers */
+        .ex-cat-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .ex-cat-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(205,145,45,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cd912d;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .ex-cat-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #2b2b2b;
+            white-space: nowrap;
+        }
+        .ex-cat-rule {
+            flex: 1;
+            height: 1px;
+            background: rgba(0,0,0,0.09);
+        }
+        /* Initials placeholder for missing logos */
+        .ex-booth-logo--initials {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ex-initials {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2f4a5a;
+            letter-spacing: -0.02em;
+            opacity: 0.45;
+        }
     </style>
 </head>
 
@@ -290,16 +335,35 @@
         <!-- Current Exhibitors -->
         <section class="bg-light text-dark pt-0">
             <div class="container">
-                <div class="row g-4 justify-content-center mb-4">
+                <div class="row g-4 justify-content-center mb-5">
                     <div class="col-lg-6 text-center">
-                        <div class="subtitle wow fadeInUp">Confirmed Exhibitors</div>
+                        <div class="subtitle wow fadeInUp">Participating Organisations</div>
                         <h2 class="wow fadeInUp">Innovation Hub — UEW 2026</h2>
-                        <p class="lead wow fadeInUp">Exhibitor confirmations are open. More organisations joining soon.</p>
+                        <p class="lead wow fadeInUp">Organisations confirmed across consulting, research, civil society, and government — showcasing tools, evidence, and innovations in evaluation.</p>
                     </div>
                 </div>
 
-                <div class="ex-booth-grid">
-                    <!-- Confirmed exhibitors -->
+                <!-- ── CATEGORY 1: Private Consulting & Tech ── -->
+                <div class="ex-cat-header wow fadeInUp">
+                    <div class="ex-cat-icon"><i class="fa fa-laptop-code"></i></div>
+                    <span class="ex-cat-label">Private Consulting &amp; Tech</span>
+                    <div class="ex-cat-rule"></div>
+                </div>
+                <div class="ex-booth-grid mb-5">
+                    <a class="ex-booth-card" href="https://tellistic.com" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/Tellistic logo.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Tellistic Techno" />
+                        </div>
+                        <div class="ex-booth-name">Tellistic Techno</div>
+                        <div class="ex-booth-type">Digital M&amp;E Platforms</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://provide-equip.com" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/Provide and Equip logo.webp" style="width: 100%; height: 100%; object-fit: contain;" alt="Provide and Equip" />
+                        </div>
+                        <div class="ex-booth-name">Provide &amp; Equip</div>
+                        <div class="ex-booth-type">Consulting &amp; Advisory</div>
+                    </a>
                     <a class="ex-booth-card" href="https://mpunguanalytics.com" target="_blank" rel="noopener noreferrer">
                         <div class="ex-booth-logo" style="background: #fff; padding: 6px;">
                             <img src="images/partner-logos/MA-Logo-Revised.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Mpungu Analytics" />
@@ -309,73 +373,106 @@
                     </a>
                     <div class="ex-booth-card">
                         <div class="ex-booth-logo" style="background: #fff; padding: 6px;">
+                            <img src="images/presenters/Pazel Conroy Consulting Ltd.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Pazel Conroy Consulting" />
+                        </div>
+                        <div class="ex-booth-name">Pazel Conroy Consulting</div>
+                        <div class="ex-booth-type">Consulting &amp; Advisory</div>
+                    </div>
+                </div>
+
+                <!-- ── CATEGORY 2: Non-Profit & Research ── -->
+                <div class="ex-cat-header wow fadeInUp">
+                    <div class="ex-cat-icon"><i class="fa fa-book-open"></i></div>
+                    <span class="ex-cat-label">Non-Profit &amp; Research Organisations</span>
+                    <div class="ex-cat-rule"></div>
+                </div>
+                <div class="ex-booth-grid mb-5">
+                    <a class="ex-booth-card" href="https://twaweza.org/country/uganda" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 6px;">
+                            <img src="images/partner-logos/Twaweza-logo.jpg" style="width: 100%; height: 100%; object-fit: contain;" alt="Twaweza Uganda" />
+                        </div>
+                        <div class="ex-booth-name">Twaweza Uganda</div>
+                        <div class="ex-booth-type">Civil Society &amp; Research</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://cepa.or.ug" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/CEPALogoBlack.jpg" style="width: 100%; height: 100%; object-fit: contain;" alt="CEPA" />
+                        </div>
+                        <div class="ex-booth-name">CEPA</div>
+                        <div class="ex-booth-type">Research &amp; Policy Analysis</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://www.wits.ac.za/clear-aa" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/CLEAR AA Logo.jpg" style="width: 100%; height: 100%; object-fit: contain;" alt="CLEAR AA" />
+                        </div>
+                        <div class="ex-booth-name">CLEAR AA</div>
+                        <div class="ex-booth-type">Capacity Building</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://www.ugandaevaluationassociation.org/" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #2f4a5a; padding: 14px;">
+                            <img src="images/feedback/UEA Logo.png" style="width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen;" alt="Uganda Evaluation Association" />
+                        </div>
+                        <div class="ex-booth-name">Uganda Evaluation Association</div>
+                        <div class="ex-booth-type">Professional Association</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://twendembele.org" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 6px;">
+                            <img src="images/partner-logos/twende-mbele-logo-02.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Twende Mbele" />
+                        </div>
+                        <div class="ex-booth-name">Twende Mbele</div>
+                        <div class="ex-booth-type">M&amp;E Peer Learning</div>
+                    </a>
+                    <div class="ex-booth-card">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 6px;">
                             <img src="images/presenters/AfrEA logo.png" style="width: 100%; height: 100%; object-fit: contain;" alt="AfrEA" />
                         </div>
                         <div class="ex-booth-name">AfrEA</div>
                         <div class="ex-booth-type">Research &amp; Publications</div>
                     </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo" style="background: #fff; padding: 6px;">
-                            <img src="images/presenters/Pazel Conroy Consulting Ltd.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Pazel Conroy Consulting Ltd" />
+                </div>
+
+                <!-- ── CATEGORY 3: Government & Academic ── -->
+                <div class="ex-cat-header wow fadeInUp">
+                    <div class="ex-cat-icon"><i class="fa fa-landmark"></i></div>
+                    <span class="ex-cat-label">Government &amp; Academic Institutions</span>
+                    <div class="ex-cat-rule"></div>
+                </div>
+                <div class="ex-booth-grid">
+                    <a class="ex-booth-card" href="https://parliament.go.ug" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/Parliament logo.svg" style="width: 100%; height: 100%; object-fit: contain;" alt="Parliament of Uganda" />
                         </div>
-                        <div class="ex-booth-name">Pazel Conroy Consulting</div>
-                        <div class="ex-booth-type">Consulting &amp; Advisory</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo" style="background: #fff; padding: 6px;">
-                            <img src="images/partner-logos/Twaweza-logo.jpg" style="width: 100%; height: 100%; object-fit: contain;" alt="Twaweza" />
+                        <div class="ex-booth-name">Parliament of Uganda</div>
+                        <div class="ex-booth-type">Government Institution</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://op.go.ug" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/plain_uganda_coat_of_arms.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Office of the President" />
                         </div>
-                        <div class="ex-booth-name">Twaweza</div>
-                        <div class="ex-booth-type">Civil Society &amp; NGOs</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo" style="background: #fff; padding: 6px;">
-                            <img src="images/partner-logos/twende-mbele-logo-02.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Twende Mbele" />
+                        <div class="ex-booth-name">Office of the President</div>
+                        <div class="ex-booth-type">Government Institution</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://opm.go.ug" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/plain_uganda_coat_of_arms.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Office of the Prime Minister" />
                         </div>
-                        <div class="ex-booth-name">Twende Mbele</div>
-                        <div class="ex-booth-type">Capacity Building</div>
-                    </div>
-                    <!-- Placeholder booth cards — replace with real exhibitors -->
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
-                        <div class="ex-booth-name">Your Organisation</div>
-                        <div class="ex-booth-type">Booth Slot Available</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
-                        <div class="ex-booth-name">Your Organisation</div>
-                        <div class="ex-booth-type">Booth Slot Available</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
-                        <div class="ex-booth-name">Your Organisation</div>
-                        <div class="ex-booth-type">Booth Slot Available</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
-                        <div class="ex-booth-name">Your Organisation</div>
-                        <div class="ex-booth-type">Booth Slot Available</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
-                        <div class="ex-booth-name">Your Organisation</div>
-                        <div class="ex-booth-type">Booth Slot Available</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
-                        <div class="ex-booth-name">Your Organisation</div>
-                        <div class="ex-booth-type">Booth Slot Available</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
-                        <div class="ex-booth-name">Your Organisation</div>
-                        <div class="ex-booth-type">Booth Slot Available</div>
-                    </div>
-                    <div class="ex-booth-card">
-                        <div class="ex-booth-logo"><i class="fa fa-building"></i></div>
-                        <div class="ex-booth-name">Your Organisation</div>
-                        <div class="ex-booth-type">Booth Slot Available</div>
-                    </div>
+                        <div class="ex-booth-name">Office of the Prime Minister</div>
+                        <div class="ex-booth-type">Government Institution</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://umi.ac.ug/umi-programmes/" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/umi logo_.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Uganda Management Institute" />
+                        </div>
+                        <div class="ex-booth-name">Uganda Management Institute</div>
+                        <div class="ex-booth-type">Academic Institution</div>
+                    </a>
+                    <a class="ex-booth-card" href="https://ubos.org" target="_blank" rel="noopener noreferrer">
+                        <div class="ex-booth-logo" style="background: #fff; padding: 10px;">
+                            <img src="images/partner-logos/ubos.jpg" style="width: 100%; height: 100%; object-fit: contain;" alt="UBOS" />
+                        </div>
+                        <div class="ex-booth-name">UBOS</div>
+                        <div class="ex-booth-type">Statistics &amp; Data</div>
+                    </a>
                 </div>
             </div>
         </section>

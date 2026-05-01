@@ -791,6 +791,41 @@
             .lph-stat { padding: 14px 8px; }
         }
 
+        /* Short landscape desktop / laptop — Surface Pro, 1280×800, 1366×768, etc.
+           Adds top padding so content sits below the fixed navbar, and trims
+           vertical spacing so everything fits without scrolling.              */
+        @media (min-width: 992px) and (max-height: 900px) {
+            section#section-hero.lph {
+                --lph-stats-h: 72px;
+                --lph-social-h: 44px;
+            }
+
+            .lph-content {
+                padding-top: 88px;
+                align-items: flex-start;
+            }
+
+            .lph-inner { padding-top: 0; }
+
+            .lph-eyebrow  { margin-bottom: 14px; }
+            .lph-edition  { margin-bottom: 18px; }
+            .lph-headline { margin-bottom: 16px; }
+
+            .lph-word {
+                font-size: clamp(3.2rem, 5.8vw, 5.8rem);
+            }
+
+            .lph-theme {
+                margin: 4px 0 22px;
+                font-size: 0.95rem;
+            }
+
+            .lph-meta { margin-bottom: 22px; }
+
+            .lph-stat     { padding: 16px 18px; }
+            .lph-stat-num { font-size: 1.85rem; }
+        }
+
         /* ============================================================
            QUOTE / DECLARATION SECTION — inline to guarantee render
            ============================================================ */
@@ -2142,16 +2177,22 @@
                         <img src="images/partner-logos/twende-mbele-logo-02.png" style="height:120px; width:auto; object-fit:contain;" alt="Twende Mbele" loading="lazy" />
                     </div>
                     <div class="col-auto">
+                        <img src="images/presenters/AfrEA logo.png" style="height:120px; width:auto; object-fit:contain;" alt="AfrEA" loading="lazy" />
+                    </div>
+                    <div class="col-auto">
                         <div style="width:1px; height:80px; background:rgba(0,0,0,0.1);" class="d-none d-md-block"></div>
                     </div>
                     <div class="col-auto">
-                        <img src="images/partner-logos/CEPA Logo.PNG" style="height:120px; width:auto; object-fit:contain;" alt="CEPA" loading="lazy" />
+                        <img src="images/partner-logos/CEPALogoBlack.jpg" style="height:50px; width:auto; object-fit:contain;" alt="CEPA" loading="lazy" />
                     </div>
                     <div class="col-auto">
                         <div style="width:1px; height:80px; background:rgba(0,0,0,0.1);" class="d-none d-md-block"></div>
                     </div>
                     <div class="col-auto">
                         <img src="images/partner-logos/Twaweza-logo.jpg" style="height:120px; width:auto; object-fit:contain;" alt="Twaweza" loading="lazy" />
+                    </div>
+                    <div class="col-auto">
+                        <img src="images/partner-logos/umi logo_.png" style="height:50px; width:auto; object-fit:contain;" alt="Twaweza" loading="lazy" />
                     </div>
                 </div>
                 <div class="row">
@@ -2183,7 +2224,7 @@
                             <span class="sched-strand-pill strand-red">&#11044; Strand 5: Governance, Learning &amp; Accountability</span>
                         </div>
                         <div class="text-center mt-4 wow fadeInUp" data-wow-delay=".5s">
-                            <a href="UEW2026 Program-A4-V2904.pdf" download class="btn-main fx-slide" style="display:inline-flex; align-items:center; gap:10px;">
+                            <a href="UEW2026 Program - A4 - V0105.pdf" download class="btn-main fx-slide" style="display:inline-flex; align-items:center; gap:10px;">
                                 <i class="fa fa-file-pdf-o" style="font-size:1.1rem;"></i>
                                 <span>Download Full Programme (PDF)</span>
                             </a>
@@ -2463,7 +2504,7 @@
                                                     <th class="th-time">Time</th>
                                                     <th class="th-blue"><small>Venue: Board Room 1<br>Strand 1: Innovation &amp; Tech<br>Chair: Kenneth Otikal</small></th>
                                                     <th class="th-green"><small>Venue: Muyenga 1<br>Strand 2: Evidence for NDP IV<br>Chair: Rosetti Nabbumba Nayenga</small></th>
-                                                    <th class="th-yellow"><small>Venue: Muyenga 2<br>Strand 3: Wellbeing, Equity &amp; Inclusion<br>Chair: Prof. Rutagwelera Godfrey Mutakyahwa</small></th>
+                                                    <th class="th-yellow"><small>Venue: Muyenga 2<br>Strand 3: Wellbeing, Equity &amp; Inclusion<br>Chair: Rutagwelera Godfrey Mutakyahwa</small></th>
                                                     <th class="th-pink"><small>Venue: Muyenga 3<br>Strand 4: Capacity Strengthening<br>Chair: Tebogo Fish</small></th>
                                                     <th class="th-red"><small>Venue: Kisakye Main Hall<br>Strand 5: Governance, Learning &amp; Accountability<br>Chair: Anitha Ishengoma</small></th>
                                                 </tr>
